@@ -1,0 +1,4039 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+     <title>小说_不可能的世界_首页</title> 
+    
+    <meta name="description" content="不可能的世界,小说,小说阅读,精彩小说尽在不可能的世界,网络各界小说高手,每日更新小说连载,小说排行榜更是提供全网最收欢迎的小说下载,当下最好看的小说,找最好看的免费小说就来不可能的世界,如青春小说,幻想小说,竞技小说,游戏小说,科幻小说,轻小说,恐怖小说,悬疑小说,推理小说,烧脑小说,神州小说,不正常小说,精彩尽在不可能的世界"/>
+    <meta name="keywords" content="不可能的世界,小说,小说排行榜,免费小说下载,好看的小说"/>
+    
+
+    <meta name="robots" content="all" />
+    <meta name="googlebot" content="all" />
+    <meta name="baiduspider" content="all" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="shenma-site-verification" content="f52ac6c1aacbc0ed35e773636c0dc96d_1447400441">
+    <link rel="shortcut icon" href="http://s.8kana.com/img/legend.ico" type="image/x-icon" />
+    <meta property="qc:admins" content="12733602666031616375" />
+    <meta name="baidu-site-verification" content="GdCkrN8SJQ" />
+    <link rel="stylesheet" type="text/css" href="style/css/kana.css"/>
+<!--    <link rel="stylesheet" type="text/css" href="style/css/music.css"/>-->
+    <script type="text/javascript" src="style/js/jquery.min.js"></script>
+    <script type="text/javascript" src="style/js/kana.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui.min.css" />
+    <script type="text/javascript" src="style/js/jquery-ui.min.js"></script>
+    
+    
+
+
+        <link rel="stylesheet" type="text/css" href="style/css/jquery.mCustomScrollbar.css"/>
+
+
+        <script type="text/javascript" src="style/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+<link rel="stylesheet" type="text/css" href="style/css/newindex.css" />
+<script type="text/javascript" src="style/js/index.js"></script>
+
+
+</head>
+<script type="text/javascript">
+
+
+    $(function() {
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+        $( "#searchbox" ).autocomplete({
+            minLength: 1,
+            source: function( request, response ) {
+                request.term = GPT.trim(request.term);
+                if(request.term == '') return false;
+                $.getJSON( "/home/search/ajaxSearchList", {keyword: extractLast(request.term)}, response );
+            },
+            search: function() {
+                // 自定义最小长度
+                var term = extractLast( this.value );
+                if ( term.length < 1 ) {
+                    return false;
+                }
+            },
+            select: function(event,ui) {
+                var searchVal = $(".ui-menu-item").text();
+                if(searchVal == '换一个关键字再试试？'){
+                    return false;
+                }
+                var autoType = ui.item.type;
+                var objId = ui.item.id;
+
+                if(autoType == 1){
+
+                    location.href="/book/"+objId+".html";
+                }else{
+                    location.href="/member/author/Portal/"+objId;
+                }
+            }
+        });
+        // 内容展示区最小高度设置
+        var headHeight = ($('.topBar').height()) + ($('.top').height()) + ($('.nav').height()) + 3;
+        var height = document.documentElement.clientHeight - (headHeight) - 351;
+        $('.main').css('min-height',height);
+        $('.searchbox').click(function(){
+            $('.search_text').css('display','none');
+            $("#searchbox").focus();
+        });
+        $('.searchbox').blur(function(){
+            var v = $(this).val();
+            if(v == ''){
+                $('.search_text').css('display','block');
+            }
+
+        });
+    });
+    function searchKey(){
+        var keyword = $('#searchbox').val();
+        keyword = GPT.trim(keyword);
+        if(keyword == ''){
+            return false;
+        }
+        $("#searchform").submit();
+    }
+
+    //验证作者密码信息
+    function authorConfirm(){
+        var UserId = GPT.getCookieValue('UserId');
+
+        if((UserId == '')||(UserId == 0)||(UserId==false)) {
+            window.location.href = '/home/passport/login';
+        } else{
+            var isAuth = GPT.getCookieValue('IsAuthor');
+            if( isAuth != '1' ){
+                window.location.href="/author/index/apply"
+            } else {
+                var auth = GPT.getCookieValue('AuthName');
+
+                if( auth == '' ){
+                    kana.loadAuthLoginForm();
+                }else{
+                    window.open('/author')
+                }
+            }
+        }
+    }
+
+</script>
+
+<body>
+
+<!-- 头部 -->
+
+
+<script>
+    getHomeHeaderInfo();
+</script>
+<!--top end-->
+
+
+<div class="topBar">
+    <div class="wrapper clearfix topBar_con">
+        <div class=" left topBarL">
+            <div class="topBar_name_Q" title="正在施工中">
+                <div class="topBar_nameC" style="cursor: default;">
+                    <i class=" left topBar_name1"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(1)">正义骑士团</span>
+                    <span id="qsMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+                <div class="topBar_No"></div>
+            </div>
+            <div class="topBar_name">
+                <div class="topBar_nameC">
+                    <i class=" left topBar_name2"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(2)">贤者之城</span>
+                    <span id="xzMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+
+            </div>
+            <div class="topBar_name">
+                <div class="topBar_nameC">
+                    <i class=" left topBar_name3"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(3)">科学艺术坊</span>
+                    <span id="ysMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+
+            </div>
+            <div class="topBar_name_Q"  title="正在施工中">
+                <div class="topBar_nameC" style="cursor: default;">
+                    <i class=" left topBar_name4"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(4)">天下布武团</span>
+                    <span id="bwMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+                <div class="topBar_No"></div>
+            </div>
+        </div>
+
+        <!--已登录状态-->
+        <div id="LoginInfo" class="right topBarR" style="display: none">
+            <div class="right topBarR_R">
+                <ul>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(51)">
+                            <span class="left">书架</span>
+                            <div id="bookshelf" class="left topBarR_R_div">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(52)">
+                            <span class="left">消息</span>
+                            <div  id="MsgNum" class="left topBarR_R_div" style="background-color:#5aa4ef;">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(53)">
+                            <span class="left">书评</span>
+                            <div id="bookcomment" class="left topBarR_R_div" style="background-color:#4fc14a;">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right topBarR_L">
+                <a href="/home/passport/logout" class="right headout">[退出]</a>
+                <a href="javascript:;" class="clearfix right Money">
+                    <span id="UserCoin" class="left MoneyNum">0</span>
+                    <i class="left MoneyIcon"></i>
+                </a>
+                <a href="javascript:;" class="right"><i class="lvMember1_1 topBarR_L_lv" id="UserLevel_M"></i></a>
+                <a href="/member/index/index" class="right IDName" id="username" target="_blank">--</a>
+
+
+                <div class="right IDphoto ">
+                    <a class="IDphoto_a" href="/member/index/index" target="_blank"><img src="" width="23" height="23" id="UserAvatar"></a>
+
+                    <div class="IDphoto_Title" style="display: none">
+                        <div class="IDphoto_Title_In">
+                            <div class="IDphoto_Title_X">
+                                <img src="style/images/closeDown_Btn.png" style="width: 100%; height: 100%;" alt=""/>
+                            </div>
+                            <p id="myCommentTitle"><span class="IDphoto_member"></span><span id="commentNew"></span>条话题回复，<span class="IDphoto_look"  onclick="openPage(1)"><a target="_blank" href="/member/comment/index?func=reply">查看</a></span></p>
+                            <p id="myBbsTitle"><span class="IDphoto_member"></span><span id="bbsNew"></span>条帖子回复，<span class="IDphoto_look"  onclick="openPage(2)"><a target="_blank" href="/member/bbs/index?func=myreply">查看</a></span></p>
+                            <p id="myMessageTitle"><span class="IDphoto_member"></span><span id="messageNew"></span>条消息，<span class="IDphoto_look"  onclick="openPage(3)"><a target="_blank" href="/member/message/index">查看</a></span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script>
+//            $(".IDphoto").hover(function(){
+//                $(this).find(".IDphoto_Title").show();
+//            },function(){
+//                $(this).find(".IDphoto_Title").hide();
+//            });
+            $(".IDphoto_Title_X").click(function(){
+                $(".IDphoto_Title").css('display','none');
+            })
+
+            function openPage(item) {
+                var userId = GPT.getCookieValue('UserId');
+                $.ajax({
+                    type:'post',
+                    data:'userId='+userId+'&item='+item,
+                    url:'/home/ajax/ajaxUpdateTime',
+                    dataType:'json',
+                    success:function(data){
+                    }
+                });
+            }
+        </script>
+
+        <!--未登录状态-->
+
+        <div id="LoginUrl" class="right topBarR" style="display: none">
+            <div class="right topBarR_login">
+                <script type="text/javascript">
+                    var html = '';
+                    html += '<a href="'+kana.getDomain('www')+'/home/passport/login?returnUrl='+window.location.href+'" class="left topBarR_login_Lbtn">登录</a>';
+                    html += '<a href="'+kana.getDomain('www')+'/home/passport/register?returnUrl='+window.location.href+'" class="left topBarR_login_Rbtn">注册</a>';
+                    document.write(html);
+                </script>
+            </div>
+            <a class="right qqLogin1" href="javascript:;" style="margin-top:17px;">
+                <i></i>
+            </a>
+            <a class="right wbLogin1" href="javascript:;" style="margin-top:17px;">
+                <i></i>
+            </a>
+        </div>
+
+        <!--未登录状态-->
+
+    </div>
+</div>
+<!--topBar end-->
+
+<!--top start-->
+<div class="top">
+    <div class="wrapper top_mian">
+        <h1 class="left" style="margin-top: 7px;">
+            <a href="http://www.8kana.com"></a>
+            <div class="beta"></div>
+            <div class="romantic"></div>
+        </h1>
+        <div class="top_Icon"></div>
+
+        <!-- 搜索框 -->
+
+        <form id="searchform" class="right nav_searchBox" style="margin-top:60px;" method="get" action="/home/search">
+            <div class="search_text">
+                <label class="searchbox">输入你感兴趣的角色,作品,作者</label>
+            </div>
+            <input id="searchbox" class="nav_txt ui-autocomplete-input searchbox" type="text" name="keyword" autocomplete="off">
+            <a class="right nav_btn" onclick="searchKey()" href="javascript:;">
+                <span></span>
+            </a>
+        </form>
+
+        <!-- 搜索框 -->
+
+    </div>
+</div>
+<!--top end-->
+
+<!--nav start-->
+
+    <div class="nav">
+    <div class="clearfix wrapper nav_main">
+        <ul class="left navBar">
+            <li id="menu_index">
+                <a href="/"  class="index navHot"  >首页</a>
+            </li>
+
+            <li id="menu_1" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/1.html" >重幻想</a>
+
+            </li>
+
+            <li id="menu_2" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/2.html" >轻幻想</a>
+
+            </li>
+
+            <li id="menu_3">
+                <a href="/home/bookclass/serial/3.html" >竞技</a>
+
+            </li>
+
+            <li id="menu_4">
+                <a href="/home/bookclass/serial/4.html" >青春</a>
+
+            </li>
+
+            <li id="menu_5">
+                <a href="/home/bookclass/serial/5.html" >烧脑</a>
+
+            </li>
+
+            <li id="menu_6">
+                <a href="/home/bookclass/serial/6.html" >神州</a>
+
+            </li>
+
+            <li id="menu_7" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/7-701.html" >不正常</a>
+
+            </li>
+
+            <li class="bookBox">
+                <a href="/home/bookclass/bookshelf" >书库</a>
+            </li>
+
+            <li id="menu_8" class="navBar_threeLi">
+                <a href="/home/book/rank" >排行榜</a>
+            </li>
+
+            <li id="menu_9">
+                <a href="/home/index/yschannel" >同人</a>
+
+            </li>
+
+            <li id="menu_10">
+                <a href="/home/index/comment" >书评</a>
+            </li>
+
+        </ul>
+        <div class="left clearfix nav_bar">
+            <a href="/bbs" target="_blank" >
+                <span class="left nav_bar_Icon1"></span>
+                <span class="left nav_bar_a">酒馆</span>
+                <span class="left nav_bar_Icon2"></span>
+            </a>
+        </div>
+        <div class="right nav_R">
+            <div class="right nav_R_novel">
+                <a href="javascript:;" class="clearfix" onclick="javascript: authorConfirm()">
+                    <i class="left nav_R_novel_Icon"></i>
+                    <span class="left">
+                        <script>
+                            if(GPT.getCookieValue('IsAuthor')==1)
+                                document.write('作者中心');
+                            else
+                                document.write('发表小说');
+                        </script>
+                    </span>
+                </a>
+            </div>
+            <div class="right nav_R_recharge">
+                <a href="javascript:;" class="clearfix" onclick="javascript:getPage(20)">
+                    <i class="left nav_R_recharge_Icon"></i>
+                    <span class="left">充值</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--nav end-->
+
+
+<!-- 头部 -->
+
+<!-- index main -->
+<div class="clearfix index_main" tag="test" style="width: 1200px; margin: 0 auto;">
+
+
+    
+	<div class="returnTop">
+		<div class="returnTop_Btn">
+			<a href="javascript:;">
+				<i class="returnTop_Btn_Icon"></i>
+				<p>返回</p>
+				<p>顶部</p>
+			</a>
+		</div>
+		<div class="feedback_Btn feedback_Btn_APP">
+			<a href="http://www.8kana.com/active/index/download" target="_blank">
+				<p>APP</p>
+				<p>下载</p>
+				<div class="APPerweima">
+					<div class="APPerweima_Box">
+						<img src="style/images/footer_erweimaAPP.png" style="width: 100%; height: 100%;">
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="feedback_Btn" id="feedback_Btn" style="margin-top: -1px;">
+			<a href="javascript:;">
+				<p>意见</p>
+				<p>反馈</p>
+			</a>
+		</div>
+	</div>
+	<!--返回顶部-->
+    <div class="clearfix index_main_HotSpot">
+        <div class="left index_main_HotSpot_L">
+            <p id="recomedNum" style="display: none">5</p>
+            <div class="HotSpot_pic">
+                <ul>
+                                                            <li>
+	                                            <a href="http://www.8kana.com/bbs/index/show/1356" target="_blank" data="135" class="setUv">
+	                                                    <img src="style/images/5645990233252.jpg" alt="" />
+                        </a>
+                    </li>
+                                        <li>
+	                                            <a href="http://active.8kana.com/ad/bookComment" target="_blank" data="136" class="setUv">
+	                                                    <img src="style/images/564599a897941.jpg" alt="" />
+                        </a>
+                    </li>
+                                        <li>
+	                                            <a href="http://www.8kana.com/book/10102.html" target="_blank" data="137" class="setUv">
+	                                                    <img src="style/images/5642e4228673f.jpg" alt="" />
+                        </a>
+                    </li>
+                                        <li>
+	                                            <a href="http://www.8kana.com/book/10075.html" target="_blank" data="138" class="setUv">
+	                                                    <img src="style/images/5642e48220e0b.jpg" alt="" />
+                        </a>
+                    </li>
+                                        <li>
+	                                            <a href="http://www.8kana.com/book/10037.html" target="_blank" data="139" class="setUv">
+	                                                    <img src="style/images/5642e4df4658a.jpg" alt="" />
+                        </a>
+                    </li>
+                                                        </ul>
+            </div>
+            <div class="clearfix HotSpot_pic_circle">
+	            	            	            	            <a href="http://www.8kana.com/bbs/index/show/1356&recomId=135" target="_blank"><div class="left HotSpot_pic_circle_size"  >精品-渡劫区域规则调整预告及若干刺激消息流出</div> </a>
+	            	            	            	            <a href="http://active.8kana.com/ad/bookComment&recomId=136" target="_blank"><div class="left HotSpot_pic_circle_size"  style="display: none;">贤者神书评推书第1期  中二誓言放出</div> </a>
+	            	            	            	            <a href="http://www.8kana.com/book/10102.html&recomId=137" target="_blank"><div class="left HotSpot_pic_circle_size"  style="display: none;">胸毛太长死于非命，上天让他重生再来</div> </a>
+	            	            	            	            <a href="http://www.8kana.com/book/10075.html&recomId=138" target="_blank"><div class="left HotSpot_pic_circle_size"  style="display: none;">跟着转世到现代的哪吒，一起去打纳粹啊</div> </a>
+	            	            	            	            <a href="http://www.8kana.com/book/10037.html&recomId=139" target="_blank"><div class="left HotSpot_pic_circle_size"  style="display: none;">一条路，生死无常，两颗心，无怨无悔。</div> </a>
+	            	            	                            <ol class="right circleBox">
+	                	                	                	                <li class="circleBox_Hot"></li>
+	                	                	                	                <li></li>
+	                	                	                	                <li></li>
+	                	                	                	                <li></li>
+	                	                	                	                <li></li>
+	                	                	                
+                </ol>
+            </div>
+        </div>
+        <div class="left index_main_HotSpot_C">
+            <h2 class="clearfix xzRecommend">
+                <i class="left xzRecommend_Icon"></i>
+                <span class="left">贤者们的推荐</span>
+            </h2>
+            <div class="clearfix xzRecommend_In">
+                <ul>
+                                                                                <li>
+                                                <div class="clearfix xzRecommend_In_T">
+							<a href="/community/xzindex/detail/20934" target="_blank">
+                            	<div class="left xzRecommend_In_head">
+									<img src="style/images/22569_ebf86_s.jpg" alt="" style="width:100%; height:100%;"/>
+                            	</div>
+                            	<div class="left xzRecommend_In_name">
+                                    									    <p class="manColor Recommend_In_name">弥漫在苍穹</p>
+                                    									<p>初级贤者</p>
+								</div>
+							</a>
+                        </div>
+                        <a href="/community/xzindex/detail/20934" target="_blank">
+                            <div class="xzRecommend_In_B">
+                                <img src="style/images/none.jpg" alt="图片丢失" style="width:100%; height:100%;"/>
+                                <div class="clearfix xzRecommend_In_B_star">
+                                    <div class="starBox">
+	                                    	                                                                            <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                        	                                                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                            <li>
+                                                <div class="clearfix xzRecommend_In_T">
+							<a href="/community/xzindex/detail/20891" target="_blank">
+                            	<div class="left xzRecommend_In_head">
+									<img src="style/images/13732_2f3f0_s.jpg" alt="" style="width:100%; height:100%;"/>
+                            	</div>
+                            	<div class="left xzRecommend_In_name">
+                                    									    <p class="manColor Recommend_In_name">布衣贵族</p>
+                                    									<p>中级贤者</p>
+								</div>
+							</a>
+                        </div>
+                        <a href="/community/xzindex/detail/20891" target="_blank">
+                            <div class="xzRecommend_In_B">
+                                <img src="style/images/10609_3202c_766_s.jpg" alt="图片丢失" style="width:100%; height:100%;"/>
+                                <div class="clearfix xzRecommend_In_B_star">
+                                    <div class="starBox">
+	                                    	                                                                            <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                        	                                                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                            <li>
+                                                <div class="clearfix xzRecommend_In_T">
+							<a href="/community/xzindex/detail/20889" target="_blank">
+                            	<div class="left xzRecommend_In_head">
+									<img src="style/images/30234_e0a52_s.jpg" alt="" style="width:100%; height:100%;"/>
+                            	</div>
+                            	<div class="left xzRecommend_In_name">
+                                    									    <p class="manColor Recommend_In_name">神尾理树</p>
+                                    									<p>初级贤者</p>
+								</div>
+							</a>
+                        </div>
+                        <a href="/community/xzindex/detail/20889" target="_blank">
+                            <div class="xzRecommend_In_B">
+                                <img src="style/images/10858_dca28_593_s.jpg" alt="图片丢失" style="width:100%; height:100%;"/>
+                                <div class="clearfix xzRecommend_In_B_star">
+                                    <div class="starBox">
+	                                    	                                                                            <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                        	                                                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                            <li style="margin-right:0;">
+                                                <div class="clearfix xzRecommend_In_T">
+							<a href="/community/xzindex/detail/20639" target="_blank">
+                            	<div class="left xzRecommend_In_head">
+									<img src="style/images/25167_bc888_s.jpg" alt="" style="width:100%; height:100%;"/>
+                            	</div>
+                            	<div class="left xzRecommend_In_name">
+                                    									    <p class="manColor Recommend_In_name">找到方向的某X</p>
+                                    									<p>初级贤者</p>
+								</div>
+							</a>
+                        </div>
+                        <a href="/community/xzindex/detail/20639" target="_blank">
+                            <div class="xzRecommend_In_B">
+                                <img src="style/images/11334_f82ff_813_s.jpg" alt="图片丢失" style="width:100%; height:100%;"/>
+                                <div class="clearfix xzRecommend_In_B_star">
+                                    <div class="starBox">
+	                                    	                                                                            <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                                                                <i class="left star_Icon"></i>
+                                        	                                                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                                                        </ul>
+            </div>
+        </div>
+        <div class="right index_main_HotSpot_R">
+            <h2 class="clearfix xzRecommend" style="width: 250px;">
+                <i class="left world_Icon"></i>
+                <span class="left">大事件</span>
+            </h2>
+			<div class="clearfix worldBox">
+				<div class="bigNews">
+																				<a href="http://active.8kana.com/bookactivity/" target="_blank">
+												<img src="style/images/562df1c383296.jpg" alt="" />
+					</a>
+														</div>
+				<div class="bigNews">
+																				<a href="http://active.8kana.com/music/music" target="_blank">
+												<img src="style/images/562de92f1ec80.jpg" alt="" />
+					</a>
+														</div>
+			</div>
+        </div>
+    </div>
+
+
+    <div class="clearfix wrapper mainBox_In">
+        
+
+<!--精选区/渡劫区 切换-->
+<div class="indexArea_Tab">
+	<div class="indexArea_Tab_L"></div>
+	<div class="indexArea_Tab_In">
+		<div class="clearfix indexArea_Tab_content">
+			<div class="left AreaTabBtn_L AreaTabBtn_Hot">
+				<a href="javascript:;" class="clearfix" onclick="jxdj()">
+					<i class="left"></i>
+					<span class="left">精选区</span>
+					<div class="indexArea1_member">100</div>
+				</a>
+			</div>
+			<div class="right AreaTabBtn_R">
+				<a href="javascript:;" class="clearfix Preselec">
+					<i class="left"></i>
+					<span class="left">渡劫区</span>
+					<div class="indexArea2_member">114</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="indexArea_Tab_R"></div>
+</div>
+<script>
+	$(document).ready(function(){
+		$(".AreaTabBtn_L").click(function(){
+			$(this).addClass("AreaTabBtn_Hot");
+			$(this).siblings(".AreaTabBtn_R").removeClass("AreaTabBtn_Hot");
+		})
+		$(".AreaTabBtn_R").click(function(){
+			$(this).addClass("AreaTabBtn_Hot");
+			$(this).siblings(".AreaTabBtn_L").removeClass("AreaTabBtn_Hot");
+		})
+	})
+</script>
+<!--精选区/渡劫区 切换-->
+<div class="newIndexBox" style="margin-bottom: 70px;">
+
+	<div class="clearfix updateBox Preselection">
+		<div class="left index_main_L">
+			<div class="clearfix index_update">
+				<!--实时更新-->
+				<div class="clearfix index_update_title_nav">
+					<div class="left index_update_title_nav_L">
+						<i class="left index_update_title_nav_Licon"></i>
+						<span class="left index_update_title_nav_Lsize">不看：</span>
+						<div class="left index_main2_title_nav_ul1">
+							<ul>
+								<li>
+									<a class="left" rel="newbook" href="javascript:;">
+										<i></i>
+									</a>
+									<span class="left">新作品</span>
+								</li>
+								<li style="margin-right:18px;">
+									<a class="left" rel="looked" href="javascript:;">
+										<i></i>
+									</a>
+									<span class="left">看过的</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="left index_update_title_nav_R">
+						<span class="left index_update_title_nav_Lsize">只看：</span>
+						<div class="left index_update_title_nav_ul">
+							<ul>
+								<li class="title_nav_li_Hot" rel="0">
+									<a href="javascript:;" style="width:64px;" class="title_nav_li_max">全部</a>
+								</li>
+								<li rel="1">
+									<a href="javascript:;">重幻想</a>
+								</li>
+								<li rel="2">
+									<a href="javascript:;">轻幻想</a>
+								</li>
+								<li rel="3">
+									<a href="javascript:;">竞技</a>
+								</li>
+								<li rel="4">
+									<a href="javascript:;">青春</a>
+								</li>
+								<li rel="5">
+									<a href="javascript:;">烧脑</a>
+								</li>
+								<li rel="6">
+									<a href="javascript:;">神州</a>
+								</li>
+								<li style="margin-right:0;" rel="7">
+									<a href="javascript:;">不正常</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<form id="filter_form">
+						<input type="hidden" name="newbook" id="newbook">
+						<input type="hidden" name="looked"  id="looked">
+						<input type="hidden" name="classid" id="classid" value="0" >
+						<input type="hidden" name="typeId" id="typeId" value="1" >
+					</form>
+				</div>
+				<div class="clearfix index_update_In lazyload" id="updateBook">
+										<ul class="clearfix">
+																		<li>
+														<a href="/book/10025.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/25/10025_5ac77_25_m.jpg" src="style/images/fmjz.jpg" alt="飞翔吧，青蛙！" style="width:100%; height:100%;"/>
+									<div class="Member_8_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/nxn/djs/10045_e28a3_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">永恒轻语</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我要成为拯救世界的大英雄！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>71</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">飞翔吧，青蛙！</p>
+								<p class="updateCover_Inform">26.8万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10083.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/83/10083_2d643_67_m.jpg" src="style/images/fmjz.jpg" alt="机器抉择" style="width:100%; height:100%;"/>
+									<div class="Member_8_5"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/uxr/xbs/10229_6da5f_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">兮木叶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当我家妹纸变成机器人的时候，该怎么办？</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>289</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">机器抉择</p>
+								<p class="updateCover_Inform">16.2万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10054.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/54/10054_7e8c2_95_m.jpg" src="style/images/fmjz.jpg" alt="放开地球，冲我来" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">醉蝠</div>
+											</div>
+											<div class="Black_update_C">
+												<P>读者群288710195，欢迎骚扰</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>340</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">放开地球，冲我来</p>
+								<p class="updateCover_Inform">73.2万   |   不正常</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11336.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/113/36/11336_d2063_764_m.jpg" src="style/images/fmjz.jpg" alt="外卖至世界尽头" style="width:100%; height:100%;"/>
+									<div class="Member_8_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201511/kzj/rxl/12551_2c301_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">热晓</div>
+											</div>
+											<div class="Black_update_C">
+												<P>对不起，我只是个送外卖的！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>129</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">外卖至世界尽头</p>
+								<p class="updateCover_Inform">4.4万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10838.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/108/38/10838_111d6_433_m.jpg" src="style/images/fmjz.jpg" alt="玻璃湖" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/xpw/lqk/10191_dbaed_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">月光小掬</div>
+											</div>
+											<div class="Black_update_C">
+												<P>强情节治愈系。受伤害的心灵，相互抚慰。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>55</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">玻璃湖</p>
+								<p class="updateCover_Inform">14.4万   |   唯美青春</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10108.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/08/10108_a95d9_91_m.jpg" src="style/images/fmjz.jpg" alt="来自喵星的我" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">六耳猫</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我就认真写写，你就随便看看。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>190</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">来自喵星的我</p>
+								<p class="updateCover_Inform">30.6万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11375.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/113/75/11375_9c926_776_m.jpg" src="style/images/fmjz.jpg" alt="击坠星辰之人" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/wqu/zhn/21977_f6eca_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">水晶乌鸦</div>
+											</div>
+											<div class="Black_update_C">
+												<P>再怎么黑暗也有星光，再怎么绝望也有希望</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>38</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">击坠星辰之人</p>
+								<p class="updateCover_Inform">5万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10009.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/09/10009_78858_27_m.jpg" src="style/images/fmjz.jpg" alt="轮舞之刃" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/pvo/vsf/10082_6e1ac_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">二十面相</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当少年遇到少女，命运伊始，战斗不息</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>161</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">轮舞之刃</p>
+								<p class="updateCover_Inform">24.4万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10023.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/23/10023_6977a_151_m.jpg" src="style/images/fmjz.jpg" alt="我的女友是魔王" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/fql/vdy/10101_c2314_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">灿烂小虎牙</div>
+											</div>
+											<div class="Black_update_C">
+												<P>出类拔萃高冷美少年和傲娇女魔王不得不说的</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>457</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">我的女友是魔王</p>
+								<p class="updateCover_Inform">48.8万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10028.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/28/10028_d8728_5_m.jpg" src="style/images/fmjz.jpg" alt="仙路" style="width:100%; height:100%;"/>
+									<div class="Member_8_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/pau/qjo/10025_88348_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">野马</div>
+											</div>
+											<div class="Black_update_C">
+												<P>这是一条很不一样的仙路……</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>125</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">仙路</p>
+								<p class="updateCover_Inform">26.7万   |   幻想神州</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10950.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/109/50/10950_f7f60_576_m.jpg" src="style/images/fmjz.jpg" alt="贤者大人来自异世界" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/icj/ylo/22487_d364b_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">wfzy000</div>
+											</div>
+											<div class="Black_update_C">
+												<P>现代魔法师罗门被召唤到亡国双子面前。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>398</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">贤者大人来自异世界</p>
+								<p class="updateCover_Inform">17.3万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/11484.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/114/84/11484_b2b10_870_m.jpg" src="style/images/fmjz.jpg" alt="命运统一战线" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">吾有七宗罪</div>
+											</div>
+											<div class="Black_update_C">
+												<P>不同世界的二人，平行的命运在此刻相交</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>58</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">命运统一战线</p>
+								<p class="updateCover_Inform">3.3万   |   架空幻想</p>
+							</a>
+						</li>
+												<div class="left update_ge"></div>
+																								<li>
+														<a href="/book/10099.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/99/10099_baa08_77_m.jpg" src="style/images/fmjz.jpg" alt="机甲与萝莉" style="width:100%; height:100%;"/>
+									<div class="Member_7_5"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">西园寺徹平</div>
+											</div>
+											<div class="Black_update_C">
+												<P>请做我的英雄，拯救我！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>208</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">机甲与萝莉</p>
+								<p class="updateCover_Inform">44.3万   |   游戏</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10027.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/27/10027_916b5_37_m.jpg" src="style/images/fmjz.jpg" alt="心兵" style="width:100%; height:100%;"/>
+									<div class="Member_9_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/ayx/tlt/10131_a5fe7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">兰帝魅晨</div>
+											</div>
+											<div class="Black_update_C">
+												<P>兰帝魅晨新作：风格啥的全都是新的哦！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>2018</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">心兵</p>
+								<p class="updateCover_Inform">53.5万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10043.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/43/10043_ee8e2_36_m.jpg" src="style/images/fmjz.jpg" alt="死党来自修罗道" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/zid/gsq/10146_4523f_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">惊寂</div>
+											</div>
+											<div class="Black_update_C">
+												<P>信则有，诚则灵。为了爱与信仰来战个痛吧！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>108</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">死党来自修罗道</p>
+								<p class="updateCover_Inform">19.8万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10500.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/105/00/10500_5e46b_260_m.jpg" src="style/images/fmjz.jpg" alt="灵鸟编年史" style="width:100%; height:100%;"/>
+									<div class="Member_7_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/aii/kga/11930_1f701_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">三只羊</div>
+											</div>
+											<div class="Black_update_C">
+												<P>热血、感动、浪漫、唯美——这里都有！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>141</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">灵鸟编年史</p>
+								<p class="updateCover_Inform">17.4万   |   幻想神州</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10097.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/97/10097_4b3b1_76_m.jpg" src="style/images/fmjz.jpg" alt="默历1736年的星云彼端" style="width:100%; height:100%;"/>
+									<div class="Member_8_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/lzw/mcb/10160_65352_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">紫薇朱槿</div>
+											</div>
+											<div class="Black_update_C">
+												<P>拥有读心术和超级人工智能的少年奋斗史</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>159</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">默历1736年的星云彼端</p>
+								<p class="updateCover_Inform">40.3万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10425.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/104/25/10425_10e7e_259_m.jpg" src="style/images/fmjz.jpg" alt="24号许愿师" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ytu/ywd/11941_e4d3c_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">讳莫</div>
+											</div>
+											<div class="Black_update_C">
+												<P>你好，我是24号许愿师，你的愿望是什么？</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>119</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">24号许愿师</p>
+								<p class="updateCover_Inform">14.6万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10095.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/95/10095_35317_96_m.jpg" src="style/images/fmjz.jpg" alt="中二少年篮球梦" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/uqa/taf/10154_30dd7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">天狗望月</div>
+											</div>
+											<div class="Black_update_C">
+												<P>燃烧着中二之心的少年啊，这是属于你的篮球</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>81</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">中二少年篮球梦</p>
+								<p class="updateCover_Inform">46.7万   |   体育</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10044.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/44/10044_0cb9a_32_m.jpg" src="style/images/fmjz.jpg" alt="癫狂患者" style="width:100%; height:100%;"/>
+									<div class="Member_8_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">雪夜九宫蝶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>精神病的世界一切都不正常，究竟谁才是真正</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>169</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">癫狂患者</p>
+								<p class="updateCover_Inform">24.1万   |   恐惧惊悚</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10140.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/40/10140_e85aa_128_m.jpg" src="style/images/fmjz.jpg" alt="私人恋爱手册" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">三根头发</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我是情圣，只负责把你的暗恋转变为牵手。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>159</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">私人恋爱手册</p>
+								<p class="updateCover_Inform">21.3万   |   唯美青春</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10852.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/108/52/10852_5030c_558_m.jpg" src="style/images/fmjz.jpg" alt="荆棘王冠" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/arp/xpw/16234_87d23_s.JPG" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">朱磊</div>
+											</div>
+											<div class="Black_update_C">
+												<P>欲达高峰，必忍其痛；欲带王冠，必承其重！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>368</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">荆棘王冠</p>
+								<p class="updateCover_Inform">8.2万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11152.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/111/52/11152_8eeef_679_m.jpg" src="style/images/fmjz.jpg" alt="黑尘世纪" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/uhr/aet/23304_0bde7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">明日潘多拉</div>
+											</div>
+											<div class="Black_update_C">
+												<P>战败的旧世界克隆士兵苏醒于新世界的故事</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>119</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">黑尘世纪</p>
+								<p class="updateCover_Inform">33.3万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10012.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/12/10012_5342f_6_m.jpg" src="style/images/fmjz.jpg" alt="不可思议的世界" style="width:100%; height:100%;"/>
+									<div class="Member_7_4"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/uxm/qzf/10044_9fa8e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">驰矢</div>
+											</div>
+											<div class="Black_update_C">
+												<P>不可思议幻想大乱斗！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>336</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">不可思议的世界</p>
+								<p class="updateCover_Inform">33.5万   |   科学幻想</p>
+							</a>
+						</li>
+												<div class="left update_ge"></div>
+																								<li>
+														<a href="/book/10142.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/42/10142_fa4f8_176_m.jpg" src="style/images/fmjz.jpg" alt="世界锁" style="width:100%; height:100%;"/>
+									<div class="Member_8_7"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/kim/fxu/11641_dd802_s.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">伏特加与奶茶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>子弹与枪给我勇气，剑与魔法赐你信仰。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>400</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">世界锁</p>
+								<p class="updateCover_Inform">36.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10193.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/101/93/10193_64ceb_507_m.jpg" src="style/images/fmjz.jpg" alt="亡者代言人" style="width:100%; height:100%;"/>
+									<div class="Member_8_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/yir/xze/11920_d9d7b_s.jpeg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">曼卿</div>
+											</div>
+											<div class="Black_update_C">
+												<P>【科幻悬疑】她为死者说话，却深陷惊天杀局</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>141</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">亡者代言人</p>
+								<p class="updateCover_Inform">12.8万   |   推理悬疑</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10010.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/10/10010_42cf6_10_m.jpg" src="style/images/fmjz.jpg" alt="古墓奇兵" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/jij/pox/10070_1a4ac_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">加盐绿茶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>年轻人就得有年轻人办法，逗比的探险。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>100</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">古墓奇兵</p>
+								<p class="updateCover_Inform">40.4万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10102.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/02/10102_77c96_79_m.jpg" src="style/images/fmjz.jpg" alt="一只有机活死人" style="width:100%; height:100%;"/>
+									<div class="Member_8_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">梦龙小剑</div>
+											</div>
+											<div class="Black_update_C">
+												<P>“我是地府公务鬼夜小鹰，有些工作需要你配合一下</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>325</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">一只有机活死人</p>
+								<p class="updateCover_Inform">36.1万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10084.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/84/10084_4a7da_64_m.jpg" src="style/images/fmjz.jpg" alt="那端纷乱的交际线" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/jho/ebc/10148_ad6f7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">阿竟</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一个普通女生继承了一个当铺，从此游走与两</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>97</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">那端纷乱的交际线</p>
+								<p class="updateCover_Inform">20.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10602.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/106/02/10602_38572_290_m.jpg" src="style/images/fmjz.jpg" alt="人性禁室" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/jho/ebc/10148_ad6f7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">阿竟</div>
+											</div>
+											<div class="Black_update_C">
+												<P>人类的欲望，真是奇妙的东西</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>99</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">人性禁室</p>
+								<p class="updateCover_Inform">13.8万   |   推理悬疑</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10125.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/25/10125_c87dd_122_m.jpg" src="style/images/fmjz.jpg" alt="魔界公主的正确打开方式" style="width:100%; height:100%;"/>
+									<div class="Member_7_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ett/wgn/11065_0eb4e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">柒陌陌</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我要代表月亮吃掉你~！！！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>149</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">魔界公主的正确打开方式</p>
+								<p class="updateCover_Inform">23.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10063.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/63/10063_e0c5e_55_m.jpg" src="style/images/fmjz.jpg" alt="罪恶游戏" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/hpx/xji/10096_4e3ed_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">若木</div>
+											</div>
+											<div class="Black_update_C">
+												<P>幸福的死亡，还是痛苦的活着，这是个问题</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>160</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">罪恶游戏</p>
+								<p class="updateCover_Inform">33.9万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10066.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/66/10066_a713b_61_m.jpg" src="style/images/fmjz.jpg" alt="玉中往事知多少" style="width:100%; height:100%;"/>
+									<div class="Member_8_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ygo/fxq/10184_1f199_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">子斐君</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一枚玉佩两世缘，奈何缘浅情深深</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>194</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">玉中往事知多少</p>
+								<p class="updateCover_Inform">21.5万   |   奇妙日常</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11480.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/114/80/11480_7f4e8_869_m.jpg" src="style/images/fmjz.jpg" alt="时间战线" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/idq/fwa/10654_72148_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">零喵</div>
+											</div>
+											<div class="Black_update_C">
+												<P>未来之路，存在于过去</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>24</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">时间战线</p>
+								<p class="updateCover_Inform">4.2万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10448.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/104/48/10448_53a2b_262_m.jpg" src="style/images/fmjz.jpg" alt="第一公会" style="width:100%; height:100%;"/>
+									<div class="Member_7_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">碎月千秋</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当一群不正常的人类组成一个不正常的公会…</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>74</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">第一公会</p>
+								<p class="updateCover_Inform">14.9万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10077.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/77/10077_a416d_56_m.jpg" src="style/images/fmjz.jpg" alt="他不喜欢超级英雄" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/xng/odj/10219_e9b9e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">竞天泽</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一个给超级英雄擦屁股的故事</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>528</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">他不喜欢超级英雄</p>
+								<p class="updateCover_Inform">26.9万   |   超能现实</p>
+							</a>
+						</li>
+																	</ul>
+									</div>
+			</div>
+		</div>
+		<div class="right index_main_R" style=" margin-top: -27px;">
+			<div class="index_main_R_TOP10">
+				<span>精选区</span>
+				排行榜
+			</div>
+			<div class="clearfix index_main_R_TOP10_In 	indexR_rank1" style="margin-top:-2px;">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Hot_li1" style="width: 83px;">
+							<a href="javascript:;" rel='11' style="width: 83px; color:#e26470;">
+								重推榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr" style="width: 83px;"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img threeHotBook_img" style="height: 84px;">
+																													<a href="http://www.8kana.com/book/10003.html" target="_blank">
+																		<img src="style/images/5642e53c2cab2.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="classPage_b_img" rel="1">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10047.html" class="left rankingList_name" target="_blank">【烧脑】轮回·半步多</a>
+								<i class="right rankingList_size rankingList_size_one" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10590.html" class="left rankingList_name" target="_blank">【青春】不可思议的猫咪</a>
+								<i class="right rankingList_size rankingList_size_two" >7.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10406.html" class="left rankingList_name" target="_blank">【神州】机斗大明朝</a>
+								<i class="right rankingList_size rankingList_size_three" >9.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10520.html" class="left rankingList_name" target="_blank">【轻幻想】武林幻想</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10001.html" class="left rankingList_name" target="_blank">【轻幻想】救世这种事SO EASY</a>
+								<i class="right rankingList_size" >7.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10596.html" class="left rankingList_name" target="_blank">【轻幻想】极限速度</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/11375.html" class="left rankingList_name" target="_blank">【重幻想】击坠星辰之人</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10051.html" class="left rankingList_name" target="_blank">【重幻想】老王修仙记</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/11105.html" class="left rankingList_name" target="_blank">【重幻想】流浪在星辰大海</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/10350.html" class="left rankingList_name" target="_blank">【轻幻想】游戏侵略者</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+																				</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In 	indexR_rank1">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Cold_li1" style="width: 125px;">
+							<a href="javascript:;" rel='11' style="width: 125px; color:#e26470;">
+								佳作榜
+							</a>
+						</li>
+						<li class="Warm_li1" style="width: 125px;">
+							<a href="javascript:;" rel='14' style="width: 125px; color:#38a7e8;">
+								吐槽榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr" style="width: 125px;"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="classPage_b_img" rel="1">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10935.html" class="left rankingList_name" target="_blank">【重幻想】我是阿拉丁神镜</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10507.html" class="left rankingList_name" target="_blank">【青春】这绝对不是未来的我！</a>
+								<i class="right rankingList_size rankingList_size_two" >8.5</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10062.html" class="left rankingList_name" target="_blank">【烧脑】法医恐怖事件</a>
+								<i class="right rankingList_size rankingList_size_three" >7.8</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10701.html" class="left rankingList_name" target="_blank">【重幻想】上帝小姐又想灭世了</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10011.html" class="left rankingList_name" target="_blank">【烧脑】无限轮回</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10006.html" class="left rankingList_name" target="_blank">【轻幻想】必死后宫逃脱计划！</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10077.html" class="left rankingList_name" target="_blank">【轻幻想】他不喜欢超级英雄</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10560.html" class="left rankingList_name" target="_blank">【神州】神仙中的战五渣</a>
+								<i class="right rankingList_size" >9.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/10614.html" class="left rankingList_name" target="_blank">【竞技】我的足球我做主</a>
+								<i class="right rankingList_size" >8.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/10140.html" class="left rankingList_name" target="_blank">【青春】私人恋爱手册</a>
+								<i class="right rankingList_size" >7.8</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b Cold_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="hotrank_11"></div>
+					</div>
+					<div class="classPage_b Warm_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="hotrank_14"></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In indexR_rank1">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Hot_li">
+							<a href="javascript:;" rel="21">
+								新秀
+							</a>
+						</li>
+						<li class="Cold_li">
+							<a href="javascript:;" rel="22">
+								中秀
+							</a>
+						</li>
+						<li class="Warm_li">
+							<a href="javascript:;" rel="23">
+								老秀
+							</a>
+						</li>
+						<li class="Glad_li">
+							<a href="javascript:;" rel="24">
+								完结榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_21">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10935.html" class="left rankingList_name" target="_blank">【重幻想】我是阿拉丁神镜</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10977.html" class="left rankingList_name" target="_blank">【不正常】关于重生变成猫的那些事</a>
+								<i class="right rankingList_size rankingList_size_two" style="font-size:18px;">--</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10701.html" class="left rankingList_name" target="_blank">【重幻想】上帝小姐又想灭世了</a>
+								<i class="right rankingList_size rankingList_size_three" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10861.html" class="left rankingList_name" target="_blank">【轻幻想】妖怪公寓入住须知</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10560.html" class="left rankingList_name" target="_blank">【神州】神仙中的战五渣</a>
+								<i class="right rankingList_size" >9.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10602.html" class="left rankingList_name" target="_blank">【烧脑】人性禁室</a>
+								<i class="right rankingList_size" style="font-size:18px;">--</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10852.html" class="left rankingList_name" target="_blank">【轻幻想】荆棘王冠</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10193.html" class="left rankingList_name" target="_blank">【烧脑】亡者代言人</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b Cold_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_22"></div>
+					</div>
+					<div class="classPage_b Warm_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_23"></div>
+					</div>
+					<div class="classPage_b Glad_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_24"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In indexR_rank1">
+				<div class="index_main_R_TOP10_In_title index_main_R_TOP10_In_title1">
+					<ul>
+						<li class="phb_li">
+							<a href="javascript:;" rel="91">
+								七日收入榜
+							</a>
+						</li>
+						<li class="xfb_li">
+							<a href="javascript:;" rel="92">
+								消费榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr index_floatr1"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b phb_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10066.html" target="_blank">
+																		<img src="style/images/5642e762ab6b3.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="otherrank_91">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10852.html" class="left rankingList_name" target="_blank">【轻幻想】荆棘王冠</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10027.html" class="left rankingList_name" target="_blank">【重幻想】心兵</a>
+								<i class="right rankingList_size rankingList_size_two" >9.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10507.html" class="left rankingList_name" target="_blank">【青春】这绝对不是未来的我！</a>
+								<i class="right rankingList_size rankingList_size_three" >8.5</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10122.html" class="left rankingList_name" target="_blank">【轻幻想】画中王</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10609.html" class="left rankingList_name" target="_blank">【重幻想】英灵</a>
+								<i class="right rankingList_size" >8.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/11040.html" class="left rankingList_name" target="_blank">【重幻想】无名之辈</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10861.html" class="left rankingList_name" target="_blank">【轻幻想】妖怪公寓入住须知</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10102.html" class="left rankingList_name" target="_blank">【轻幻想】一只有机活死人</a>
+								<i class="right rankingList_size" >8.9</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/11003.html" class="left rankingList_name" target="_blank">【轻幻想】药局诡录</a>
+								<i class="right rankingList_size" >8.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/11160.html" class="left rankingList_name" target="_blank">【烧脑】忍者高校</a>
+								<i class="right rankingList_size" style="font-size:18px;">--</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b xfb_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10066.html" target="_blank">
+																		<img src="style/images/5642e762ab6b3.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="otherrank_92"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="clearfix updateBox Preselectionbk" style="display: none">
+		<div class="left index_main_L">
+			<div class="clearfix index_update">
+				<!--实时更新-->
+				<div class="clearfix index_update_title_nav">
+					<div class="left index_update_title_nav_L">
+						<i class="left index_update_title_nav_Licon"></i>
+						<span class="left index_update_title_nav_Lsize">不看：</span>
+						<div class="left index_main2_title_nav_ul1">
+							<ul>
+								<li>
+									<a class="left" rel="newbook" href="javascript:;">
+										<i></i>
+									</a>
+									<span class="left">新作品</span>
+								</li>
+								<li style="margin-right:18px;">
+									<a class="left" rel="looked" href="javascript:;">
+										<i></i>
+									</a>
+									<span class="left">看过的</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="left index_update_title_nav_R">
+						<span class="left index_update_title_nav_Lsize">只看：</span>
+						<div class="left index_update_title_nav_ul">
+							<ul>
+								<li class="title_nav_li_Hot" rel="0">
+									<a href="javascript:;" style="width:64px;" class="title_nav_li_max">全部</a>
+								</li>
+								<li rel="1">
+									<a href="javascript:;">重幻想</a>
+								</li>
+								<li rel="2">
+									<a href="javascript:;">轻幻想</a>
+								</li>
+								<li rel="3">
+									<a href="javascript:;">竞技</a>
+								</li>
+								<li rel="4">
+									<a href="javascript:;">青春</a>
+								</li>
+								<li rel="5">
+									<a href="javascript:;">烧脑</a>
+								</li>
+								<li rel="6">
+									<a href="javascript:;">神州</a>
+								</li>
+								<li style="margin-right:0;" rel="7">
+									<a href="javascript:;">不正常</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<form id="filter_form">
+						<input type="hidden" name="newbook" id="newbook">
+						<input type="hidden" name="looked"  id="looked">
+						<input type="hidden" name="classid" id="classid" value="0" >
+						<input type="hidden" name="typeId" id="typeId" value="1" >
+					</form>
+				</div>
+				<div class="clearfix index_update_In lazyload" id="updateBook">
+										<ul class="clearfix">
+																		<li>
+														<a href="/book/10025.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/25/10025_5ac77_25_m.jpg" src="style/images/fmjz.jpg" alt="飞翔吧，青蛙！" style="width:100%; height:100%;"/>
+									<div class="Member_8_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/nxn/djs/10045_e28a3_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">永恒轻语</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我要成为拯救世界的大英雄！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>71</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">飞翔吧，青蛙！</p>
+								<p class="updateCover_Inform">26.8万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10083.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/83/10083_2d643_67_m.jpg" src="style/images/fmjz.jpg" alt="机器抉择" style="width:100%; height:100%;"/>
+									<div class="Member_8_5"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/uxr/xbs/10229_6da5f_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">兮木叶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当我家妹纸变成机器人的时候，该怎么办？</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>289</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">机器抉择</p>
+								<p class="updateCover_Inform">16.2万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10054.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/54/10054_7e8c2_95_m.jpg" src="style/images/fmjz.jpg" alt="放开地球，冲我来" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">醉蝠</div>
+											</div>
+											<div class="Black_update_C">
+												<P>读者群288710195，欢迎骚扰</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>340</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">放开地球，冲我来</p>
+								<p class="updateCover_Inform">73.2万   |   不正常</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11336.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/113/36/11336_d2063_764_m.jpg" src="style/images/fmjz.jpg" alt="外卖至世界尽头" style="width:100%; height:100%;"/>
+									<div class="Member_8_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201511/kzj/rxl/12551_2c301_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">热晓</div>
+											</div>
+											<div class="Black_update_C">
+												<P>对不起，我只是个送外卖的！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>129</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">外卖至世界尽头</p>
+								<p class="updateCover_Inform">4.4万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10838.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/108/38/10838_111d6_433_m.jpg" src="style/images/fmjz.jpg" alt="玻璃湖" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/xpw/lqk/10191_dbaed_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">月光小掬</div>
+											</div>
+											<div class="Black_update_C">
+												<P>强情节治愈系。受伤害的心灵，相互抚慰。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>55</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">玻璃湖</p>
+								<p class="updateCover_Inform">14.4万   |   唯美青春</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10108.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/08/10108_a95d9_91_m.jpg" src="style/images/fmjz.jpg" alt="来自喵星的我" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">六耳猫</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我就认真写写，你就随便看看。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>190</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">来自喵星的我</p>
+								<p class="updateCover_Inform">30.6万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11375.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/113/75/11375_9c926_776_m.jpg" src="style/images/fmjz.jpg" alt="击坠星辰之人" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/wqu/zhn/21977_f6eca_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">水晶乌鸦</div>
+											</div>
+											<div class="Black_update_C">
+												<P>再怎么黑暗也有星光，再怎么绝望也有希望</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>38</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">击坠星辰之人</p>
+								<p class="updateCover_Inform">5万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10009.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/09/10009_78858_27_m.jpg" src="style/images/fmjz.jpg" alt="轮舞之刃" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/pvo/vsf/10082_6e1ac_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">二十面相</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当少年遇到少女，命运伊始，战斗不息</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>161</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">轮舞之刃</p>
+								<p class="updateCover_Inform">24.4万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10023.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/23/10023_6977a_151_m.jpg" src="style/images/fmjz.jpg" alt="我的女友是魔王" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/fql/vdy/10101_c2314_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">灿烂小虎牙</div>
+											</div>
+											<div class="Black_update_C">
+												<P>出类拔萃高冷美少年和傲娇女魔王不得不说的</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>457</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">我的女友是魔王</p>
+								<p class="updateCover_Inform">48.8万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10028.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/28/10028_d8728_5_m.jpg" src="style/images/fmjz.jpg" alt="仙路" style="width:100%; height:100%;"/>
+									<div class="Member_8_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/pau/qjo/10025_88348_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">野马</div>
+											</div>
+											<div class="Black_update_C">
+												<P>这是一条很不一样的仙路……</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>125</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">仙路</p>
+								<p class="updateCover_Inform">26.7万   |   幻想神州</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10950.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/109/50/10950_f7f60_576_m.jpg" src="style/images/fmjz.jpg" alt="贤者大人来自异世界" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/icj/ylo/22487_d364b_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">wfzy000</div>
+											</div>
+											<div class="Black_update_C">
+												<P>现代魔法师罗门被召唤到亡国双子面前。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>398</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">贤者大人来自异世界</p>
+								<p class="updateCover_Inform">17.3万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/11484.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/114/84/11484_b2b10_870_m.jpg" src="style/images/fmjz.jpg" alt="命运统一战线" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">吾有七宗罪</div>
+											</div>
+											<div class="Black_update_C">
+												<P>不同世界的二人，平行的命运在此刻相交</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>58</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">命运统一战线</p>
+								<p class="updateCover_Inform">3.3万   |   架空幻想</p>
+							</a>
+						</li>
+												<div class="left update_ge"></div>
+																								<li>
+														<a href="/book/10099.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/99/10099_baa08_77_m.jpg" src="style/images/fmjz.jpg" alt="机甲与萝莉" style="width:100%; height:100%;"/>
+									<div class="Member_7_5"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">西园寺徹平</div>
+											</div>
+											<div class="Black_update_C">
+												<P>请做我的英雄，拯救我！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>208</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">机甲与萝莉</p>
+								<p class="updateCover_Inform">44.3万   |   游戏</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10027.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/27/10027_916b5_37_m.jpg" src="style/images/fmjz.jpg" alt="心兵" style="width:100%; height:100%;"/>
+									<div class="Member_9_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/ayx/tlt/10131_a5fe7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">兰帝魅晨</div>
+											</div>
+											<div class="Black_update_C">
+												<P>兰帝魅晨新作：风格啥的全都是新的哦！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>2018</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">心兵</p>
+								<p class="updateCover_Inform">53.5万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10043.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/43/10043_ee8e2_36_m.jpg" src="style/images/fmjz.jpg" alt="死党来自修罗道" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/zid/gsq/10146_4523f_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">惊寂</div>
+											</div>
+											<div class="Black_update_C">
+												<P>信则有，诚则灵。为了爱与信仰来战个痛吧！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>108</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">死党来自修罗道</p>
+								<p class="updateCover_Inform">19.8万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10500.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/105/00/10500_5e46b_260_m.jpg" src="style/images/fmjz.jpg" alt="灵鸟编年史" style="width:100%; height:100%;"/>
+									<div class="Member_7_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/aii/kga/11930_1f701_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">三只羊</div>
+											</div>
+											<div class="Black_update_C">
+												<P>热血、感动、浪漫、唯美——这里都有！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>141</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">灵鸟编年史</p>
+								<p class="updateCover_Inform">17.4万   |   幻想神州</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10097.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/97/10097_4b3b1_76_m.jpg" src="style/images/fmjz.jpg" alt="默历1736年的星云彼端" style="width:100%; height:100%;"/>
+									<div class="Member_8_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/lzw/mcb/10160_65352_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">紫薇朱槿</div>
+											</div>
+											<div class="Black_update_C">
+												<P>拥有读心术和超级人工智能的少年奋斗史</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>159</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">默历1736年的星云彼端</p>
+								<p class="updateCover_Inform">40.3万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10425.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/104/25/10425_10e7e_259_m.jpg" src="style/images/fmjz.jpg" alt="24号许愿师" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ytu/ywd/11941_e4d3c_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">讳莫</div>
+											</div>
+											<div class="Black_update_C">
+												<P>你好，我是24号许愿师，你的愿望是什么？</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>119</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">24号许愿师</p>
+								<p class="updateCover_Inform">14.6万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10095.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/95/10095_35317_96_m.jpg" src="style/images/fmjz.jpg" alt="中二少年篮球梦" style="width:100%; height:100%;"/>
+									<div class="Member_8_2"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/uqa/taf/10154_30dd7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">天狗望月</div>
+											</div>
+											<div class="Black_update_C">
+												<P>燃烧着中二之心的少年啊，这是属于你的篮球</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>81</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">中二少年篮球梦</p>
+								<p class="updateCover_Inform">46.7万   |   体育</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10044.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/44/10044_0cb9a_32_m.jpg" src="style/images/fmjz.jpg" alt="癫狂患者" style="width:100%; height:100%;"/>
+									<div class="Member_8_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">雪夜九宫蝶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>精神病的世界一切都不正常，究竟谁才是真正</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>169</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">癫狂患者</p>
+								<p class="updateCover_Inform">24.1万   |   恐惧惊悚</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10140.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/40/10140_e85aa_128_m.jpg" src="style/images/fmjz.jpg" alt="私人恋爱手册" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">三根头发</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我是情圣，只负责把你的暗恋转变为牵手。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>159</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">私人恋爱手册</p>
+								<p class="updateCover_Inform">21.3万   |   唯美青春</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10852.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/108/52/10852_5030c_558_m.jpg" src="style/images/fmjz.jpg" alt="荆棘王冠" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/arp/xpw/16234_87d23_s.JPG" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">朱磊</div>
+											</div>
+											<div class="Black_update_C">
+												<P>欲达高峰，必忍其痛；欲带王冠，必承其重！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>368</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">荆棘王冠</p>
+								<p class="updateCover_Inform">8.2万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11152.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/111/52/11152_8eeef_679_m.jpg" src="style/images/fmjz.jpg" alt="黑尘世纪" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/uhr/aet/23304_0bde7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">明日潘多拉</div>
+											</div>
+											<div class="Black_update_C">
+												<P>战败的旧世界克隆士兵苏醒于新世界的故事</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>119</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">黑尘世纪</p>
+								<p class="updateCover_Inform">33.3万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10012.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/12/10012_5342f_6_m.jpg" src="style/images/fmjz.jpg" alt="不可思议的世界" style="width:100%; height:100%;"/>
+									<div class="Member_7_4"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/uxm/qzf/10044_9fa8e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">驰矢</div>
+											</div>
+											<div class="Black_update_C">
+												<P>不可思议幻想大乱斗！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>336</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">不可思议的世界</p>
+								<p class="updateCover_Inform">33.5万   |   科学幻想</p>
+							</a>
+						</li>
+												<div class="left update_ge"></div>
+																								<li>
+														<a href="/book/10142.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/42/10142_fa4f8_176_m.jpg" src="style/images/fmjz.jpg" alt="世界锁" style="width:100%; height:100%;"/>
+									<div class="Member_8_7"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/kim/fxu/11641_dd802_s.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">伏特加与奶茶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>子弹与枪给我勇气，剑与魔法赐你信仰。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>400</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">世界锁</p>
+								<p class="updateCover_Inform">36.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10193.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201510/101/93/10193_64ceb_507_m.jpg" src="style/images/fmjz.jpg" alt="亡者代言人" style="width:100%; height:100%;"/>
+									<div class="Member_8_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/yir/xze/11920_d9d7b_s.jpeg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">曼卿</div>
+											</div>
+											<div class="Black_update_C">
+												<P>【科幻悬疑】她为死者说话，却深陷惊天杀局</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>141</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">亡者代言人</p>
+								<p class="updateCover_Inform">12.8万   |   推理悬疑</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10010.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/10/10010_42cf6_10_m.jpg" src="style/images/fmjz.jpg" alt="古墓奇兵" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/jij/pox/10070_1a4ac_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">加盐绿茶</div>
+											</div>
+											<div class="Black_update_C">
+												<P>年轻人就得有年轻人办法，逗比的探险。</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>100</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">古墓奇兵</p>
+								<p class="updateCover_Inform">40.4万   |   超能现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10102.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/02/10102_77c96_79_m.jpg" src="style/images/fmjz.jpg" alt="一只有机活死人" style="width:100%; height:100%;"/>
+									<div class="Member_8_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">梦龙小剑</div>
+											</div>
+											<div class="Black_update_C">
+												<P>“我是地府公务鬼夜小鹰，有些工作需要你配合一下</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>325</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">一只有机活死人</p>
+								<p class="updateCover_Inform">36.1万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10084.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/84/10084_4a7da_64_m.jpg" src="style/images/fmjz.jpg" alt="那端纷乱的交际线" style="width:100%; height:100%;"/>
+									<div class="Member_7_8"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/jho/ebc/10148_ad6f7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">阿竟</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一个普通女生继承了一个当铺，从此游走与两</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>97</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">那端纷乱的交际线</p>
+								<p class="updateCover_Inform">20.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10602.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/106/02/10602_38572_290_m.jpg" src="style/images/fmjz.jpg" alt="人性禁室" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201510/jho/ebc/10148_ad6f7_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">阿竟</div>
+											</div>
+											<div class="Black_update_C">
+												<P>人类的欲望，真是奇妙的东西</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>99</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">人性禁室</p>
+								<p class="updateCover_Inform">13.8万   |   推理悬疑</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10125.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/101/25/10125_c87dd_122_m.jpg" src="style/images/fmjz.jpg" alt="魔界公主的正确打开方式" style="width:100%; height:100%;"/>
+									<div class="Member_7_6"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ett/wgn/11065_0eb4e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">柒陌陌</div>
+											</div>
+											<div class="Black_update_C">
+												<P>我要代表月亮吃掉你~！！！</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>149</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">魔界公主的正确打开方式</p>
+								<p class="updateCover_Inform">23.7万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10063.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/63/10063_e0c5e_55_m.jpg" src="style/images/fmjz.jpg" alt="罪恶游戏" style="width:100%; height:100%;"/>
+									<div class="Member_8_3"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/hpx/xji/10096_4e3ed_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">若木</div>
+											</div>
+											<div class="Black_update_C">
+												<P>幸福的死亡，还是痛苦的活着，这是个问题</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>160</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">罪恶游戏</p>
+								<p class="updateCover_Inform">33.9万   |   架空幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10066.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/66/10066_a713b_61_m.jpg" src="style/images/fmjz.jpg" alt="玉中往事知多少" style="width:100%; height:100%;"/>
+									<div class="Member_8_9"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/ygo/fxq/10184_1f199_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">子斐君</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一枚玉佩两世缘，奈何缘浅情深深</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>194</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">玉中往事知多少</p>
+								<p class="updateCover_Inform">21.5万   |   奇妙日常</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/11480.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201511/114/80/11480_7f4e8_869_m.jpg" src="style/images/fmjz.jpg" alt="时间战线" style="width:100%; height:100%;"/>
+									<div class="Member_G"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/idq/fwa/10654_72148_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">零喵</div>
+											</div>
+											<div class="Black_update_C">
+												<P>未来之路，存在于过去</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>24</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">时间战线</p>
+								<p class="updateCover_Inform">4.2万   |   科学幻想</p>
+							</a>
+						</li>
+																								<li>
+														<a href="/book/10448.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/104/48/10448_53a2b_262_m.jpg" src="style/images/fmjz.jpg" alt="第一公会" style="width:100%; height:100%;"/>
+									<div class="Member_7_0"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://s.8kana.com/img/common/head/author_head.png" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">碎月千秋</div>
+											</div>
+											<div class="Black_update_C">
+												<P>当一群不正常的人类组成一个不正常的公会…</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>74</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">第一公会</p>
+								<p class="updateCover_Inform">14.9万   |   狂想现实</p>
+							</a>
+						</li>
+																								<li style="margin-right:0;">
+														<a href="/book/10077.html" target="_blank">
+								<div class="index_update_In_cover">
+									<img original="http://c.8kana.com/201509/100/77/10077_a416d_56_m.jpg" src="style/images/fmjz.jpg" alt="他不喜欢超级英雄" style="width:100%; height:100%;"/>
+									<div class="Member_8_1"></div>
+									<div class="Black_update">
+										<div class="Black_update_In">
+											<div class="clearfix Black_update_T">
+												<div class="left Black_update_Head lazyload">
+													<img original="http://a.8kana.com/author/201509/xng/odj/10219_e9b9e_s.jpg" src="style/images/fmjz.jpg" alt="" style="width:100%; height:100%;"/>
+												</div>
+												<div class="left Black_update_Name">竞天泽</div>
+											</div>
+											<div class="Black_update_C">
+												<P>一个给超级英雄擦屁股的故事</P>
+											</div>
+											<div class="Black_update_B">追更人数<span>528</span></div>
+										</div>
+									</div>
+								</div>
+								<p class="updateCover_Name">他不喜欢超级英雄</p>
+								<p class="updateCover_Inform">26.9万   |   超能现实</p>
+							</a>
+						</li>
+																	</ul>
+									</div>
+			</div>
+		</div>
+		<div class="right index_main_R" style=" margin-top: -27px;">
+			<div class="index_main_R_TOP10">
+				<span>精选区</span>
+				排行榜
+			</div>
+			<div class="clearfix index_main_R_TOP10_In 	indexR_rank1" style="margin-top:-2px;">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Hot_li1" style="width: 83px;">
+							<a href="javascript:;" rel='11' style="width: 83px; color:#e26470;">
+								重推榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr" style="width: 83px;"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img threeHotBook_img" style="height: 84px;">
+																													<a href="http://www.8kana.com/book/10003.html" target="_blank">
+																		<img src="style/images/5642e53c2cab2.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="classPage_b_img" rel="1">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10047.html" class="left rankingList_name" target="_blank">【烧脑】轮回·半步多</a>
+								<i class="right rankingList_size rankingList_size_one" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10590.html" class="left rankingList_name" target="_blank">【青春】不可思议的猫咪</a>
+								<i class="right rankingList_size rankingList_size_two" >7.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10406.html" class="left rankingList_name" target="_blank">【神州】机斗大明朝</a>
+								<i class="right rankingList_size rankingList_size_three" >9.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10520.html" class="left rankingList_name" target="_blank">【轻幻想】武林幻想</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10001.html" class="left rankingList_name" target="_blank">【轻幻想】救世这种事SO EASY</a>
+								<i class="right rankingList_size" >7.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10596.html" class="left rankingList_name" target="_blank">【轻幻想】极限速度</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/11375.html" class="left rankingList_name" target="_blank">【重幻想】击坠星辰之人</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10051.html" class="left rankingList_name" target="_blank">【重幻想】老王修仙记</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/11105.html" class="left rankingList_name" target="_blank">【重幻想】流浪在星辰大海</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/10350.html" class="left rankingList_name" target="_blank">【轻幻想】游戏侵略者</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+																				</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In 	indexR_rank1">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Cold_li1" style="width: 125px;">
+							<a href="javascript:;" rel='11' style="width: 125px; color:#e26470;">
+								佳作榜
+							</a>
+						</li>
+						<li class="Warm_li1" style="width: 125px;">
+							<a href="javascript:;" rel='14' style="width: 125px; color:#38a7e8;">
+								吐槽榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr" style="width: 125px;"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="classPage_b_img" rel="1">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10935.html" class="left rankingList_name" target="_blank">【重幻想】我是阿拉丁神镜</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10507.html" class="left rankingList_name" target="_blank">【青春】这绝对不是未来的我！</a>
+								<i class="right rankingList_size rankingList_size_two" >8.5</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10062.html" class="left rankingList_name" target="_blank">【烧脑】法医恐怖事件</a>
+								<i class="right rankingList_size rankingList_size_three" >7.8</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10701.html" class="left rankingList_name" target="_blank">【重幻想】上帝小姐又想灭世了</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10011.html" class="left rankingList_name" target="_blank">【烧脑】无限轮回</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10006.html" class="left rankingList_name" target="_blank">【轻幻想】必死后宫逃脱计划！</a>
+								<i class="right rankingList_size" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10077.html" class="left rankingList_name" target="_blank">【轻幻想】他不喜欢超级英雄</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10560.html" class="left rankingList_name" target="_blank">【神州】神仙中的战五渣</a>
+								<i class="right rankingList_size" >9.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/10614.html" class="left rankingList_name" target="_blank">【竞技】我的足球我做主</a>
+								<i class="right rankingList_size" >8.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/10140.html" class="left rankingList_name" target="_blank">【青春】私人恋爱手册</a>
+								<i class="right rankingList_size" >7.8</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b Cold_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="hotrank_11"></div>
+					</div>
+					<div class="classPage_b Warm_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10017.html" target="_blank">
+																		<img src="style/images/5642e69c49d14.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="hotrank_14"></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In indexR_rank1">
+				<div class="index_main_R_TOP10_In_title">
+					<ul>
+						<li class="Hot_li">
+							<a href="javascript:;" rel="21">
+								新秀
+							</a>
+						</li>
+						<li class="Cold_li">
+							<a href="javascript:;" rel="22">
+								中秀
+							</a>
+						</li>
+						<li class="Warm_li">
+							<a href="javascript:;" rel="23">
+								老秀
+							</a>
+						</li>
+						<li class="Glad_li">
+							<a href="javascript:;" rel="24">
+								完结榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b Hot_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_21">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10935.html" class="left rankingList_name" target="_blank">【重幻想】我是阿拉丁神镜</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10977.html" class="left rankingList_name" target="_blank">【不正常】关于重生变成猫的那些事</a>
+								<i class="right rankingList_size rankingList_size_two" style="font-size:18px;">--</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10701.html" class="left rankingList_name" target="_blank">【重幻想】上帝小姐又想灭世了</a>
+								<i class="right rankingList_size rankingList_size_three" >8.7</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10861.html" class="left rankingList_name" target="_blank">【轻幻想】妖怪公寓入住须知</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10560.html" class="left rankingList_name" target="_blank">【神州】神仙中的战五渣</a>
+								<i class="right rankingList_size" >9.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/10602.html" class="left rankingList_name" target="_blank">【烧脑】人性禁室</a>
+								<i class="right rankingList_size" style="font-size:18px;">--</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10852.html" class="left rankingList_name" target="_blank">【轻幻想】荆棘王冠</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10193.html" class="left rankingList_name" target="_blank">【烧脑】亡者代言人</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b Cold_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_22"></div>
+					</div>
+					<div class="classPage_b Warm_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_23"></div>
+					</div>
+					<div class="classPage_b Glad_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/11336.html" target="_blank">
+																		<img src="style/images/5642e6fab0c56.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="showrank_24"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix index_main_R_TOP10_In indexR_rank1">
+				<div class="index_main_R_TOP10_In_title index_main_R_TOP10_In_title1">
+					<ul>
+						<li class="phb_li">
+							<a href="javascript:;" rel="91">
+								七日收入榜
+							</a>
+						</li>
+						<li class="xfb_li">
+							<a href="javascript:;" rel="92">
+								消费榜
+							</a>
+						</li>
+					</ul>
+					<div class="index_floatr index_floatr1"></div>
+				</div>
+				<div class="rankingList_R1_main1 newIndex_R1">
+					<div class="classPage_b phb_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10066.html" target="_blank">
+																		<img src="style/images/5642e762ab6b3.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="otherrank_91">
+																					<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_one">1</i>
+								<a href="/book/10852.html" class="left rankingList_name" target="_blank">【轻幻想】荆棘王冠</a>
+								<i class="right rankingList_size rankingList_size_one" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_two">2</i>
+								<a href="/book/10027.html" class="left rankingList_name" target="_blank">【重幻想】心兵</a>
+								<i class="right rankingList_size rankingList_size_two" >9.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member rankingList_three">3</i>
+								<a href="/book/10507.html" class="left rankingList_name" target="_blank">【青春】这绝对不是未来的我！</a>
+								<i class="right rankingList_size rankingList_size_three" >8.5</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">4</i>
+								<a href="/book/10122.html" class="left rankingList_name" target="_blank">【轻幻想】画中王</a>
+								<i class="right rankingList_size" >8.3</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">5</i>
+								<a href="/book/10609.html" class="left rankingList_name" target="_blank">【重幻想】英灵</a>
+								<i class="right rankingList_size" >8.4</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">6</i>
+								<a href="/book/11040.html" class="left rankingList_name" target="_blank">【重幻想】无名之辈</a>
+								<i class="right rankingList_size" >8.6</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">7</i>
+								<a href="/book/10861.html" class="left rankingList_name" target="_blank">【轻幻想】妖怪公寓入住须知</a>
+								<i class="right rankingList_size" >8.1</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">8</i>
+								<a href="/book/10102.html" class="left rankingList_name" target="_blank">【轻幻想】一只有机活死人</a>
+								<i class="right rankingList_size" >8.9</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">9</i>
+								<a href="/book/11003.html" class="left rankingList_name" target="_blank">【轻幻想】药局诡录</a>
+								<i class="right rankingList_size" >8.2</i>
+															</div>
+														<div class="clearfix classPage_b_main_">
+																<i class="left b_main1_member">10</i>
+								<a href="/book/11160.html" class="left rankingList_name" target="_blank">【烧脑】忍者高校</a>
+								<i class="right rankingList_size" style="font-size:18px;">--</i>
+															</div>
+																				</div>
+					</div>
+					<div class="classPage_b xfb_li_Box">
+						<div class="classPage_b_img">
+																													<a href="http://www.8kana.com/book/10066.html" target="_blank">
+																		<img src="style/images/5642e762ab6b3.jpg" alt="" />
+								</a>
+																						</div>
+						<div class="classPage_b_main" id="otherrank_92"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="clearfix bookReviewBox">
+		<div class="left index_main_L">
+			<div class="clearfix index_bookReview">
+				<div class="clearfix index_update_title">
+					<div class="left index_bookReview_title_L"></div>
+					<div class="left index_update_title_size">贤者书评</div>
+				</div>
+				<div class="clearfix index_bookReview_In lazyload">
+					<ul class="clearfix">
+																								<li class="clearfix">
+														<div class="left bookReview_cover">
+								<a href="/book/10609.html" target="_blank">
+									<img original="http://c.8kana.com/201511/106/09/10609_3202c_766_m.jpg"  src="style/images/fmjz.jpg" alt="英灵" title="英灵" style="width: 100%;height: 100%;" />
+								</a>
+								<div class="Member_8_4"></div>
+							</div>
+							<div class="left bookReview_inform">
+								<h2 class="clearfix">
+																		<div class="left bookReview_inform_Icon bookReview_inform_Icon_red" >精华</div>
+									<span class="left " style="width: 195px"><a href="/community/xzindex/detail/21010" target="_blank" title="所有的少年，终会有荣光加身意气风发的那一天【毛毛熊推荐录一】">所有的少年，终会有荣光加身意气风发的那一天【毛毛熊推荐录一】</a></span>
+																	</h2>
+								<div class="clearfix index_bookReview_name">
+									<a href="/member/personal/index/13264" class="left womanColor" target="_blank"><span>有法力的喵熊</span></a>
+									<span class="left index_bookReview_name_span">评</span>
+									<a href="/book/10609.html" target="_blank" class="left">英灵</a>
+								</div>
+								<div class="bookReview_inform_In">
+									<p>
+										<span class="bookReview_inform_In_Quotes1"></span>
+										<a href="/community/xzindex/detail/21010" target="_blank"><span class="bookReview_inform_In_p">&nbsp;&nbsp;塞尔维亚人米洛拉德·帕维奇用十万个词语写出了一个不存在的帝国，从序章就开始引领读者进入迷幻的哈... </span></a>
+										<span class="bookReview_inform_In_Quotes2"></span>
+										<a href="/community/xzindex/detail/21010" target="_blank" class="bookReview_inform_All">查看全文</a>
+									</p>
+								</div>
+								<div class="clearfix bookReview_inform_B">
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_tlakIcon"></i>
+										<span class="left">58</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_seeIcon"></i>
+										<span class="left">110</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_zambiaIcon"></i>
+										<span class="left">16</span>
+									</div>
+								</div>
+							</div>
+							<div class="right bookReview_head">
+								<div class="bookReview_head_T">
+									<a href="/member/personal/index/13264" target="_blank">
+										<img original="http://a.8kana.com/201510/iyj/mza/13264_ba49a_m.jpg" src="style/images/trphjz.jpg" alt="头像丢失" style="width: 100%;height: 100%;"/>
+									</a>
+									<div class="bookReview_head_Lv lv_D"></div>
+								</div>
+																<div class="starBox_1_5 bookReview_head_B"></div>
+															</div>
+						</li>
+																		<li class="clearfix" style="margin-right:0;">
+														<div class="left bookReview_cover">
+								<a href="/book/10852.html" target="_blank">
+									<img original="http://c.8kana.com/201510/108/52/10852_5030c_558_m.jpg"  src="style/images/fmjz.jpg" alt="荆棘王冠" title="荆棘王冠" style="width: 100%;height: 100%;" />
+								</a>
+								<div class="Member_8_3"></div>
+							</div>
+							<div class="left bookReview_inform">
+								<h2 class="clearfix">
+																		<div class="left bookReview_inform_Icon bookReview_inform_Icon_red" >精华</div>
+									<span class="left " style="width: 195px"><a href="/community/xzindex/detail/20624" target="_blank" title="为心之所念，我愿加冕为王，弃族成殇">为心之所念，我愿加冕为王，弃族成殇</a></span>
+																	</h2>
+								<div class="clearfix index_bookReview_name">
+									<a href="/member/personal/index/24830" class="left manColor" target="_blank"><span>君墨临泽</span></a>
+									<span class="left index_bookReview_name_span">评</span>
+									<a href="/book/10852.html" target="_blank" class="left">荆棘王冠</a>
+								</div>
+								<div class="bookReview_inform_In">
+									<p>
+										<span class="bookReview_inform_In_Quotes1"></span>
+										<a href="/community/xzindex/detail/20624" target="_blank"><span class="bookReview_inform_In_p">啊啦啊啦，这里是初入贤者之城之城的萌新，这里是狮子当然也可依id而称呼在下为君墨，具体情况视大家的心情而定啦... </span></a>
+										<span class="bookReview_inform_In_Quotes2"></span>
+										<a href="/community/xzindex/detail/20624" target="_blank" class="bookReview_inform_All">查看全文</a>
+									</p>
+								</div>
+								<div class="clearfix bookReview_inform_B">
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_tlakIcon"></i>
+										<span class="left">67</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_seeIcon"></i>
+										<span class="left">187</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_zambiaIcon"></i>
+										<span class="left">16</span>
+									</div>
+								</div>
+							</div>
+							<div class="right bookReview_head">
+								<div class="bookReview_head_T">
+									<a href="/member/personal/index/24830" target="_blank">
+										<img original="http://a.8kana.com/201510/hhm/yhf/24830_74fa8_m.jpg" src="style/images/trphjz.jpg" alt="头像丢失" style="width: 100%;height: 100%;"/>
+									</a>
+									<div class="bookReview_head_Lv lv_D"></div>
+								</div>
+																<div class="starBox_1_5 bookReview_head_B"></div>
+															</div>
+						</li>
+																		<li class="clearfix">
+														<div class="left bookReview_cover">
+								<a href="/book/10804.html" target="_blank">
+									<img original="http://c.8kana.com/201511/108/04/10804_6f785_902_m.jpg"  src="style/images/fmjz.jpg" alt="此间有怪力乱神" title="此间有怪力乱神" style="width: 100%;height: 100%;" />
+								</a>
+								<div class="Member_8_1"></div>
+							</div>
+							<div class="left bookReview_inform">
+								<h2 class="clearfix">
+																		<div class="left bookReview_inform_Icon bookReview_inform_Icon_red" >精华</div>
+									<span class="left " style="width: 195px"><a href="/community/xzindex/detail/20486" target="_blank" title="戏剧解读—用一个科学的方式分析一个不科学的故事">戏剧解读—用一个科学的方式分析一个不科学的故事</a></span>
+																	</h2>
+								<div class="clearfix index_bookReview_name">
+									<a href="/member/personal/index/14049" class="left manColor" target="_blank"><span>芸中书</span></a>
+									<span class="left index_bookReview_name_span">评</span>
+									<a href="/book/10804.html" target="_blank" class="left">此间有怪力乱神</a>
+								</div>
+								<div class="bookReview_inform_In">
+									<p>
+										<span class="bookReview_inform_In_Quotes1"></span>
+										<a href="/community/xzindex/detail/20486" target="_blank"><span class="bookReview_inform_In_p">&nbsp;&nbsp;&nbsp;#前言#&nbsp;&nbsp;&nbsp;在阅读之前只是准备评开头，但是为了书评有失公允，我看完了第一卷才... </span></a>
+										<span class="bookReview_inform_In_Quotes2"></span>
+										<a href="/community/xzindex/detail/20486" target="_blank" class="bookReview_inform_All">查看全文</a>
+									</p>
+								</div>
+								<div class="clearfix bookReview_inform_B">
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_tlakIcon"></i>
+										<span class="left">67</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_seeIcon"></i>
+										<span class="left">394</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_zambiaIcon"></i>
+										<span class="left">19</span>
+									</div>
+								</div>
+							</div>
+							<div class="right bookReview_head">
+								<div class="bookReview_head_T">
+									<a href="/member/personal/index/14049" target="_blank">
+										<img original="http://a.8kana.com/201510/zli/grt/14049_dbf2b_m.jpg" src="style/images/trphjz.jpg" alt="头像丢失" style="width: 100%;height: 100%;"/>
+									</a>
+									<div class="bookReview_head_Lv lv_D"></div>
+								</div>
+																<div class="starBox_1_1 bookReview_head_B"></div>
+															</div>
+						</li>
+																		<li class="clearfix" style="margin-right:0;">
+														<div class="left bookReview_cover">
+								<a href="/book/10585.html" target="_blank">
+									<img original="http://c.8kana.com/201510/105/85/10585_16642_338_m.jpg"  src="style/images/fmjz.jpg" alt="阴神榜" title="阴神榜" style="width: 100%;height: 100%;" />
+								</a>
+								<div class="Member_G"></div>
+							</div>
+							<div class="left bookReview_inform">
+								<h2 class="clearfix">
+																		<div class="left bookReview_inform_Icon bookReview_inform_Icon_blue">推荐</div>
+									<span class="left " style="width: 195px"><a href="/community/xzindex/detail/20899" target="_blank" title="论发书前认真阅读约稿函的重要性！">论发书前认真阅读约稿函的重要性！</a></span>
+																	</h2>
+								<div class="clearfix index_bookReview_name">
+									<a href="/member/personal/index/12354" class="left manColor" target="_blank"><span>王草莓</span></a>
+									<span class="left index_bookReview_name_span">评</span>
+									<a href="/book/10585.html" target="_blank" class="left">阴神榜</a>
+								</div>
+								<div class="bookReview_inform_In">
+									<p>
+										<span class="bookReview_inform_In_Quotes1"></span>
+										<a href="/community/xzindex/detail/20899" target="_blank"><span class="bookReview_inform_In_p">PS：写本篇书评时阅读至第15章。书评类型：初评习惯在写书评之前来到书的页面看看数据，这本书的数据低得吓人！具... </span></a>
+										<span class="bookReview_inform_In_Quotes2"></span>
+										<a href="/community/xzindex/detail/20899" target="_blank" class="bookReview_inform_All">查看全文</a>
+									</p>
+								</div>
+								<div class="clearfix bookReview_inform_B">
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_tlakIcon"></i>
+										<span class="left">28</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_seeIcon"></i>
+										<span class="left">83</span>
+									</div>
+									<div class="left bookReview_inform_B1">
+										<i class="left bookReview_zambiaIcon"></i>
+										<span class="left">12</span>
+									</div>
+								</div>
+							</div>
+							<div class="right bookReview_head">
+								<div class="bookReview_head_T">
+									<a href="/member/personal/index/12354" target="_blank">
+										<img original="http://a.8kana.com/201510/dbv/tyo/12354_4b9e9_m.jpeg" src="style/images/trphjz.jpg" alt="头像丢失" style="width: 100%;height: 100%;"/>
+									</a>
+									<div class="bookReview_head_Lv lv_C"></div>
+								</div>
+																<div class="starBox_1_3 bookReview_head_B"></div>
+															</div>
+						</li>
+																	</ul>
+				</div>
+				<div class="index_bookReview_all_look">
+					<a href="/community/xzindex/index" class="right" target="_blank">查看全部贤者书评></a>
+				</div>
+			</div>
+			<div class="index_science">
+				<div class="clearfix index_update_title">
+					<div class="left index_science_title_L"></div>
+					<div class="left index_update_title_size">科学与艺术</div>
+				</div>
+				<div class="clearfix index_science_In lazyload">
+					<ul>
+																								<li>
+														<a href="/community/ysworks/detail/20677.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/cos/2015/11/16/34708_005505_q2Hmag_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="http://a.8kana.com/201511/fwv/ati/34708_b8d76_s.jpeg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName womanColor">薇薇小公举</span>
+												献给
+												<span class="Black_science_BookName">装妖作怪</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>
+	
+
+
+	
+
+
+	
+
+
+	苏木笙，可爱的乖乖女小兔纸……
+
+
+	萌萌哒！
+
+
+	...</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">210</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">4</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">8</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_cos">COS</span>
+																<a href="/community/ysworks/detail/20677.html" class="left" title="乖乖兔女：苏木笙" target="_blank">乖乖兔女：苏木笙</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/34708" class="left index_science_In_name main1_In1_C_man womanColor" target="_blank">薇薇小公举</a>
+								<a href="/community/ysworks/detail/20677.html" class="left index_science_In_name_" target="_blank">：
+	
+
+
+	
+
+
+	
+
+
+	苏木笙...</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10109.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>装妖作怪</a>
+							</div>
+						</li>
+																		<li>
+														<a href="/community/ysworks/detail/20138.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/sd/2015/11/13/10101_231840_3pOdwI_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="style/images/10101_c2314_s.jpg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName manColor">超级无敌帅霹雳</span>
+												献给
+												<span class="Black_science_BookName">我的女友是魔王</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>小凌通过时空之门在山海经带回来的狗灵，能身成小萝莉，最爱鸡腿和鸡翅，哈哈，养一群小...</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">382</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">6</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">8</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_sd">设定</span>
+																<a href="/community/ysworks/detail/20138.html" class="left" title="阿布（犬娘）" target="_blank">阿布（犬娘）</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/10101" class="left index_science_In_name main1_In1_C_man manColor" target="_blank">超级无敌帅霹雳</a>
+								<a href="/community/ysworks/detail/20138.html" class="left index_science_In_name_" target="_blank">：小凌通过时空之门在山海经带回来...</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10023.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>我的女友是魔王</a>
+							</div>
+						</li>
+																		<li style="margin-right:0;">
+														<a href="/community/ysworks/detail/20309.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/ct/2015/11/14/11115_112219_n0yIuL_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="style/images/11115_35121_s.jpg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName manColor">水泥豆腐</span>
+												献给
+												<span class="Black_science_BookName">那些年，那些学渣(bà)</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>
+	《 那些年，那些学渣(bà)》——红霞山，感谢书友“花开荼蘼”的技术支持~\(...</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">262</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">4</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">6</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_ch">插画</span>
+																<a href="/community/ysworks/detail/20309.html" class="left" title="《 那些年，那些学渣(bà)》——红霞山" target="_blank">《 那些年，那些学渣(bà)》——红霞山</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/11115" class="left index_science_In_name main1_In1_C_man manColor" target="_blank">水泥豆腐</a>
+								<a href="/community/ysworks/detail/20309.html" class="left index_science_In_name_" target="_blank">：
+	《 那些年，那些学渣(bà)》—...</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10459.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>那些年，那些学渣(bà)</a>
+							</div>
+						</li>
+																		<li>
+														<a href="/community/ysworks/detail/19723.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/sd/2015/11/12/16166_225251_GkEgOi_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="style/images/16166_086d2_s.jpg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName womanColor">蔚蓝那瓣花叶</span>
+												献给
+												<span class="Black_science_BookName">这就是我的篮球</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>男主角就四辣么帅！</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">451</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">7</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">6</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_sd">设定</span>
+																<a href="/community/ysworks/detail/19723.html" class="left" title="【人设】田野" target="_blank">【人设】田野</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/16166" class="left index_science_In_name main1_In1_C_man womanColor" target="_blank">蔚蓝那瓣花叶</a>
+								<a href="/community/ysworks/detail/19723.html" class="left index_science_In_name_" target="_blank">：男主角就四辣么帅！</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10076.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>这就是我的篮球</a>
+							</div>
+						</li>
+																		<li>
+														<a href="/community/ysworks/detail/20753.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/sd/2015/11/16/10255_132448_udta9D_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="style/images/10255_16bac_s.jpg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName womanColor">吾妻由乃</span>
+												献给
+												<span class="Black_science_BookName">黑之英雄异闻录</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>
+	
+
+
+	第五弹来了，这次是小西娅，值得注目的是手中的十字枪杖
+
+
+	是有这样的...</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">155</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">5</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">5</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_sd">设定</span>
+																<a href="/community/ysworks/detail/20753.html" class="left" title="【设定集计划】（第五弹）西娅·K·欧鲁贝克" target="_blank">【设定集计划】（第五弹）西娅·K·欧鲁贝克</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/10255" class="left index_science_In_name main1_In1_C_man womanColor" target="_blank">吾妻由乃</a>
+								<a href="/community/ysworks/detail/20753.html" class="left index_science_In_name_" target="_blank">：
+	
+
+
+	第五弹来了，这次是小西娅...</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10050.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>黑之英雄异闻录</a>
+							</div>
+						</li>
+																		<li style="margin-right:0;">
+														<a href="/community/ysworks/detail/20363.html" class="index_science_In_T" target="_blank">
+								<img original="http://comm.8kana.com/works/sd/2015/11/14/10286_223613_SMBgpi_l.jpg" src="style/images/trjz.jpg" alt="" width="100%" height="100%"/>
+																<div class="Black_science">
+									<div class="Black_science_In">
+										<div class="clearfix Black_science_T">
+											<div class="left Black_science_Head">
+												<img src="http://a.8kana.com/201511/pqh/joe/10286_cbcf0_s.jpeg" alt="" style="width:100%; height:100%;"/>
+											</div>
+											<div class="left Black_science_Name">
+												<span class="Black_science_AuthorName womanColor">神婆猫</span>
+												献给
+												<span class="Black_science_BookName">狂植入侵</span>
+											</div>
+										</div>
+										<div class="Black_science_C">
+											<p>
+	由某人帮忙操刀的星启岛初图（嘻嘻，某人怎么都没好意思留名的说……）
+
+
+	PS...</p>
+										</div>
+										<div class="Black_science_B">
+											<div class="Black_science_B_Icon">
+												<i class="left Black_seeIcon" style="margin-top:12px;"></i>
+												<span class="left">191</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_informIcon" style="margin-top:11px;"></i>
+												<span class="left">5</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_binIcon" style="margin-top:10px;"></i>
+												<span class="left">--</span>
+											</div>
+											<div class="Black_science_B_Icon">
+												<i class="left Black_zambiaIcon" style="margin-top:10px;"></i>
+												<span class="left">5</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="clearfix index_science_In_li1">
+																<span class="left sciCtCfont_sd">设定</span>
+																<a href="/community/ysworks/detail/20363.html" class="left" title="星启岛的初步设定" target="_blank">星启岛的初步设定</a>
+							</div>
+							<div class="clearfix index_science_In_nameBox">
+								<a href="/member/personal/index/10286" class="left index_science_In_name main1_In1_C_man womanColor" target="_blank">神婆猫</a>
+								<a href="/community/ysworks/detail/20363.html" class="left index_science_In_name_" target="_blank">：
+	由某人帮忙操刀的星启岛初图（嘻嘻，...</a>
+							</div>
+							<div class="clearfix index_main4_In_li1 index_main4_In_li3">
+								<a href="/book/10096.html" class="left index_main4_In_li3_size" target="_blank" style="color: #999999"><span >献给：</span>狂植入侵</a>
+							</div>
+						</li>
+																	</ul>
+				</div>
+				<div class="index_bookReview_all_look">
+					<a href="/community/ysindex/index" class="right" target="_blank">查看全部同人作品></a>
+				</div>
+			</div>
+		</div>
+
+
+
+        
+    <div class="right index_main_R">
+
+    <!--排行榜-->
+		<div class="clearfix index_main_R_TOP10_In indexR_rank3" style="height: 515px; margin-top: 9px;">
+		    <div class="index_main_R_TOP10_In_title index_main_R_TOP10_In_title2" style="margin-bottom:4px;">
+		        <ul>
+		            <li class="threeHotBook_li">
+		                <a href="javascript:;">
+		                    3天热门书评
+		                </a>
+		            </li>
+		        </ul>
+		        <div class="index_floatr threeHotBook_floatr"></div>
+		    </div>
+		    <div class="rankingList_R1_main1 newIndex_R3">
+		        <div class="threeHotBook_main hotComment">
+
+		        </div>
+		        <div class="classPage_b_img threeHotBook_img">
+			        			        			        				        <a href="http://www.8kana.com/book/10084.html" target="_blank">
+					        					        <img src="style/images/5642e7a979ae3.jpg" alt="" />
+				        </a>
+				        				        		        </div>
+		    </div>
+		</div>
+		<div class="clearfix index_main_R_TOP10_In indexR_rank4" style="margin-top:32px; height: 429px">
+		    <div class="index_main_R_TOP10_In_title index_main_R_TOP10_In_title2">
+		        <ul>
+		            <li class="threeHotBook_li">
+		                <a href="javascript:;">
+		                    3天热门同人
+		                </a>
+		            </li>
+		        </ul>
+		        <div class="index_floatr threeHotBook_floatr"></div>
+		    </div>
+		    <div class="rankingList_R1_main1 newIndex_R4">
+				<div class="clearfix threeHotPeople_main" id="ysWorks"></div>
+			    <div class="classPage_b_img threeHotBook_img">
+				    				    				    					    <a href="http://www.8kana.com/book/10509.html" target="_blank">
+						    						    <img src="style/images/5642e7f76bbb6.jpg" alt="" />
+					    </a>
+				    				    			    </div>
+		    </div>
+		</div>
+    </div>
+</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$('.setUv').click(function(){
+			var id = $(this).attr('data');
+			var href = $(this).attr('href');
+			var url = '/active/ad/recommedCount';
+			var param = "id="+id+'&href='+href;
+			GPT.sendAjax(url,param);
+		});
+
+		setTimeout(function(){
+			var url = '/home/bookclass/hotYsWorks/0/0';
+			$("#ysWorks").load(url);
+		},1000);
+		setTimeout(function(){
+			var url = '/home/bookclass/hotComment/0/0';
+			$(".hotComment").load(url);
+		},1000);
+		$('.Preselec').click(function(){
+
+			var url = '/home/index/preselection/0/0';
+			$(".Preselection").load(url);
+			setTimeout(function(){
+				$('.Preselectionbk').css('display','none');
+			},100);
+
+		})
+
+
+	});
+	function jxdj(){
+		$('.Preselection').html('');
+		$('.Preselectionbk').css('display','block');
+	}
+</script>
+
+    </div>
+</div>
+
+<!-- index main -->
+
+<!--footer start-->
+
+<div class="footer">
+    <div class="footer_up">
+        <div class="footer_up_In">
+            <div class="footer_Logo">
+                <div class="footer_Logo_Up"></div>
+                <div class="footer_Logo_Down">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/about')">关于我们</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/contact')">联系我们</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/link')">友情链接</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/bbs/index/idea')" >问题帮助</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_erweimaApp">
+                <a href="http://www.8kana.com/active/index/download" target="_blank">
+                    <div class="footer_erweimaApp_Img">
+                        <img src="style/images/footer_erweimaAPP.png" alt="" style="width: 100%; height: 100%;"/>
+                    </div>
+                    <p>不可能的世界APP</p>
+                    <p style="margin-top: 5px;">扫描或点击下载</p>
+                </a>
+            </div>
+            <div class="footer_erweimaHome">
+                <a href="javascript:;">
+                    <div class="footer_erweimaHome_Img">
+                        <img src="style/images/footer_erweimaHome.png" alt="" style="width: 100%; height: 100%;"/>
+                    </div>
+                    <p>不可能的世界</p>
+                    <p style="margin-top: 5px;">官方微信</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer_down">
+        <div class="footer_down_In">
+            <div class="footer_down_In_">
+                <span>© 2014 不可能的世界 <a href="javascript:;"> http://www.8kana.com</a> </span>
+                <span>北京晨星盛世网络文化有限公司 版权所有</span>
+                <span>京ICP备15011361号-1</span>
+                <span>网络文化经营许可证：文网文[2015]0613-243号</span>
+                <span>京公网安备：11010102000514号</span>
+                <!--<a key ="5608b6adefbfb02412482bd0" logo_size="83x30"  logo_type="business"  href="http://www.anquan.org" ><script src="style/js/aq_auth.js"></script></a>-->
+                <a href="http://webscan.360.cn/index/checkwebsite/url/www.8kana.com" style="display: none"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/44d801581afbd43af3c0051d02717c41"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer end-->
+
+<div class="MusicPopUp_bg"></div>
+<!--<script>-->
+<!--    var _hmt = _hmt || [];-->
+<!--    (function() {-->
+<!--        var hm = document.createElement("script");-->
+<!--        hm.src = "//hm.baidu.com/hm.js?8e5c267d09f366bed9ed2b29a40a3798";-->
+<!--        var s = document.getElementsByTagName("script")[0];-->
+<!--        s.parentNode.insertBefore(hm, s);-->
+<!--    })();-->
+<!--</script>-->
+<!---->
+<!--<script>-->
+<!---->
+<!--    (function(){-->
+<!---->
+<!--        var bp = document.createElement('script');-->
+<!---->
+<!--        bp.src = '//push.zhanzhang.baidu.com/push.js';-->
+<!---->
+<!--        var s = document.getElementsByTagName("script")[0];-->
+<!---->
+<!--        s.parentNode.insertBefore(bp, s);-->
+<!---->
+<!--    })();-->
+<!---->
+<!--</script>-->
+
+</body>
+</html>

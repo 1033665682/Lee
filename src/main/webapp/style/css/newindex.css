@@ -1,0 +1,1558 @@
+﻿*{margin: 0; padding: 0; border: 0;}
+ul,ol,li{list-style: none;}
+body{background-color: #fafafa; font-size: 12px; color:#333; font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;}
+a{ text-decoration: none; color:#333;}
+.clearfix:after{ content:"."; display:block; clear:both; font-size:0; height:0; overflow:hidden; }
+.clearfix{ zoom:1;}
+.left{float: left;}
+.right{float: right;}
+
+
+/* ================================ */
+
+.index_main1_tj_icon a,.index_update_title_nav_Licon,.index_update_In_li_name_ i,.index_update_In_liIcon_new,.index_main4_In_yellow_icon,.index_main4_In_blue_icon,.fadeBox_In_yy_icon,.fadeBox_In_sp_icon,.HotSpot_pic_circle ol li,.xzRecommend_Icon,.star_Icon,.world_Icon,.seeIcon,.Black_VideoIcon,.Black_ImgIcon,.Black_SgIcon,.Black_MusicIcon,.Black_CosIcon,.Black_SdIcon,.index_update_title_L,.index_bookReview_title_L,.index_science_title_L,.bookReview_inform_In_Quotes1,.bookReview_inform_In_Quotes2,.bookReview_tlakIcon,.bookReview_seeIcon,.bookReview_zambiaIcon,.LvStar_Box,.Bicon_informIcon,.Bicon_binIcon,.index_main2_title_nav_ul1 ul .index_main2_title_nav_ul1_Hot a i,.Black_seeIcon,.Black_informIcon,.Black_binIcon,.Black_zambiaIcon,.AreaTabBtn_L a i,.AreaTabBtn_R a i{background: url(img/index.png) no-repeat;}
+.styleBox1 i,.styleBox2 i,.styleBox3 i,.styleBox4 i,.styleBox5 i,.styleBox6 i,.styleBox7 i,.index_update_In_liIcon2,.index_update_In_liIcon3,.index_update_In_liIcon4{background: url(img/topNav.png) no-repeat;}
+
+/* 头部 */
+
+
+
+/* 头部 */
+
+
+.main{
+	margin:25px auto 0px;
+}
+.index_main{
+	width: 1200px; height: auto; margin: 0 auto;
+}
+
+.index_main_HotSpot{
+	height: 200px; width: 1200px; margin: 22px auto 0;
+}
+.index_main_HotSpot_L{
+	width: 466px; height:200px; margin-right: 31px; position: relative;
+}
+
+/* 热点 */
+
+/* 轮播图 */
+.HotSpot_pic{
+	width: 466px; height: 200px; overflow: hidden; position: relative;
+}
+.HotSpot_pic ul{
+	width: 500%; position: absolute; top:0; left:0;
+}
+.HotSpot_pic ul li{
+	float: left; width: 466px; height: 200px; position: relative;
+}
+.HotSpot_pic ul li a{
+	display: block; width: 466px; height: 200px;
+}
+
+.HotSpot_pic_circle{
+	width: 466px; height: 36px; background: url(img/HotSpot_pic_circle.png) repeat-x; position: absolute; left:0; bottom: 0;
+}
+.HotSpot_pic_circle_size{
+	color:#fff; line-height: 36px; font-size: 14px; margin-left: 16px; position: absolute; left:0; bottom:0; z-index: 999;
+}
+.HotSpot_pic_circle ol{
+	margin-right: 2px; margin-top: 13px;
+}
+.HotSpot_pic_circle ol li{
+	width: 11px; height: 11px; float: left; cursor: pointer; margin-right: 9px; background-position: -63px -42px;
+}
+.HotSpot_pic_circle ol .circleBox_Hot{
+	background-position: -74px -42px;
+}
+/* 轮播图 */
+
+.index_main_HotSpot_C{
+	width: 423px; height: 200px;
+}
+.xzRecommend{
+	width: 423px; height: 16px; height: 26px; font-size: 16px;
+}
+.xzRecommend_Icon{
+	display: block; width: 12px; height: 16px; background-position: 0 -76px; margin: 3px 5px 0 0 ;
+}
+
+.xzRecommend_In{
+	width: 423px; height: 158px;  margin-top: 13px;
+}
+.xzRecommend_In ul li{
+	width: 85px; height: 161px; margin-right: 27px; float: left;
+}
+.xzRecommend_In_T{
+	width: 95px; height: 30px; margin-bottom: 12px;
+}
+.xzRecommend_In_T a{
+	width: 95px; height: 30px;
+	display: block;
+}
+.xzRecommend_In_head{
+	width: 30px; height: 30px;
+}
+.xzRecommend_In_head img{
+	border-radius: 1px; display: block;
+}
+.xzRecommend_In_name{
+	color:#999999; margin-left: 5px; width:60px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden; margin-top: -3px;
+}
+.Recommend_In_name{
+	width:65px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+}
+.xzRecommend_In_name_blue{
+	color:#00a4dc;
+}
+.xzRecommend_In_B{
+	width: 85px; height: 119px; position: relative;
+}
+.xzRecommend_In_B_star{
+	width: 85px; height: 23px; background: url(img/xzRecommend_In_B_star.png) repeat-x; position: absolute; left:0; bottom: 0; text-align: center;
+
+}
+.starBox{
+	display: inline-block; *display: inline; zoom: 1;
+}
+.star_Icon{
+	display: block; width: 12px; height: 11px; background-position: -85px -42px; margin: 5px 3px 0 0;
+}
+
+.index_main_HotSpot_R{
+	width: 250px; height: 200px;
+}
+.world_Icon{
+	display: block; width: 20px; height: 16px; background-position: -107px -94px; margin: 4px 5px 0 0;
+}
+.worldBox{
+	width: 250px; height: auto; margin-top: 7px;
+}
+.worldBox ul li{
+	float: left; margin-right: 20px; width: 115px; height: 72px; position: relative; margin-bottom: 21px;
+}
+.worldBox ul li a{
+	display: block; width: 115px; height: 74px;
+}
+.worldBox_Black{
+	width: 95px; height: 64px; background: url(img/worldBox_Black.png) repeat-x; position: absolute; top:0; left:0; padding: 10px 10px 0; cursor: pointer; display: none;
+}
+.worldBox_Black_In{
+	width: 95px; height: 64px; position: relative; word-break: break-all;
+}
+.worldBox_Black p{
+	color:#fff;
+}
+.worldBox_Black_B{
+	position: absolute; left:0; bottom: 10px; width: 95px; height: 10px;
+}
+.seeIcon{
+	display: block; width: 14px; height: 10px; background-position: 0 -93px; margin-right: 5px;
+}
+.seeSize{
+	color:#fff; line-height: 10px;
+}
+
+/*<大事件*/
+
+.bigNews{
+	width: 250px; height: 74px; margin-top: 13px;
+}
+.bigNews a{
+	display: block; width: 250px; height: 74px;
+}
+
+/*<大事件*/
+
+.Black_VideoIcon{
+	display: block; width: 14px; height: 10px;  background-position: -14px -93px;
+}
+.Black_ImgIcon{
+	display: block; width: 13px; height: 12px; background-position: -29px -93px;
+}
+.Black_SgIcon{
+	display: block; width: 13px; height: 13px; background-position: -43px -93px;
+}
+.Black_MusicIcon{
+	display: block; width: 13px; height: 13px; background-position: -57px -93px;
+}
+.Black_CosIcon{
+	display: block; width: 20px; height: 14px; background-position: -71px -93px;
+}
+.Black_SdIcon{
+	display: block; width: 13px; height: 12px; background-position: -92px -93px;
+}
+
+
+/* 热点 */
+
+/* main 内容 */
+
+/* 左侧 */
+
+.index_main_L{
+	width: 920px; height: auto; padding-right: 15px;
+}
+
+/* 实时更新 */
+
+.index_update_title{
+	width: 920px; height:63px; line-height: 63px;
+}
+.index_update_title_L{
+	width: 20px; height: 21px; margin-top: 22px; margin-right: 7px; background-position: -130px -41px;
+}
+.index_update_title_size{
+	font-size: 20px; font-weight: bold; margin-top: -1px;
+}
+
+/*.index_update{
+	width: 920px; height: auto;
+}
+
+.index_update_title_R{
+	margin-top: 32px; background: url(img/index_update_title_R_.png) no-repeat left center; padding-left: 9px; margin-left: 9px;
+}
+.index_update_title_R .index_update_title_Ricon{
+	display: block; width: 15px; height: 15px; background-position: -90px -53px; margin-right: 5px;
+}
+.index_update_title_R:hover .index_update_title_Ricon{
+	background-position: -105px -53px;
+}
+.R_Icon_Hot .index_update_title_Ricon{
+	background-position: -105px -53px;
+}
+.R_Icon_Hot:hover .index_update_title_Ricon{
+	background-position: -105px -53px;
+}
+
+.index_update_title_R .index_update_title_Ricon1{
+	display: block; width: 13px; height: 15px; background-position: -62px -53px; margin-right: 5px;
+}
+.index_update_title_R:hover .index_update_title_Ricon1{
+	background-position: -76px -53px;
+}
+.R_Icon_Hot .index_update_title_Ricon1{
+	background-position: -76px -53px;
+}
+.R_Icon_Hot:hover .index_update_title_Ricon1{
+	background-position: -76px -53px;
+}
+.index_update_title_R span{
+	color:#bfbfbf; line-height: 15px;
+}
+.index_update_title_R:hover span{
+	color:#ff8000;
+}
+.R_Icon_Hot span{
+	color:#ff8000;
+}
+.R_Icon_Hot:hover span{
+	color:#ff8000;
+}*/
+
+/*精选区/渡劫区 切换*/
+
+.indexArea_Tab{
+	width: 1200px; height: 26px; margin: 28px 0 16px;  position: relative;
+}
+.indexArea_Tab_In{
+	width: 1150px; height: 26px; background: url(img/indexAreaTab_bg.png) repeat-x; margin: 0 auto;
+}
+.indexArea_Tab_content{
+	width: 207px; height: 26px; margin: 0 auto;
+}
+.AreaTabBtn_L{
+	width: 90px; height: 26px; background-color: #fafafa;
+}
+.AreaTabBtn_L a{
+	display: block; width: 80px; height: 26px; background-color: #777; border-radius: 50px; line-height: 26px; color:#fff; margin-left: 5px; position: relative;
+}
+.AreaTabBtn_L a:hover{
+	background-color: #ff8000;
+}
+.AreaTabBtn_L a i{
+	display: block; width: 16px; height: 16px; background-position: -98px -41px; margin: 4px 6px 0 10px;
+}
+.AreaTabBtn_R{
+	width: 90px; height: 26px; background-color: #fafafa;
+}
+.AreaTabBtn_R a{
+	display: block; width: 80px; height: 26px; background-color: #777; border-radius: 50px; line-height: 26px; color:#fff; margin-left: 5px; position: relative;
+}
+.AreaTabBtn_R a:hover{
+	background-color: #ff8000;
+}
+.AreaTabBtn_R a i{
+	display: block; width: 11px; height: 15px; background-position: -115px -41px; margin: 5px 7px 0 12px;
+}
+.indexArea_Tab_L{
+	width: 25px; height:26px; background: url(img/indexAreaTab_L.png); position: absolute; top:0; left:0;
+}
+.AreaTabBtn_Hot a{
+	background-color: #ff8000;
+}
+.indexArea_Tab_R{
+	width: 25px; height:26px; background: url(img/indexAreaTab_R.png); position: absolute; top:0; right:0;
+}
+
+.indexArea1_member{
+	height: 13px; background-color: #fc6c6c; border-radius: 4px; border:2px solid #fff; line-height: 12px; padding: 0 5px; color:#fff; position: absolute; top:-15px; left:50%; font-family: "Verdana"; font-size: 10px;
+}
+.indexArea2_member{
+	height: 13px; background-color: #fc6c6c; border-radius: 4px; border:2px solid #fff; line-height: 12px; padding: 0 5px; color:#fff; position: absolute; top:-15px; left:50%; font-family: "Verdana"; font-size: 10px;
+}
+
+/*精选区/渡劫区 切换*/
+
+.index_update_title_nav{
+	width: 920px; height: 47px; border-top: 1px solid #e3e3e3; border-radius: 0 0 7px 7px; /* background: url(img/index_update_title_nav_bg.png); */ line-height: 47px; background-color: #f4f2f2;
+}
+.index_update_title_nav_L{
+	margin: 12px 0 0 14px; height: 23px; line-height: 23px; border-right:1px solid #c3c3c3;
+}
+.index_update_title_nav_Licon{
+	display: block; width: 22px; height: 22px; background-position: 0 -19px; margin-right: 5px;
+}
+.index_update_title_nav_Lsize{
+	font-weight: bold; margin-right: 5px;
+}
+
+
+.index_main2_title_nav_ul1 ul li{
+	float: left; margin-right: 18px;
+}
+.index_main2_title_nav_ul1 ul li a:link,.index_main2_title_nav_ul1 ul li a:visited{
+	display: block; width: 15px; height: 15px; margin-right: 5px; background-color: red; margin-top: 3px; border:1px solid #dddddd; background-color: #fff;
+}
+.index_main2_title_nav_ul1 ul li a:hover{
+	border-color:#c4c4c4;
+}
+.index_main2_title_nav_ul1 ul li a:active{
+	border-color:#ddd; background-color: #fff;
+}
+.index_main2_title_nav_ul1 ul .index_main2_title_nav_ul1_Hot a i{
+	display: block; width: 11px; height: 9px; background-position: -44px 0; margin: 3px auto 0;
+}
+
+
+.index_update_title_nav_ul ul li{
+	float: left; margin-right: 14px;
+}
+.index_update_title_nav_ul ul li a:link,.index_update_title_nav_ul ul li a:visited{
+	display: block; width: 62px ; height: 21px; border:1px solid #dddddd; text-align: center; line-height: 21px; background-color: #fff; box-shadow: 0 1px 0 #fff inset; border-radius: 10px;
+}
+.index_update_title_nav_ul ul li a:hover{
+	border-color:#d5d7d8; background-color: #ececec; box-shadow: 0 1px 0 #f1f1f1 inset;
+}
+.index_update_title_nav_ul ul li a:active{
+	border-color:#4ebdec; background-color: #62c3ec; box-shadow: 0 1px 0 #62c3ec inset; color:#fff;
+}
+.index_update_title_nav_ul ul li .title_nav_li_max{
+	width: 64px;
+}
+
+
+.index_update_title_nav_ul ul .title_nav_li_Hot a:link{
+	display: block; width: 62px ; height: 21px; border:1px solid #4ebdec; text-align: center; line-height: 21px; background-color: #62c3ec; box-shadow: 0 1px 0 #62c3ec inset; border-radius: 10px; color:#fff;
+}
+.index_update_title_nav_ul ul .title_nav_li_Hot a:visited{
+	display: block; width: 62px ; height: 21px; border:1px solid #4ebdec; text-align: center; line-height: 21px; background-color: #62c3ec; box-shadow: 0 1px 0 #62c3ec inset; border-radius: 10px; color:#fff;
+}
+.index_update_title_nav_ul ul .title_nav_li_Hot a:hover{
+	display: block; width: 62px ; height: 21px; border:1px solid #4ebdec; text-align: center; line-height: 21px; background-color: #62c3ec; box-shadow: 0 1px 0 #62c3ec inset; border-radius: 10px;
+}
+
+.index_update_title_nav_ul ul .title_nav_li_Hot .title_nav_li_max:link{
+	width: 64px;
+}
+.index_update_title_nav_ul ul .title_nav_li_Hot .title_nav_li_max:visited{
+	width: 64px;
+}
+.index_update_title_nav_ul ul .title_nav_li_Hot .title_nav_li_max:hover{
+	width: 64px;
+}
+.index_update_title_nav_ul ul .title_nav_li_Hot .title_nav_li_max:active{
+	width: 64px;
+}
+.index_update_title_nav_R{
+	margin: 12px 0 0 14px; height: 23px; line-height: 23px;
+}
+
+
+.index_update_In{
+	width: 920px; height: auto;
+}
+.index_update_In ul{
+	width: 920px; height: auto; margin-top: 30px;
+}
+.index_update_In ul li{
+	float: left; width: 130px; height: 236px; margin-right: 28px; padding-bottom: 20px;
+}
+.index_update_In ul li a{
+	display: block; width: 130px; height: 236px;
+}
+.index_update_In_cover{
+	width: 130px; height: 182px; position: relative;
+}
+.updateCover_Name{
+	color:#363636; font-size: 14px; text-align: center; width: 130px; font-weight: bold; margin: 5px 0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+}
+.updateCover_Inform{
+	color:#999; text-align: center;
+}
+
+
+.Black_update{
+	width: 114px; height: 182px; background: url(img/Black_bg1.png); position: absolute; top:0; left:0; padding: 0 8px; display: none;
+}
+.Black_update_In{
+	position: relative; width: 114px; height: 170px;
+}
+.Black_update_T{
+	width: 114px; height: 28px; margin-top: 12px; margin-bottom: 12px;
+}
+.Black_update_Head{
+	width: 28px; height: 28px; border-radius: 100px; overflow: hidden; margin-right: 2px;
+}
+.Black_update_Name{
+	color:#fff; line-height: 28px;
+}
+.Black_update_C p{
+	color:#fff; word-break: break-all;
+}
+.Black_update_B{
+	color:#fff; position: absolute; left:0; bottom:10px;
+}
+.Black_update_B span{
+	color:#fcff00;
+}
+
+
+
+.index_bookReview{
+	width: 946px; height: auto;
+}
+.index_bookReview_title_L{
+	display: block; width: 20px; height: 20px; background-position: -130px -62px; margin: 21px 7px 0 0;
+}
+.index_bookReview_In{
+	width: 920px; height: auto;
+}
+.index_bookReview_In ul li{
+	float: left;  width: 447px; height: 182px; margin-right: 26px; padding-bottom: 35px;
+}
+.bookReview_cover{
+	width: 130px; height: 182px; margin-right: 15px; position: relative;
+}
+.bookReview_cover a{
+	display: block; width: 130px; height: 182px;
+}
+.bookReview_inform{
+	width: 242px; height: 182px; position: relative;
+}
+.bookReview_inform h2{
+	width: 242px; height: 18px; font-size: 16px; font-weight: bold;
+}
+.bookReview_inform_Icon{
+	width: 42px; height: 18px; border-radius: 2px; color:#fff; font-weight: bold; line-height: 18px; text-align: center; font-size: 14px; margin-right: 5px;
+}
+.bookReview_inform_Icon_red{
+	background-color: #ff4242;
+}
+.bookReview_inform_Icon_blue{
+	background-color: #00a3da;
+}
+.bookReview_inform h2 span{
+	display: block; width: 242px; height: 18px; line-height: 18px; text-overflow:ellipsis; overflow: hidden; white-space: nowrap;
+}
+.index_bookReview_name{
+	margin: 15px 0 10px;
+}
+/*.index_bookReview_name a{*/
+	/*color:#0088cc;*/
+/*}*/
+.index_bookReview_name a:hover{
+	text-decoration: underline;
+}
+.index_bookReview_name_span{
+	margin: 0 5px;
+}
+
+.bookReview_inform_In{
+	width: 237px; padding-right: 5px;
+}
+.bookReview_inform_In p{
+	width: 237px; height:89px; position: relative; word-break: break-all;
+}
+.bookReview_inform_In_Quotes1{
+	display: inline-block; width: 12px; height: 9px; background-position: -62px -69px; margin-right: 3px;
+}
+.bookReview_inform_In_Quotes2{
+	display: inline-block; width: 12px; height: 9px; background-position: -75px -69px; margin-left: 3px; margin-right: 5px;
+}
+.bookReview_inform_In_p{
+	font-size: 14px; line-height: 22px; color:#666;
+}
+.bookReview_inform_All{
+	color:#0088cc; font-size: 14px;
+	display: block; width: 60px; height: 24px; line-height: 24px; position: absolute; right:25px; bottom:0;
+}
+.bookReview_inform_All:hover{
+	text-decoration: underline;
+}
+.bookReview_inform_B{
+	width: 242px; height: 14px; line-height: 14px; position: absolute; bottom:0; left:0;
+}
+.bookReview_inform_B1{
+	width: 80px; height: 14px;
+}
+.bookReview_tlakIcon,.bookReview_seeIcon,.bookReview_zambiaIcon{
+	display: block; width: 14px; height: 14px; background-position: -28px -78px; margin-right: 5px;
+}
+.bookReview_seeIcon{
+	background-position: -43px -78px;
+}
+.bookReview_zambiaIcon{
+	background-position:  -58px -78px;
+}
+.bookReview_inform_B1 span{
+	color:#999;
+}
+
+.bookReview_head{
+	width: 46px; height: 182px;
+}
+.bookReview_head_T{
+	width: 46px; height: 46px; border-radius: 3px; position: relative;
+}
+.bookReview_head_T a{
+	display: block; width: 46px; height: 46px; border-radius: 3px; overflow: hidden;
+}
+.bookReview_head_Lv{
+	position: absolute; bottom: 0; right: 0;
+}
+.bookReview_head_B{
+	margin-top: 5px;
+}
+
+.index_bookReview_all_look{
+	width: 920px; height: 28px; margin-bottom: 20px;
+}
+.index_bookReview_all_look a:link{
+	display: block; width: 177px; height: 26px; border:1px solid #dedede; text-align: center; line-height: 26px; background-color: #eeeeee; border-radius: 3px;
+}
+.index_bookReview_all_look a:visited{
+	display: block; width: 177px; height: 26px; border:1px solid #dedede; text-align: center; line-height: 26px; background-color: #eeeeee; border-radius: 3px;
+}
+.index_bookReview_all_look a:hover{
+	background-color: #fff; color:#3192e4;
+}
+.index_bookReview_all_look a:active{
+	color:#3192e4; background-color: #eee;
+}
+
+.update_ge{
+	width: 920px; height: 1px; background-color: #e4e4e4; margin: 7px 0 44px;
+}
+
+/* 贤者书评 */
+
+/* 科学与艺术 */
+
+.index_science{
+	width: 920px; height: auto;
+}
+.index_science_title_L{
+	width: 21px; height: 21px; background-position: -129px -82px; margin-top: 21px; margin-right: 5px;
+}
+.index_science_In ul li{
+	float: left; width: 288px; height: auto; position: relative; margin-right: 28px; padding-bottom: 30px; position: relative;
+}
+.border_yellow_Box{
+	display: block; position: absolute; top:0; left:0; background: url(img/science_img_border_yellow.png) no-repeat; width: 288px; height: 164px;
+}
+.border_blue_Box{
+	display: block; position: absolute; top:0; left:0; background: url(img/science_img_border_blue.png) no-repeat; width: 288px; height: 164px;
+}
+.index_science_In_T{
+	display: block; width: 288px; height: 164px; margin-bottom: 9px; position: relative;
+}
+
+
+.Black_science{
+	width: 262px; height: 164px; position: absolute; top:0; left:0; padding: 0 13px; background: url(img/Black_bg1.png); z-index: 99; display: none;
+}
+.Black_science_In{
+	width: 262px; height: 149px; position: relative; word-break: break-all;
+}
+.Black_science_T{
+	width: 262px; height: 28px; margin: 15px 0 12px 0;
+}
+.Black_science_Head{
+	width: 28px; height: 28px; margin-right: 3px; border-radius: 100px; overflow: hidden;
+}
+.Black_science_Name{
+	color:#e9f701; line-height: 28px;
+}
+.Black_science_AuthorName{
+	color:#fff;
+}
+.Black_science_BookName{
+	color:#fff;
+}
+.Black_science_C p{
+	color:#fff;
+}
+.Black_science_B{
+	width: 262px; height: 32px; position: absolute; left:0; bottom: 5px;
+}
+.Black_science_B_Icon{
+	width: 65px; height: 32px; float: left;
+}
+.Black_science_B_Icon span{
+	color:#fff; line-height: 32px;
+}
+.Black_seeIcon,.Black_informIcon,.Black_binIcon,.Black_zambiaIcon{
+	display: block; margin-right: 5px;
+}
+.Black_seeIcon{
+	background-position: 0 -93px; width: 14px; height: 10px;
+}
+.Black_informIcon{
+	background-position: -91px -81px; width: 12px; height: 10px;
+}
+.Black_binIcon{
+	background-position: -104px -81px; width: 10px; height: 12px;
+}
+.Black_zambiaIcon{
+	background-position: -115px -81px; width: 14px; height: 12px;
+}
+
+
+.index_science_In_li1{
+	margin-bottom: 6px; width: 288px; height: 17px;
+}
+.index_science_In_li1 a{
+	line-height: 17px; font-size: 14px; font-weight: bold; width: 247px; height: 17px; text-overflow: ellipsis;	white-space: nowrap; overflow: hidden;
+}
+.index_science_In_nameBox{
+	width: 288px; height: 18px; line-height: 18px; margin-bottom: 4px;
+}
+.index_science_In_nameBox a{
+	display: block;
+}
+.index_science_In_nameBox .index_science_In_name_{
+	text-overflow:ellipsis; overflow: hidden; white-space: nowrap;
+}
+
+
+/* 左侧结束 */
+
+/* 右侧 */
+
+.index_main_R{
+	width: 250px; height: auto; padding-left: 13px; background: url(img/index_main_Rbg.png) repeat-y;
+}
+
+
+/* .index_science_In ul .main4_center_li{
+	margin: 0 34px 20px 33px;
+}
+.index_science_In ul li .index_main4_In_li_img{
+	width: 293px; height: 163px; display: block; border-radius: 4px; overflow: hidden;
+}
+.index_science_In ul li .index_main4_In_li_img_no{
+	width: 293px; height: 163px; display: block; border-radius: 4px; overflow: hidden;
+}
+.index_science_In ul .index_main4_In_yellow .index_main4_In_li_img{
+	border:3px solid #e4cc50; box-sizing:border-box;
+}
+.index_science_In ul .index_main4_In_blue .index_main4_In_li_img{
+	border:3px solid #6aafd6; box-sizing:border-box;
+}
+.index_science_In ul li .index_main4_In_li_img img{
+	transition:all 0.3s ease-in 0s;
+}
+.index_science_In ul li:hover .index_main4_In_li_img img{
+	transform:scale(1.1);
+} */
+
+
+
+
+
+
+/* .index_main4_In_li2_size{
+	color:#595959;text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: block; width: 206px;
+} */
+/* .index_main4_In_li3_size{
+	color:#a1a1a1;
+}
+.index_main4_In_yellow_icon{
+	width: 39px; height: 40px; background-position: -72px 0; position: absolute; top:0; left: 16px;
+}
+.index_main4_In_blue_icon{
+	width: 39px; height: 40px; background-position: -111px 0; position: absolute; top:0; left: 16px;
+}
+.fadeBox{
+	width: 293px; height: 163px; position: absolute; top:0; left:0; border-radius: 4px;
+}
+.fadeBox_In{
+	width: 293px; height: 163px; position: relative; cursor: pointer;
+}
+.fadeBox_In_yy_icon{
+	width: 26px; height: 29px; background-position: 0 -42px; position: absolute; right:15px; bottom: 12px;
+}
+.fadeBox_In_sp_icon{
+	width: 34px; height: 34px; background-position: -27px -42px; position: absolute; right:15px; bottom: 12px;
+}
+
+
+index main left
+
+.index_main_R_T{
+	width: 230px; height: 182px; margin-bottom: 35px;
+}
+.index_main_R_T a{
+	display: block; width: 230px; height: 89px;
+} */
+
+
+
+
+/* TOP10排行榜 */
+
+.index_main_R_TOP10{
+	width: 240px; height: 32px; padding-left: 10px; line-height: 32px; font-size: 15px; color:#fff; margin-bottom: 12px; background: url(img/index_main_R_top.png) no-repeat; font-weight: bold; margin-top: 27px;
+}
+.index_main_R_TOP10_In{
+	width: 250px; height: auto; margin-bottom: 4px;
+}
+.index_main_R_TOP10_In_title{
+	width: 250px; height: 42px; border-bottom:3px solid #eaeaea; line-height: 42px; margin-bottom: 10px; position: relative;
+}
+.index_main_R_TOP10_In_title ul li{
+	width: 62px; height: 41px; text-align: center; font-size: 16px; float: left;
+}
+.index_main_R_TOP10_In_title ul li a{
+	display: block; width: 62px; height: 41px;
+}
+.index_main_R_TOP10_In_title ul li a span{
+	font-size: 10px;
+}
+.Hot_li a{
+	color:#e26470;
+}
+.Cold_li a{
+	color:#38a7e8;
+}
+.Warm_li a{
+	color:#e3b042;
+}
+.Glad_li a{
+	color:#7ac5a0;
+}
+.index_floatr{
+	height: 3px; position: absolute; left:0; bottom: -3px; background-color: #e26470; width: 62px;
+}
+.Hot_li_Box,.phb_li_Box{
+	/* padding-bottom: 8px; */ /* background: url(img/li_Box_bg.png) repeat-x left bottom; */  /*margin-bottom: 5px;*/
+}
+.Cold_li_Box,.Warm_li_Box,.Glad_li_Box,.xfb_li_Box{
+	display: none; /* padding-bottom: 8px;  *//* background: url(img/li_Box_bg.png) repeat-x left bottom; *//*border-bottom: 1px solid #eeeded;*/
+}
+
+/* 排行榜 */
+
+.rankingList_R1_main1{
+	width:250px; height: auto; /*border-bottom: 1px solid #eeeded;*/
+}
+.rankingList_R1_main1_h2_div{
+	background-color: #32d564;
+}
+.rankingList_R1_main2_h2_div{
+	background-color: #3bb98a;
+}
+.rankingList_R1_main1_member_Hot{
+	background-color: #32d564;
+}
+.rankingList_R1_main2_member_Hot{
+	background-color: #3ebe8e;
+}
+.rankingList_R1_main1_name_Hot{
+	color:#2cba58;
+}
+.rankingList_R1_main2_name_Hot{
+	color:#30a67a;
+}
+.classPage_b_img a{
+	display: block; width: 250px; height: 74px; overflow: hidden; border-radius: 4px; margin-bottom: 10px;
+}
+.classPage_b_main{
+	width: 250px; height: auto;/* padding-bottom: 10px;*/
+}
+.classPage_b_main_{
+	margin-bottom: 12px; width: 250px; height: 15px; line-height: 15px; position: relative;
+}
+.classPage_b_main_ a{
+	display: block;
+}
+.b_main1_member{
+	display: block; width: 26px; height: 15px; border-radius: 2px; background-color: #b7b6b6; color:#fff; text-align: center; line-height: 15px;
+}
+
+/* 排行榜前三個序號顏色 */
+
+.rankingList_one{
+	background-color: #f66b5f;
+}
+.rankingList_two{
+	background-color: #ff8657;
+}
+.rankingList_three{
+	background-color: #ffb657;
+}
+
+/* 排行榜前三個序號顏色 */
+
+.rankingList_name{
+	line-height: 15px; display: block; width: 180px; overflow: hidden; height:15px; color:#222;
+}
+.rankingList_name:hover{
+	text-decoration: underline;
+}
+.rankingList_size{
+	color: #c4c4c4; font-weight: bold; line-height: 15px; font-size: 14px; font-family: "Arial"; margin-right: 2px;
+}
+.rankingList_member_size{
+	color:#ef7d0d;
+}
+.rankingList_member_size i{
+	margin-top: 2px;
+}
+.rankingList_member_name{
+	width: 125px; cursor: pointer;
+}
+
+/* 排行榜前三個分數顏色 */
+
+.rankingList_size_one{
+	color:#f66b5f;
+}
+.rankingList_size_two{
+	color:#ff8657;
+}
+.rankingList_size_three{
+	color:#ffb657;
+}
+
+/* 排行榜前三個分數顏色 */
+
+/* 消费榜 */
+
+.phb_li a{
+	color:#e26470;
+}
+.xfb_li a{
+	color:#38a7e8;
+}
+.index_main_R_TOP10_In_title1 ul li{
+	width: 125px;
+}
+.index_main_R_TOP10_In_title1 ul li a{
+	width: 125px;
+}
+.index_floatr1{
+	width: 125px;
+}
+.b_main1_icon{
+	margin: 2px 0 0 5px;
+}
+
+/* 消费榜 */
+
+/* 人气角色 */
+
+
+.index_floatr2{
+	width: 85px;
+}
+.index_main_R_TOP10_In_title2 ul li{
+	width: 85px;
+}
+.index_main_R_TOP10_In_title2 ul li a{
+	width: 85px;
+}
+.b_main1_head{
+	width: 47px; height: 47px; border-radius: 3px; display: block; overflow: hidden; margin-right: 10px; position: relative;
+}
+.popularRole{
+	width: 250px; height: 58px; border-bottom:1px solid #efefef; padding-top: 10px; margin-bottom: 0;
+}
+.popularRole_name{
+	margin-bottom: 3px; display: block;
+}
+.b_main1_head_name{
+	width: 165px; height: auto; word-break: break-all;
+}
+.popularRole_member_1,.popularRole_member_2,.popularRole_member_3,.popularRole_member_4{
+	width: 24px; height: 24px; background: url(img/popularRole_member.png) no-repeat;
+}
+.popularRole_member_2{
+	background-position: -24px 0;
+}
+.popularRole_member_3{
+	background-position: -48px 0;
+}
+.popularRole_member_4{
+	background-position: -72px 0;
+}
+.b_main1_head_size{
+	color:#666666;
+}
+
+
+/* 人气角色 */
+
+/* 3天热门书评 */
+
+.index_main_R_TOP10_In_title2 ul .threeHotBook_li a{
+	color:#333; width: 100px;
+}
+.threeHotBook_floatr{
+	width: 125px; background-color: #38a7e8;
+}
+.threeHotBook_main{
+	width: 250px; height: auto;
+}
+.threeHotBook_Hot{
+	width: 245px; height: 96px; border-bottom: 1px solid #efefef; padding-top: 10px; padding-right: 5px; margin-bottom: 0;
+}
+.threeHotBook{
+	width: 245px; height: 39px; border-bottom: 1px solid #efefef; padding-right: 5px; margin-bottom: 0; line-height: 39px; position: relative;
+}
+.threeHotBook_head{
+	width: 60px; height: 84px; margin-right: 10px; position: relative;
+}
+.threeHotBook_head a{
+	display: block; position: relative; width: 60px; height: 84px;
+}
+.threeHotBook_Hot_one{
+	width: 60px; height: 84px; background: url(img/threeHotBook_Hot_one.png) no-repeat; position: absolute; top:0; left:0;
+}
+.threeHotBook_Hot_two{
+	width: 60px; height: 84px; background: url(img/threeHotBook_Hot_two.png) no-repeat; position: absolute; top:0; left:0;
+}
+.threeHotBook_In{
+	width: 170px; position: relative; height: 84px;
+}
+.threeHotBook_In_p{
+    height: 30px; width: 170px;
+}
+.threeHotBook_In_name{
+	width: 175px; height: 20px; line-height: 20px; position: relative;
+}
+.threeHotBook_In_name_Size{
+    margin: 0 5px 0 80px;
+}
+.threeHotBook_In_name_people{
+    color:#0088cc;  position: absolute; top:0; left:0;
+}
+/*.threeHotBook_In_name a{
+    color:#0088cc;
+}*/
+.threeHotBook_In_name_book{
+	display: block; white-space: nowrap; overflow: hidden; text-overflow:ellipsis; width: 70px;color:#0088cc;
+}
+/*.threeHotBook_In_name span{
+	margin: 0 5px;
+}*/
+.threeHotBook_In_B{
+	width: 175px;
+}
+.threeHotBook_In_B1{
+	width: 87px; height: 14px;
+}
+.threeHotBook_In_B1 span{
+	color:#999;
+}
+.threeHotPeople_In_B1{
+	width: 63px; height: 14px;
+}
+.threeHotPeople_In_B1 span{
+	color:#999;
+}
+.threeHotBook_member{
+	width: 15px; height: 15px; text-align: center; line-height: 15px; color:#fff; font-weight: bold; background-color: #b7b6b6; margin-right: 10px; margin-top: 11px;
+}
+.threeHotBook_member_Hot{
+	background-color: #ffb657;
+}
+.threeHotBook_member_size{
+	width: 220px; height: 39px; line-height: 39px; white-space: nowrap; overflow: hidden; text-overflow:ellipsis;
+}
+.threeHotBook_img{
+	height: 74px; width: 100%;
+}
+
+.threeHotBook_Box{
+	width: 260px; height: 146px; background: url(img/threeHotBook_Box.png) no-repeat; position: absolute; top:-136px; left:-5px; z-index: 99; display: none;
+}
+.threeHotBook_Box_In{
+	width: 236px; height: 112px; margin: 4px 0 0 4px; padding:8px;
+	display: block;
+}
+.threeHotBook_Box_In_head{
+	width: 80px; height: 112px; margin-right: 10px; position: relative;
+}
+.threeHotBook_Box_In_head img{
+	display: block; width: 80px; height: 112px;
+}
+.threeHotBook_Box_R{
+	width: 146px; height: 112px;
+}
+.threeHotBook_Box_R_T{
+	width: 146px; height: 73px; border-bottom: 1px solid #efefef; word-break: break-all;
+}
+.threeHotBook_Box_R_T p{
+	line-height: 18px;
+}
+.threeHotBook_Box_R_T_star{
+	margin-top: 4px;
+}
+.Bicon{
+	width: 63px; height:12px; float: left; line-height: 12px; margin-top: 6px; padding-left: 5px; color:#999;
+}
+.Bicon_informIcon{
+	display: block; width: 12px; height: 14px; margin-right: 5px; background-position: -91px -69px; margin-top: 1px;
+}
+.Bicon_binIcon{
+	display: block; width: 12px; height: 14px; margin-right: 5px; background-position: -104px -69px; margin-top: 1px;
+}
+
+/* 3天热门书评 */
+
+/* 3天热门同人 */
+
+.threeHotPeople_main{
+	margin-top: 10px;
+}
+.threeHotPeople_Hot{
+	width: 115px; height: 115px; margin-right: 20px; padding-bottom: 12px; position: relative;
+}
+.threeHotPeople_Hot_one,.threeHotPeople_Hot_two,.threeHotPeople_Hot_three,.threeHotPeople_Hot_four{
+	width: 22px; height: 21px; border-radius: 0 3px 0 0; background-color: #f66b5f; position: absolute; left:0; bottom: 12px; text-align: center; line-height: 21px; color:#fff; font-weight: bold; font-size: 16px;
+}
+.threeHotPeople_Hot_two{
+	background-color: #ff8657;
+}
+.threeHotPeople_Hot_three{
+	background-color: #ffb657;
+}
+.threeHotPeople_Hot_four{
+	background-color: #b7b6b6;
+}
+.threeHotPeople_Black{
+	height: 115px; background: url(img/Black_bg1.png); padding-top:0;
+}
+.threeHotPeople_Black_In{
+	height: 90px;
+}
+.threeHotPeople_Black_In_p{
+	margin-top: 25px; margin-bottom: 5px;
+}
+.threeHotPeople_Black_B{
+	bottom: 20px;
+}
+
+.threeHotPeople_In{
+	width: 250px; height: 40px; border-bottom: 1px solid #ececec; padding:14px 0; cursor: pointer; position: relative;
+}
+.threeHotPeople_In_head{
+	width: 40px; height: 40px; margin-right: 10px; position: relative;
+}
+.threeHotPeople_In_head a{
+	display: block; width: 40px; height: 40px;
+}
+.threeHotPeople_Hot_member{
+	width: 15px; height: 15px; background-color: #b7b6b6; font-weight: bold; color:#fff; text-align: center; line-height: 15px; position: absolute; left:0; bottom: 0;
+}
+.threeHotPeople_In_R{
+	width: 190px; height: 40px; padding-right: 10px; position: relative;
+}
+.threeHotPeople_In_R p{
+	margin-top: -3px; width: 180px; height: 15px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+.threeHotPeople_In_B{
+	width: 190px;
+}
+
+.threeHotPeople_Box{
+	width: 310px; height: 146px; background: url(img/threeHotTr_Box.png) no-repeat; position: absolute; top:-136px; left:-33px; z-index: 99; display: none;
+}
+.threeHotPeople_Box a{
+	display: block; width: 310px; height: 146px;
+}
+.threeHotPeople_Box_In{
+	padding: 12px; width:286px; height: 122px;
+}
+.threeHotPeople_Box_In_T{
+	width: 286px; height: 87px; border-bottom: 1px solid #efefef;
+}
+.threeHotPeople_Box_In_head{
+	width: 60px; height: 80px; margin-right: 08px;
+}
+.threeHotPeople_Box_In_head a{
+	display: block; width: 80px; height: 80px;
+}
+.threeHotPeople_Box_R{
+	width: 205px; height: 80px; word-break: break-all;
+}
+.threeHotPeople_Box_R_name{
+	margin-bottom: 5px;
+	width: 205px;
+}
+.threeHotPeople_Box_R_name a{
+	color:#0088cc;
+}
+.threeHotPeople_Box_R_name span{
+	margin: 0 3px;
+}
+.threeHotPeople_Box_R_authorName{
+	color:#2d93e2;
+}
+.threeHotPeople_Box_In_B{
+	width: 286px; height: 32px; color:#999;
+}
+.threeHotPeople_Icon{
+	width: 71px; height:32px; line-height: 32px; float: left;
+}
+.maxWidth1{
+	max-width:69px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.maxWidth2{
+	max-width:105px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.threeHotBook_main_No{
+	width: 100%; height: 83px; background-color: #f3f3f3; border-radius: 3px; padding-top: 7px; margin-top: 17px; display: none;
+}
+.threeHotBook_main_No_Img{
+	width: 43px; height: 50px; background: url(img/threeHotBook_main_No_Img.png) no-repeat; margin: 0 auto 8px;
+}
+.BrankBox_mian_No_size{
+	width: 100%; text-align: center;
+}
+
+/*首页右侧修改*/
+
+/*热、冷、温、乐/新秀、中秀、老秀、中级秀/七日排行榜、消费榜*/
+
+.indexR_rank1{
+	height: 414px; margin-bottom: 14px; margin-top: -10px;
+}
+.indexR_rank1 .index_main_R_TOP10_In_title{
+	height: 37px; line-height: 37px;
+}
+.indexR_rank1 .index_main_R_TOP10_In_title ul li{
+	height: 37px;
+}
+.indexR_rank1 .index_main_R_TOP10_In_title ul li a{
+	height: 37px;
+}
+.indexR_rank1 .newIndex_R1{
+	height: 384px; padding-bottom: 0;
+}
+
+/*热、冷、温、乐/新秀、中秀、老秀、中级秀/七日排行榜、消费榜*/
+
+/*人气角色*/
+
+.indexR_rank2{
+	height: 320px; margin-bottom: 37px;
+}
+.indexR_rank2 .index_main_R_TOP10_In_title{
+	height: 37px; line-height: 37px;
+}
+.indexR_rank2 .index_main_R_TOP10_In_title ul li{
+	height: 37px;
+}
+.indexR_rank2 .index_main_R_TOP10_In_title ul li a{
+	height: 37px;
+}
+.indexR_rank2 .rankingList_R1_main1{
+	height:276px;
+}
+
+/*人气角色*/
+
+/*3天热门书评*/
+
+.indexR_rank3{
+	height: 514px; margin-bottom: 32px;
+}
+.indexR_rank3 .index_main_R_TOP10_In_title{
+	height: 37px; line-height: 37px;
+}
+.indexR_rank3 .index_main_R_TOP10_In_title ul li{
+	height: 37px;
+}
+.indexR_rank3 .index_main_R_TOP10_In_title ul li a{
+	height: 37px;
+}
+.indexR_rank3 .hotComment{
+	height:374px; margin-bottom: 23px;
+}
+
+/*3天热门书评*/
+
+/*3天热门同人*/
+
+.indexR_rank4{
+	height: 546px;
+}
+.indexR_rank4 .index_main_R_TOP10_In_title{
+	height: 37px; line-height: 37px; margin-bottom: 13px;
+}
+.indexR_rank4 .index_main_R_TOP10_In_title ul li{
+	height: 37px;
+}
+.indexR_rank4 .index_main_R_TOP10_In_title ul li a{
+	height: 37px;
+}
+.indexR_rank4 .newIndex_R4{
+	margin-bottom: 37px;
+}
+
+/*3天热门同人*/
+
+/*首页右侧修改*/
+
+/* 
+
+音乐盒子
+
+.musicBtn_min_Icon,.musicBtn_max_Tbtn,.PrevBtn,.MusicPlayer_Btn,.MusicPause_Btn,.NextBtn,.musicBtn_max_style_Btn,.musicBtn_max_styleBtn1,.musicBtn_max_styleBtn2,.musicBtn_max_styleBtn3,.musicBtn_max_styleBtn4,.musicBtn_max_volumeBtn1,.musicBtn_max_volumeBtn2,.musicBtn_max_volume_Btn,.musicBtn_max_zan,.musicBtn_max_share,.musicBtn_max_list,.musicBtn_max_Rbtn,.musicList_main_R_zan,.musicList_main_R_share,.musicList_main_R_del,.musicList_title_X a,.music_share_In_X a,.music_share_QQIcon a,.music_share_SinaIcon a{ background: url(img/musicBtn.png) no-repeat;}
+
+.musicBtn{
+	position: fixed; left:0; bottom: 80px;
+}
+.musicBtn_In{
+	width: 100%; height:87px; position: relative;
+}
+.musicBtn_min{
+	width: 28px; height: 52px; background: url(img/musicBtn_min.png) no-repeat; cursor: pointer; padding-top: 35px; position: absolute; top:0; left:0;
+}
+.musicBtn_min_Icon{
+	display: block; width: 18px; height: 22px; background-position: -203px -37px; margin-left: 3px;
+}
+.musicBtn_max{
+	height: 84px; padding-top: 3px; width: 638px; position: absolute; top:0; left:-670px;
+}
+.musicBtn_max_In{
+	height: 84px; background: url(img/musicBtn_max.png) repeat-x; position: relative;
+}
+.musicBtn_max_T{
+	width: 100%; height: 3px; background-color: #5a5a5a; position: relative;
+}
+.musicBtn_max_Tbtn{
+	width: 8px; height: 8px; background-position: -209px -15px; position: absolute; top:-3px; left:0; cursor: pointer; z-index: 9;
+}
+.musicBtn_max_T_time{
+	font-size: 13px; color:#909090; position: absolute; top:5px; right: 12px;
+}
+.musicBtn_max_B{
+	width: 100%; height: 81px;
+}
+.musicBtn_max_head{
+	width: 65px; height: 65px; margin: 7px 10px 0 7px;
+}
+.musicBtn_max_head a{
+	display: block; width: 65px; height: 65px;
+}
+.musicBtn_max_name{
+	margin-right: 15px;
+}
+.musicBtn_max_music_name{
+	margin: 7px 0 3px;
+}
+.musicBtn_max_music_name a{
+	font-size: 14px; font-weight: bold; color:#fff; 
+}
+.musicBtn_max_singer_name a{
+	color:#999;
+}
+.musicBtn_max_B_ge{
+	width: 1px; height: 60px; background-color: #575757; margin: 9px 22px 0 0;
+}
+.MusicPlayer{
+	width: 140px; height: 81px; 
+}
+.PrevBtn{
+	display: block; width: 20px; height: 19px; background-position: 0 -5px; margin: 30px 35px 0 0; cursor: pointer;
+}
+.PrevBtn:hover{
+	background-position: 0 -35px;
+}
+.MusicPlayer_Btn{
+	display: block; width: 22px; height: 29px;  background-position: -21px -1px; margin: 26px 27px 0 0; cursor: pointer;
+}
+.MusicPlayer_Btn:hover{
+	background-position: -21px -31px;
+}
+.MusicPause_Btn{
+	display: block; width: 22px; height: 29px; background-position: -44px 0; margin: 25px 27px 0 0; cursor: pointer; display: none;
+}
+.MusicPause_Btn:hover{
+	background-position: -44px -30px;
+}
+.NextBtn{
+	display: block; width: 20px; height: 19px; background-position: -67px -5px; margin: 30px 16px 0 0; cursor: pointer;
+}
+.NextBtn:hover{
+	background-position: -67px -35px;
+}
+.musicBtn_max_style{
+	width: 34px; height: 19px; margin-right: 13px;  margin-top: 30px; position: relative;
+}
+.musicBtn_max_style_Btn{
+	width: 24px; height: 19px; cursor: pointer; margin: 0 auto;
+}
+.musicBtn_max_style_Btn:hover{
+	background-position: -88px -19px;
+}
+.musicBtn_max_style_In{
+	width: 34px; height: 100px; position: absolute; left:0; bottom: -6px; background-color: #393939; padding-top: 5px; display: none;z-index: 99;
+}
+.musicBtn_max_styleBtn1{
+	width: 22px; height: 19px; background-position: -161px 0; cursor: pointer; margin: 0 auto 4px;
+}
+.musicBtn_max_styleBtn1:hover{
+	background-position: -161px -19px;
+}
+.musicBtn_max_styleBtn2{
+	width: 22px; height: 19px; background-position: -138px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn2:hover{
+	background-position: -138px -19px;
+}
+.musicBtn_max_styleBtn3{
+	width: 24px; height: 19px; background-position: -113px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn3:hover{
+	background-position: -113px -19px;
+}
+.musicBtn_max_styleBtn4{
+	width: 24px; height: 19px; background-position: -88px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn4:hover{
+	background-position: -88px -19px;
+}
+.musicBtn_max_volume{
+	width: 92px; height: 16px; margin: 31px 16px 0 0;
+}
+.musicBtn_max_volumeBtn{
+	width: 20px; height: 16px; background-position: -185px 0; margin-right: 5px; cursor: pointer;
+}
+.musicBtn_max_volumeBtn1{
+	width: 20px; height: 16px; background-position: -185px 0; margin-right: 5px; cursor: pointer;
+}
+.musicBtn_max_volumeBtn2{
+	width: 20px; height: 16px; background-position: -185px -16px; margin-right: 5px; cursor: pointer; display: none;
+}
+.musicBtn_max_volume_{
+	width: 67px; height: 3px; background-color: #b3b3b3; border-radius: 1px; position: relative; margin-top: 6px;
+}
+.musicBtn_max_volume_Btn{
+	width: 15px; height: 15px; background-position: -206px 0; position: absolute; top:-6px; left:0; cursor: pointer;
+}
+.musicBtn_max_zan{
+	width: 30px; height: 30px; background-position: -222px 0; margin: 25px 12px 0 0; cursor: pointer;
+}
+.musicBtn_max_zan:hover{
+	background-position: -222px -30px;
+}
+.musicBtn_max_zan_Hot{
+	background-position: -222px -30px;
+}
+.musicBtn_max_share{
+	width: 30px; height: 30px; background-position: -252px 0; margin: 25px 15px 0 0; cursor: pointer;
+}
+.musicBtn_max_share:hover{
+	background-position: -252px -30px;
+}
+.musicBtn_max_list{
+	width: 22px; height: 18px; background-position: -88px -41px; margin: 31px 16px 0 0; cursor: pointer;
+}
+.musicBtn_max_list:hover{
+	background-position: -111px -41px;
+}
+.musicBtn_max_R{
+	width: 31px; height: 50px; background: url(img/musicBtn_max_R.png) no-repeat; position: absolute; top:0; right:-31px; padding-top: 34px; cursor: pointer;
+}
+.musicBtn_max_R .musicBtn_max_Rbtn{
+	width: 10px; height: 16px; background-position: -135px -42px; margin: 0 auto;
+}
+.musicBtn_max_R:hover .musicBtn_max_Rbtn{
+	background-position: -146px -42px;
+}
+
+.musicList{
+	width: 640px; height: 297px; background: url(img/musicList.png); position: absolute; left:0; bottom: 84px; display: none;
+}
+.musicList_title{
+	width: 100%; height: 42px; border-bottom: 1px solid #4f4f4f; position: relative;
+}
+.musicList_title ul li{
+	width: 77px; height: 42px; float: left;
+}
+.musicList_title ul li a{
+	display: block; width: 77px; height: 42px; text-align: center; line-height: 42px; font-weight: bold; font-size: 13px; color:#999;
+}
+.musicList_title ul .musicList_title_li_Hot a{
+	color:#fff;
+}
+.musicList_float{
+	width: 58px; height: 3px; background-color: #04df61; position: absolute; left:10px; bottom: 0;
+}
+.musicList_title_X{
+	width: 20px; height: 20px; position: absolute; top:8px; right:9px; cursor: pointer;
+}
+.musicList_title_X a{
+	display: block; width: 10px; height: 10px; background-position: -182px -44px; margin: 5px auto 0;
+}
+.musicList_title_X a:hover{
+	background-position: -192px -44px;
+}
+.musicList_B{
+	width: 640px; height: 254px; overflow: hidden;
+}
+.musicList_main{
+	width: 100%; height: auto;overflow: hidden; position: absolute; top:6px; left:0;
+}
+.musicList_main_List{
+	display: none;
+}
+.musicList_main ul{
+	width: 640px; height: auto;
+}
+.musicList_main ul li{
+	width: 100%; height: 33px; cursor: pointer;
+}
+.musicList_main ul li:hover{
+	background-color: #000000;
+}
+.musicList_main ul .musicList_main_Hot{
+	background-color: #000000;
+}
+.musicList_main ul .musicList_main_Hot:hover{
+	background-color: #000000;
+}
+.musicList_main ul li .musicList_main_song_name{
+	width: 380px; height: 33px; line-height: 33px; padding-left: 10px; color:#999;
+}
+.musicList_main ul li:hover .musicList_main_song_name{
+	color:#fff;
+}
+.musicList_main ul .musicList_main_Hot .musicList_main_song_name{
+	color:#04df61;
+}
+.musicList_main ul .musicList_main_Hot:hover .musicList_main_song_name{
+	color:#04df61;
+}
+.musicList_main ul li .musicList_main_singer_name{
+	width: 110px; height: 33px; line-height: 33px; color:#999;
+}
+.musicList_main ul li:hover .musicList_main_singer_name{
+	color:#fff;
+}
+.musicList_main ul .musicList_main_Hot .musicList_main_singer_name{
+	color:#04df61;
+}
+.musicList_main ul .musicList_main_Hot:hover .musicList_main_singer_name{
+	color:#04df61;
+}
+.musicList_main_R{
+	width: 120px; height: 33px; display: none;
+}
+.musicList_main_R_zan{
+	width: 12px; height: 11px; background-position: -231px -11px; margin: 12px 22px 0 0;
+}
+.musicList_main_R_zan:hover{
+	background-position: -231px -41px;
+}
+.musicList_main_R_zan_Hot{
+	background-position: -231px -41px;
+}
+.musicList_main_R_share{
+	width: 14px; height: 12px; background-position: -260px -9px; margin: 11px 20px 0 0;
+}
+.musicList_main_R_share:hover{
+	background-position: -260px -39px;
+}
+.musicList_main_R_del{
+	width: 12px; height: 11px; background-position: -157px -44px; margin-top: 12px;
+}
+.musicList_main_R_del:hover{
+	background-position: -169px -44px;
+}
+
+音乐分享弹窗
+
+.MusicPopUp_bg{
+	position: fixed ; top: 0%; left: 0%; width: 100%; height: 100%; background: url(img/MusicPopUp_bg.png); z-index: 199; display: none;
+}
+.music_share{
+	width: 330px; height: 180px; position: fixed; top: 25%; left: 50%; z-index: 200; margin-left: -165px; display: none;
+}
+.music_share_In{
+ 	width: 330px; height: 177px; border-top: 3px solid #04df61; border-radius: 6px; background-color: #fff; box-shadow: 0 0 3px rgba(0,0,0,0.2); margin: 0 auto; position: relative;
+}
+.music_share_In_X{
+	width: 20px; height: 20px; position: absolute; top:6px; right:6px;
+}
+.music_share_In_X a{
+	display: block; width: 20px; height: 20px; background-position: -282px 0;
+}
+.music_share_In_X a:hover{
+	background-position: -282px -20px;
+}
+.music_share_Title{
+	font-size: 20px; font-weight: bold; text-align: center; width: 330px; margin: 20px 0 15px;
+}
+.music_share_main{
+	width: 248px; height: 88px; margin: 0 auto;
+}
+.music_share_mainL,.music_share_mainR{
+	width: 124px; height: 88px; 
+}
+.music_share_QQIcon a{
+	display: block; width: 60px; height: 60px; background-position: 0 -60px; margin: 0 auto 12px;
+}
+.music_share_QQIcon a:hover{
+	background-position: -60px -60px;
+}
+.music_share_QQsize,.music_share_Sinasize{
+	text-align: center;
+}
+.music_share_SinaIcon a{
+	display: block; width: 60px; height: 60px; background-position: -120px -60px; margin: 0 auto 12px;
+}
+.music_share_SinaIcon a:hover{
+	background-position: -180px -60px;
+} */
+
+/*新首页右侧固定高度*/
+
+/*.newIndex_R1{
+	height: 388px;
+}
+.newIndex_R2{
+	height: 273px; border-bottom: 0;
+}
+.newIndex_R3{
+	height: 466px; border-bottom: 0;
+}
+.newIndex_R4{
+	height: 555px; border-bottom: 0;
+}*/

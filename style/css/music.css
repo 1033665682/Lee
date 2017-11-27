@@ -1,0 +1,313 @@
+﻿
+
+/* 音乐盒子 */
+
+.musicBtn_min_Icon,.musicBtn_max_Tbtn,.PrevBtn,.MusicPlayer_Btn,.MusicPause_Btn,.NextBtn,.musicBtn_max_style_Btn,.musicBtn_max_styleBtn1,.musicBtn_max_styleBtn2,.musicBtn_max_styleBtn3,.musicBtn_max_styleBtn4,.musicBtn_max_volumeBtn1,.musicBtn_max_volumeBtn2,.musicBtn_max_volume_Btn,.musicBtn_max_zan,.musicBtn_max_share,.musicBtn_max_list,.musicBtn_max_Rbtn,.musicList_main_R_zan,.musicList_main_R_share,.musicList_main_R_del,.musicList_title_X a,.music_share_In_X a,.music_share_QQIcon a,.music_share_SinaIcon a{ background: url(img/musicBtn.png) no-repeat;}
+
+.musicBtn{
+	position: fixed; left:0; bottom: 80px;
+}
+.musicBtn_In{
+	width: 100%; height:87px; position: relative;
+}
+.musicBtn_min{
+	width: 28px; height: 52px; background: url(img/musicBtn_min.png) no-repeat; cursor: pointer; padding-top: 35px; position: absolute; top:0; left:0;
+}
+.musicBtn_min_Icon{
+	display: block; width: 18px; height: 22px; background-position: -203px -37px; margin-left: 3px;
+}
+.musicBtn_max{
+	height: 84px; padding-top: 3px; width: 638px; position: absolute; top:0; left:-670px;
+}
+.musicBtn_max_In{
+	height: 84px; background: url(img/musicBtn_max.png) repeat-x; position: relative;
+}
+.musicBtn_max_T{
+	width: 100%; height: 3px; background-color: #5a5a5a; position: relative;
+}
+.musicBtn_max_Tbtn{
+	width: 8px; height: 8px; background-position: -209px -15px; position: absolute; top:-3px; left:0; cursor: pointer; z-index: 9;
+}
+.musicBtn_max_T_time{
+	font-size: 13px; color:#909090; position: absolute; top:5px; right: 12px;
+}
+.musicBtn_max_B{
+	width: 100%; height: 81px;
+}
+.musicBtn_max_head{
+	width: 65px; height: 65px; margin: 7px 10px 0 7px;
+}
+.musicBtn_max_head a{
+	display: block; width: 65px; height: 65px;
+}
+.musicBtn_max_name{
+	margin-right: 15px;
+}
+.musicBtn_max_music_name{
+	margin: 7px 0 3px;
+}
+.musicBtn_max_music_name a{
+	font-size: 14px; font-weight: bold; color:#fff; 
+}
+.musicBtn_max_singer_name a{
+	color:#999;
+}
+.musicBtn_max_B_ge{
+	width: 1px; height: 60px; background-color: #575757; margin: 9px 22px 0 0;
+}
+.MusicPlayer{
+	width: 140px; height: 81px; 
+}
+.PrevBtn{
+	display: block; width: 20px; height: 19px; background-position: 0 -5px; margin: 30px 35px 0 0; cursor: pointer;
+}
+.PrevBtn:hover{
+	background-position: 0 -35px;
+}
+.MusicPlayer_Btn{
+	display: block; width: 22px; height: 29px;  background-position: -21px -1px; margin: 26px 27px 0 0; cursor: pointer;
+}
+.MusicPlayer_Btn:hover{
+	background-position: -21px -31px;
+}
+.MusicPause_Btn{
+	display: block; width: 22px; height: 29px; background-position: -44px 0; margin: 25px 27px 0 0; cursor: pointer; display: none;
+}
+.MusicPause_Btn:hover{
+	background-position: -44px -30px;
+}
+.NextBtn{
+	display: block; width: 20px; height: 19px; background-position: -67px -5px; margin: 30px 16px 0 0; cursor: pointer;
+}
+.NextBtn:hover{
+	background-position: -67px -35px;
+}
+.musicBtn_max_style{
+	width: 34px; height: 19px; margin-right: 13px;  margin-top: 30px; position: relative;
+}
+.musicBtn_max_style_Btn{
+	width: 24px; height: 19px; cursor: pointer; margin: 0 auto;
+}
+.musicBtn_max_style_Btn:hover{
+	background-position: -88px -19px;
+}
+.musicBtn_max_style_In{
+	width: 34px; height: 100px; position: absolute; left:0; bottom: -6px; background-color: #393939; padding-top: 5px; display: none;z-index: 99;
+}
+.musicBtn_max_styleBtn1{
+	width: 22px; height: 19px; background-position: -161px 0; cursor: pointer; margin: 0 auto 4px;
+}
+.musicBtn_max_styleBtn1:hover{
+	background-position: -161px -19px;
+}
+.musicBtn_max_styleBtn2{
+	width: 22px; height: 19px; background-position: -138px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn2:hover{
+	background-position: -138px -19px;
+}
+.musicBtn_max_styleBtn3{
+	width: 24px; height: 19px; background-position: -113px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn3:hover{
+	background-position: -113px -19px;
+}
+.musicBtn_max_styleBtn4{
+	width: 24px; height: 19px; background-position: -88px 0; cursor: pointer; margin: 0 auto 7px;
+}
+.musicBtn_max_styleBtn4:hover{
+	background-position: -88px -19px;
+}
+.musicBtn_max_volume{
+	width: 92px; height: 16px; margin: 31px 16px 0 0;
+}
+.musicBtn_max_volumeBtn{
+	width: 20px; height: 16px; background-position: -185px 0; margin-right: 5px; cursor: pointer;
+}
+.musicBtn_max_volumeBtn1{
+	width: 20px; height: 16px; background-position: -185px 0; margin-right: 5px; cursor: pointer;
+}
+.musicBtn_max_volumeBtn2{
+	width: 20px; height: 16px; background-position: -185px -16px; margin-right: 5px; cursor: pointer; display: none;
+}
+.musicBtn_max_volume_{
+	width: 67px; height: 3px; background-color: #b3b3b3; border-radius: 1px; position: relative; margin-top: 6px;
+}
+.musicBtn_max_volume_Btn{
+	width: 15px; height: 15px; background-position: -206px 0; position: absolute; top:-6px; left:0; cursor: pointer;
+}
+.musicBtn_max_zan{
+	width: 30px; height: 30px; background-position: -222px 0; margin: 25px 12px 0 0; cursor: pointer;
+}
+.musicBtn_max_zan:hover{
+	background-position: -222px -30px;
+}
+.musicBtn_max_zan_Hot{
+	background-position: -222px -30px;
+}
+.musicBtn_max_share{
+	width: 30px; height: 30px; background-position: -252px 0; margin: 25px 15px 0 0; cursor: pointer;
+}
+.musicBtn_max_share:hover{
+	background-position: -252px -30px;
+}
+.musicBtn_max_list{
+	width: 22px; height: 18px; background-position: -88px -41px; margin: 31px 16px 0 0; cursor: pointer;
+}
+.musicBtn_max_list:hover{
+	background-position: -111px -41px;
+}
+.musicBtn_max_R{
+	width: 31px; height: 50px; background: url(img/musicBtn_max_R.png) no-repeat; position: absolute; top:0; right:-31px; padding-top: 34px; cursor: pointer;
+}
+.musicBtn_max_R .musicBtn_max_Rbtn{
+	width: 10px; height: 16px; background-position: -135px -42px; margin: 0 auto;
+}
+.musicBtn_max_R:hover .musicBtn_max_Rbtn{
+	background-position: -146px -42px;
+}
+
+.musicList{
+	width: 640px; height: 297px; background: url(img/musicList.png); position: absolute; left:0; bottom: 84px; display: none;
+}
+.musicList_title{
+	width: 100%; height: 42px; border-bottom: 1px solid #4f4f4f; position: relative;
+}
+.musicList_title ul li{
+	width: 77px; height: 42px; float: left;
+}
+.musicList_title ul li a{
+	display: block; width: 77px; height: 42px; text-align: center; line-height: 42px; font-weight: bold; font-size: 13px; color:#999;
+}
+.musicList_title ul .musicList_title_li_Hot a{
+	color:#fff;
+}
+.musicList_float{
+	width: 58px; height: 3px; background-color: #04df61; position: absolute; left:10px; bottom: 0;
+}
+.musicList_title_X{
+	width: 20px; height: 20px; position: absolute; top:8px; right:9px; cursor: pointer;
+}
+.musicList_title_X a{
+	display: block; width: 10px; height: 10px; background-position: -182px -44px; margin: 5px auto 0;
+}
+.musicList_title_X a:hover{
+	background-position: -192px -44px;
+}
+.musicList_B{
+	width: 640px; height: 254px; overflow: hidden;
+}
+.musicList_main{
+	width: 100%; height: auto;/*  overflow: hidden; position: absolute; top:6px; left:0; */
+}
+.musicList_main_List{
+	display: none;
+}
+.musicList_main ul{
+	width: 640px; height: auto;
+}
+.musicList_main ul li{
+	width: 100%; height: 33px; cursor: pointer;
+}
+.musicList_main ul li:hover{
+	/* background-color: #000000; */
+}
+/* .musicList_main ul .musicList_main_Hot{
+	background-color: #000000;
+}
+.musicList_main ul .musicList_main_Hot:hover{
+	background-color: #000000;
+} */
+.musicList_main ul li .musicList_main_song_name{
+	width: 380px; height: 33px; line-height: 33px; padding-left: 10px; color:#999;
+}
+.musicList_main ul li:hover .musicList_main_song_name{
+	color:#fff;
+}
+.musicList_main ul .musicList_main_Hot .musicList_main_song_name{
+	color:#04df61;
+}
+.musicList_main ul .musicList_main_Hot:hover .musicList_main_song_name{
+	color:#04df61;
+}
+.musicList_main ul li .musicList_main_singer_name{
+	width: 110px; height: 33px; line-height: 33px; color:#999;
+}
+.musicList_main ul li:hover .musicList_main_singer_name{
+	color:#fff;
+}
+.musicList_main ul .musicList_main_Hot .musicList_main_singer_name{
+	color:#04df61;
+}
+.musicList_main ul .musicList_main_Hot:hover .musicList_main_singer_name{
+	color:#04df61;
+}
+.musicList_main_R{
+	width: 120px; height: 33px; display: none;
+}
+.musicList_main_R_zan{
+	width: 12px; height: 11px; background-position: -231px -11px; margin: 12px 22px 0 0;
+}
+.musicList_main_R_zan:hover{
+	background-position: -231px -41px;
+}
+.musicList_main_R_zan_Hot{
+	background-position: -231px -41px;
+}
+.musicList_main_R_share{
+	width: 14px; height: 12px; background-position: -260px -9px; margin: 11px 20px 0 0;
+}
+.musicList_main_R_share:hover{
+	background-position: -260px -39px;
+}
+.musicList_main_R_del{
+	width: 12px; height: 11px; background-position: -157px -44px; margin-top: 12px;
+}
+.musicList_main_R_del:hover{
+	background-position: -169px -44px;
+}
+
+/* 音乐分享弹窗 */
+
+.MusicPopUp_bg{
+	position: fixed ; top: 0%; left: 0%; width: 100%; height: 100%; background: url(img/MusicPopUp_bg.png); z-index: 199; display: none;
+}
+.music_share{
+	width: 330px; height: 180px; position: fixed; top: 25%; left: 50%; z-index: 200; margin-left: -165px; display: none;
+}
+.music_share_In{
+ 	width: 330px; height: 177px; border-top: 3px solid #04df61; border-radius: 6px; background-color: #fff; box-shadow: 0 0 3px rgba(0,0,0,0.2); margin: 0 auto; position: relative;
+}
+.music_share_In_X{
+	width: 20px; height: 20px; position: absolute; top:6px; right:6px;
+}
+.music_share_In_X a{
+	display: block; width: 20px; height: 20px; background-position: -282px 0;
+}
+.music_share_In_X a:hover{
+	background-position: -282px -20px;
+}
+.music_share_Title{
+	font-size: 20px; font-weight: bold; text-align: center; width: 330px; margin: 20px 0 15px;
+}
+.music_share_main{
+	width: 248px; height: 88px; margin: 0 auto;
+}
+.music_share_mainL,.music_share_mainR{
+	width: 124px; height: 88px; 
+}
+.music_share_QQIcon a{
+	display: block; width: 60px; height: 60px; background-position: 0 -60px; margin: 0 auto 12px;
+}
+.music_share_QQIcon a:hover{
+	background-position: -60px -60px;
+}
+.music_share_QQsize,.music_share_Sinasize{
+	text-align: center;
+}
+.music_share_SinaIcon a{
+	display: block; width: 60px; height: 60px; background-position: -120px -60px; margin: 0 auto 12px;
+}
+.music_share_SinaIcon a:hover{
+	background-position: -180px -60px;
+}

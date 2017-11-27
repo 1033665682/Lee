@@ -1,0 +1,2118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+     <title>青春咏叹调-咖啡加糖 著-唯美青春-不可能的世界 </title> 
+    
+<meta name="keywords" id="metaKeywords" content="青春咏叹调 咖啡加糖" />
+<meta name="description" id="metaDescription" content="青春咏叹调,青春咏叹调小说阅读。唯美青春小说青春咏叹调由作家咖啡加糖创作,不可能的世界小说提供青春咏叹调首发最新章节及章节列表,青春咏叹调最新更新尽在不可能的世界 。" />
+
+
+    <meta name="robots" content="all" />
+    <meta name="googlebot" content="all" />
+    <meta name="baiduspider" content="all" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="shenma-site-verification" content="f52ac6c1aacbc0ed35e773636c0dc96d_1447400441">
+    <link rel="shortcut icon" href="http://s.8kana.com/img/legend.ico" type="../image/x-icon" />
+    <meta property="qc:admins" content="12733602666031616375" />
+    <meta name="baidu-site-verification" content="GdCkrN8SJQ" />
+    <link rel="stylesheet" type="text/css" href="style/css/kana.css"/>
+<!--    <link rel="stylesheet" type="text/css" href="style/css/music.css"/>-->
+    <script type="text/javascript" src="style/js/jquery.min.js"></script>
+    <script type="text/javascript" src="style/js/kana.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui.min.css" />
+    <script type="text/javascript" src="style/js/jquery-ui.min.js"></script>
+    
+    
+
+
+    <link rel="stylesheet" type="text/css" href="style/css/book.css"/>
+    <script type="text/javascript" src="style/js/echarts-all.js"></script>
+    <script type="text/javascript" src="style/js/inform.js"></script>
+
+    <script type="text/javascript">
+
+        var bookId = 11479;
+
+        function read(cId) {
+            window.open('/read/' + cId + '.html');
+        }
+
+        function sortFunction() {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + 3 * 30 * 24 * 60 * 60 * 1000);
+            /* 三个月 x 一个月当作 30 天 x 一天 24 小时
+             x 一小时 60 分 x 一分 60 秒 x 一秒 1000 毫秒 */
+
+            var strT = "";
+            var arr,reg=new RegExp("(^| )bookSort=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg))
+                strT = unescape(arr[2]);
+
+            var strValue = bookId + '|';
+            if(strT !=""){
+                if(strT.indexOf(bookId + '|')>=0){
+                    strValue = strT.replace(strValue,'');
+                }else {
+                    strValue = strT + strValue;
+                }
+
+            }
+
+            $.cookie('bookSort',strValue,  {expires: expires,path:'/',domain:_cfg_domain_root });
+
+            sort();
+        }
+
+        function sort() {
+
+            var ChapterList = $('li[tag="chapters"]');
+            var NodeNum = ChapterList.length;
+            var strTemp = "";
+            var strClass = "";
+
+            for(var i=0 ; i< (NodeNum/2); i++){
+                strTemp = ChapterList.eq(i).html();
+                strClass = ChapterList.eq(i).attr("class");
+                ChapterList.eq(i).html(ChapterList.eq(NodeNum-i-1).html());
+                ChapterList.eq(i).attr("class",ChapterList.eq(NodeNum-i-1).attr("class"));
+
+                ChapterList.eq(NodeNum-i-1).html(strTemp);
+                ChapterList.eq(NodeNum-i-1).attr("class",strClass);
+            }
+
+        }
+
+        function showMoreList(name,z,the){
+            for(var i=1;i<=z;i++) {
+                if(name == 'juese'){
+                   var h = $(the).siblings('.roleHeroBox_B_Main').find('ul').find('li:hidden').eq(0).show();
+                }else{
+                    var h = $(the).siblings('ul').find('li:hidden').eq(0).show();
+                }
+            }
+            var s = $(the).find('.snum').html();
+            var h = s-z;
+            if(h>0){
+                $(the).find('.'+name+'_num').html('共有<span class="snum" style="margin-left: 0px;">'+h+'</span>个，点击展开');
+            }else{
+                $(the).hide();
+            }
+        }
+
+        $(document).ready(function(){
+
+            /*  读取排序设置  */
+            var strT = "";
+            var arr,reg=new RegExp("(^| )bookSort=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg))
+                strT = unescape(arr[2]);
+
+            if(strT.indexOf(bookId + '|')>=0){
+//                console.log('DESC...');
+            } else {
+//                console.log('ASC...');
+                sort();
+                $(".zxBox").removeClass("zxBox").siblings("a").addClass('zxBox');
+
+            }
+
+            /*图片延时加载*/
+            $('.lazyload').imagelazyload({
+                threshold : 1000,
+                load: function(self, settings){
+                    $(self).find('img').each(function(){
+                        var $this=this;
+                        if(typeof($($this).attr("original"))!='undefined'){
+                            $("<img />").bind("load", function() {
+                                //$($this).attr("src", $($this).attr("xsrc")).removeAttr('xsrc');
+                                $($this).attr("src", $($this).attr("original"));
+                            }).attr("src", $($this).attr("original"));
+                        }
+                    });
+                    self.loaded = true;
+                }
+            });
+
+            $(".informErweima a").hover(function(){
+                $(this).find(".informErweima_Box").show();
+            },function(){
+                $(this).find(".informErweima_Box").hide();
+            })
+
+            $(".informShared").click(function(event) {
+                $(".informShared_popUp").show();
+                $(".MusicPopUp_bg").show();
+            });
+
+            $(".informShared_popUp_In_X").click(function(event) {
+                $(".informShared_popUp").hide();
+                $(".MusicPopUp_bg").hide();
+            });
+        })
+
+    </script>
+
+
+
+</head>
+<script type="text/javascript">
+
+
+    $(function() {
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+        $( "#searchbox" ).autocomplete({
+            minLength: 1,
+            source: function( request, response ) {
+                request.term = GPT.trim(request.term);
+                if(request.term == '') return false;
+                $.getJSON( "/home/search/ajaxSearchList", {keyword: extractLast(request.term)}, response );
+            },
+            search: function() {
+                // 自定义最小长度
+                var term = extractLast( this.value );
+                if ( term.length < 1 ) {
+                    return false;
+                }
+            },
+            select: function(event,ui) {
+                var searchVal = $(".ui-menu-item").text();
+                if(searchVal == '换一个关键字再试试？'){
+                    return false;
+                }
+                var autoType = ui.item.type;
+                var objId = ui.item.id;
+
+                if(autoType == 1){
+
+                    location.href="/book/"+objId+".html";
+                }else{
+                    location.href="/member/author/Portal/"+objId;
+                }
+            }
+        });
+        // 内容展示区最小高度设置
+        var headHeight = ($('.topBar').height()) + ($('.top').height()) + ($('.nav').height()) + 3;
+        var height = document.documentElement.clientHeight - (headHeight) - 351;
+        $('.main').css('min-height',height);
+        $('.searchbox').click(function(){
+            $('.search_text').css('display','none');
+            $("#searchbox").focus();
+        });
+        $('.searchbox').blur(function(){
+            var v = $(this).val();
+            if(v == ''){
+                $('.search_text').css('display','block');
+            }
+
+        });
+    });
+    function searchKey(){
+        var keyword = $('#searchbox').val();
+        keyword = GPT.trim(keyword);
+        if(keyword == ''){
+            return false;
+        }
+        $("#searchform").submit();
+    }
+
+    //验证作者密码信息
+    function authorConfirm(){
+        var UserId = GPT.getCookieValue('UserId');
+
+        if((UserId == '')||(UserId == 0)||(UserId==false)) {
+            window.location.href = '/home/passport/login';
+        } else{
+            var isAuth = GPT.getCookieValue('IsAuthor');
+            if( isAuth != '1' ){
+                window.location.href="/author/index/apply"
+            } else {
+                var auth = GPT.getCookieValue('AuthName');
+
+                if( auth == '' ){
+                    kana.loadAuthLoginForm();
+                }else{
+                    window.open('/author')
+                }
+            }
+        }
+    }
+
+</script>
+
+<body>
+
+<!-- 头部 -->
+
+
+<script>
+    getHomeHeaderInfo();
+</script>
+<!--top end-->
+
+
+<div class="topBar">
+    <div class="wrapper clearfix topBar_con">
+        <div class=" left topBarL">
+            <div class="topBar_name_Q" title="正在施工中">
+                <div class="topBar_nameC" style="cursor: default;">
+                    <i class=" left topBar_name1"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(1)">正义骑士团</span>
+                    <span id="qsMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+                <div class="topBar_No"></div>
+            </div>
+            <div class="topBar_name">
+                <div class="topBar_nameC">
+                    <i class=" left topBar_name2"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(2)">贤者之城</span>
+                    <span id="xzMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+
+            </div>
+            <div class="topBar_name">
+                <div class="topBar_nameC">
+                    <i class=" left topBar_name3"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(3)">科学艺术坊</span>
+                    <span id="ysMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+
+            </div>
+            <div class="topBar_name_Q"  title="正在施工中">
+                <div class="topBar_nameC" style="cursor: default;">
+                    <i class=" left topBar_name4"></i>
+                    <span class="left topBar_name_txt" onclick="javascript:getPage(4)">天下布武团</span>
+                    <span id="bwMemberNum" class="left topBar_name_num">/0</span>
+                    <span class="left topBar_name_mark"></span>
+                </div>
+                <div class="topBar_No"></div>
+            </div>
+        </div>
+
+        <!--已登录状态-->
+        <div id="LoginInfo" class="right topBarR" style="display: none">
+            <div class="right topBarR_R">
+                <ul>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(51)">
+                            <span class="left">书架</span>
+                            <div id="bookshelf" class="left topBarR_R_div">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(52)">
+                            <span class="left">消息</span>
+                            <div  id="MsgNum" class="left topBarR_R_div" style="background-color:#5aa4ef;">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" onclick="javascript:getPage(53)">
+                            <span class="left">书评</span>
+                            <div id="bookcomment" class="left topBarR_R_div" style="background-color:#4fc14a;">
+                                <i class="topBarR_R_div_icon"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right topBarR_L">
+                <a href="/home/passport/logout" class="right headout">[退出]</a>
+                <a href="javascript:;" class="clearfix right Money">
+                    <span id="UserCoin" class="left MoneyNum">0</span>
+                    <i class="left MoneyIcon"></i>
+                </a>
+                <a href="javascript:;" class="right"><i class="lvMember1_1 topBarR_L_lv" id="UserLevel_M"></i></a>
+                <a href="/member/index/index" class="right IDName" id="username" target="_blank">--</a>
+
+
+                <div class="right IDphoto ">
+                    <a class="IDphoto_a" href="/member/index/index" target="_blank"><img src="" width="23" height="23" id="UserAvatar"></a>
+
+                    <div class="IDphoto_Title" style="display: none">
+                        <div class="IDphoto_Title_In">
+                            <div class="IDphoto_Title_X">
+                                <img src="style/images/closeDown_Btn.png" style="width: 100%; height: 100%;" alt=""/>
+                            </div>
+                            <p id="myCommentTitle"><span class="IDphoto_member"></span><span id="commentNew"></span>条话题回复，<span class="IDphoto_look"  onclick="openPage(1)"><a target="_blank" href="/member/comment/index?func=reply">查看</a></span></p>
+                            <p id="myBbsTitle"><span class="IDphoto_member"></span><span id="bbsNew"></span>条帖子回复，<span class="IDphoto_look"  onclick="openPage(2)"><a target="_blank" href="/member/bbs/index?func=myreply">查看</a></span></p>
+                            <p id="myMessageTitle"><span class="IDphoto_member"></span><span id="messageNew"></span>条消息，<span class="IDphoto_look"  onclick="openPage(3)"><a target="_blank" href="/member/message/index">查看</a></span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script>
+//            $(".IDphoto").hover(function(){
+//                $(this).find(".IDphoto_Title").show();
+//            },function(){
+//                $(this).find(".IDphoto_Title").hide();
+//            });
+            $(".IDphoto_Title_X").click(function(){
+                $(".IDphoto_Title").css('display','none');
+            })
+
+            function openPage(item) {
+                var userId = GPT.getCookieValue('UserId');
+                $.ajax({
+                    type:'post',
+                    data:'userId='+userId+'&item='+item,
+                    url:'/home/ajax/ajaxUpdateTime',
+                    dataType:'json',
+                    success:function(data){
+                    }
+                });
+            }
+        </script>
+
+        <!--未登录状态-->
+
+        <div id="LoginUrl" class="right topBarR" style="display: none">
+            <div class="right topBarR_login">
+                <script type="text/javascript">
+                    var html = '';
+                    html += '<a href="'+kana.getDomain('www')+'/home/passport/login?returnUrl='+window.location.href+'" class="left topBarR_login_Lbtn">登录</a>';
+                    html += '<a href="'+kana.getDomain('www')+'/home/passport/register?returnUrl='+window.location.href+'" class="left topBarR_login_Rbtn">注册</a>';
+                    document.write(html);
+                </script>
+            </div>
+            <a class="right qqLogin1" href="javascript:;" style="margin-top:17px;">
+                <i></i>
+            </a>
+            <a class="right wbLogin1" href="javascript:;" style="margin-top:17px;">
+                <i></i>
+            </a>
+        </div>
+
+        <!--未登录状态-->
+
+    </div>
+</div>
+<!--topBar end-->
+
+<!--top start-->
+<div class="top">
+    <div class="wrapper top_mian">
+        <h1 class="left" style="margin-top: 7px;">
+            <a href="http://www.8kana.com"></a>
+            <div class="beta"></div>
+            <div class="romantic"></div>
+        </h1>
+        <div class="top_Icon"></div>
+
+        <!-- 搜索框 -->
+
+        <form id="searchform" class="right nav_searchBox" style="margin-top:60px;" method="get" action="/home/search">
+            <div class="search_text">
+                <label class="searchbox">输入你感兴趣的角色,作品,作者</label>
+            </div>
+            <input id="searchbox" class="nav_txt ui-autocomplete-input searchbox" type="text" name="keyword" autocomplete="off">
+            <a class="right nav_btn" onclick="searchKey()" href="javascript:;">
+                <span></span>
+            </a>
+        </form>
+
+        <!-- 搜索框 -->
+
+    </div>
+</div>
+<!--top end-->
+
+<!--nav start-->
+
+    <div class="nav">
+    <div class="clearfix wrapper nav_main">
+        <ul class="left navBar">
+            <li id="menu_index">
+                <a href="/"    >首页</a>
+            </li>
+
+            <li id="menu_1" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/1.html" >重幻想</a>
+
+            </li>
+
+            <li id="menu_2" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/2.html" >轻幻想</a>
+
+            </li>
+
+            <li id="menu_3">
+                <a href="/home/bookclass/serial/3.html" >竞技</a>
+
+            </li>
+
+            <li id="menu_4">
+                <a href="/home/bookclass/serial/4.html"  class="navHot" >青春</a>
+
+            </li>
+
+            <li id="menu_5">
+                <a href="/home/bookclass/serial/5.html" >烧脑</a>
+
+            </li>
+
+            <li id="menu_6">
+                <a href="/home/bookclass/serial/6.html" >神州</a>
+
+            </li>
+
+            <li id="menu_7" class="navBar_threeLi">
+                <a href="/home/bookclass/serial/7-701.html" >不正常</a>
+
+            </li>
+
+            <li class="bookBox">
+                <a href="/home/bookclass/bookshelf" >书库</a>
+            </li>
+
+            <li id="menu_8" class="navBar_threeLi">
+                <a href="/home/book/rank" >排行榜</a>
+            </li>
+
+            <li id="menu_9">
+                <a href="/home/index/yschannel" >同人</a>
+
+            </li>
+
+            <li id="menu_10">
+                <a href="/home/index/comment" >书评</a>
+            </li>
+
+        </ul>
+        <div class="left clearfix nav_bar">
+            <a href="/bbs" target="_blank" >
+                <span class="left nav_bar_Icon1"></span>
+                <span class="left nav_bar_a">酒馆</span>
+                <span class="left nav_bar_Icon2"></span>
+            </a>
+        </div>
+        <div class="right nav_R">
+            <div class="right nav_R_novel">
+                <a href="javascript:;" class="clearfix" onclick="javascript: authorConfirm()">
+                    <i class="left nav_R_novel_Icon"></i>
+                    <span class="left">
+                        <script>
+                            if(GPT.getCookieValue('IsAuthor')==1)
+                                document.write('作者中心');
+                            else
+                                document.write('发表小说');
+                        </script>
+                    </span>
+                </a>
+            </div>
+            <div class="right nav_R_recharge">
+                <a href="javascript:;" class="clearfix" onclick="javascript:getPage(20)">
+                    <i class="left nav_R_recharge_Icon"></i>
+                    <span class="left">充值</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--nav end-->
+
+
+<!-- 头部 -->
+
+<!-- index main -->
+<div class="clearfix index_main" tag="test" style="width: 1200px; margin: 0 auto;">
+
+
+    
+    <div class="wrapper bookContainTop" >
+        <p>
+            <a href="/">首页</a> >
+            <a href="/home/bookclass/serial/4">青春</a> >
+            <a href="/home/bookclass/serial/4/401">唯美青春</a> >
+            <a href="javascript:void(0)"><span>青春咏叹调</span></a>
+        </p>
+    </div>
+
+
+    <div class="clearfix wrapper mainBox_In">
+        
+
+
+    <div class="left informL">
+    <div class="clearfix bookContain">
+        <div class="left bookContain_l">
+            <div class="left bookContainImgBox">
+                <a href="javascript:;">
+                                            <img src="style/images/11479_0a3cf_868_m.jpg" style="width:100%;height:100%"  alt="青春咏叹调" />
+                                    </a>
+            </div>
+            <div class="left bookContain_l_con">
+                <div class="bookContain_l_conh2">
+                    <h2 class="left">青春咏叹调</h2>
+
+                    <span class="left bookContain_l_consp">
+                    （
+                        <span class="bookContain_l_consp1">唯美青春 </span>
+                     /
+                        <span class="bookContain_l_consp2">连载中</span>
+                     ）
+                     </span>
+
+                                            <a href="javascript:;" class="left bookContain_Btn1" title="精选作品">精选</a>
+                                                                <a href="javascript:;" class="left" title="签约"><img src="style/images/qyue.png"></a>
+                                    </div>
+
+                <ul class="bookContain_l_conul1">
+                    <li>作&nbsp;者：
+                        <a class="authorName" href="/member/author/Portal/10155" target="_blank">咖啡加糖</a>
+                        <span class="bookContain_l_conul1sp">（<a href="#2">共著1部作品 完结0部</a>）</span>
+                    </li>
+
+                    <li>开&nbsp;放：
+                        <span class="bookContain_l_conul1sp1">本书允许非商业用途下自由开放同人创作</span>
+                    </li>
+                    <li>管&nbsp;理：
+                                            </li>
+                    <li>
+                        <div>简&nbsp;介：</div>
+                        <div class="bookPresent" style="margin-top: -23px;text-indent: 55px;">
+                            <a href="javascript:;" >
+                                <div class="bookPresent_T">
+                            <p>
+                                                                       青春是唱不完的旋律      说不尽的友情                                                                   </p>
+                                </div>
+                            <div class="bookPresent_Btn" style="display: none" >
+                                <i></i>
+                            </div>
+                            </a>
+                        </div>
+                        <style>
+                            .sageCity_Page1{
+                                width: 770px; height: 560px; border-radius: 5px; position: fixed; top:12%; left:50%; margin-left: -385px; background-color: #fff; z-index: 1002; font-family: "微软雅黑"; display: none;
+                            }
+                            .popUp_In{
+                                width: 100%; height: 100%;
+                            }
+                            .popUp_Title{
+                                width: 100%; height:  58px;
+                            }
+                            .popUp_Title h1{
+                                font-size: 16px; color:#454545; margin-left: 17px; line-height: 58px;
+                            }
+                            .closeDown{
+                                display: block; height: 17px; padding-top: 3px;
+                            }
+                            .Sponsor4_workValue{
+                                width: 100%; height: 413px;	margin-top: 10px;
+                            }
+                            .Sponsor4_workValue_Main{
+                                height: 413px; padding: 0 38px; width: 694px;
+                            }
+                            .Sponsor4_workValue_Main_C{
+                                border-bottom: 1px solid #ebebeb; height: 412px; overflow-y: auto; width: 100%;
+                            }
+                            .sageCity_Page_B{
+                                width: 100%; height: 36px; margin-top: 20px; text-align: center; position: relative;
+                            }
+                            .sageCity_Page_B_size{
+                                line-height: 36px; font-size: 14px; color:#b0aeae; position: absolute; top:0; left:38px;
+                            }
+                            .sageCity_Page_B_size span{
+                                color:#27a6e0;
+                            }
+                            .SsageCity_Page_Btn{
+                                width: 110px; display: inline-block; *display: inline; zoom: 1;
+                            }
+                            .Sponsor4_workValue_Main_Center{
+                                width: 650px;
+                            }
+                            .Sponsor4_workValue_Main_Center p{
+                                line-height: 22px; margin-bottom: 27px; font-size: 14px; color:#454545;
+                            }
+                            .Sponsor4_workValue_Main_Center .sageCity_Page_Text_Page{
+                                color:#27a6e0; font-size: 14px; font-weight: bold; margin-bottom: 10px;
+                            }
+                            .Sponsor4_red{
+                                color:#c00000;
+                            }
+                            .Sponsor4_blue{
+                                color:#27a6e0;
+                            }
+                            .Sponsor4_green{
+                                color:#00b050;
+                            }
+                            .popUpBtn_Blue a:link{
+                                display:block; height: 36px; border-radius: 2px; background-color: #2bafeb; text-align: center; line-height: 36px; color:#fff; font-size: 16px;
+                            }
+                            .popUpBtn_Blue a:visited{
+                                display:block; height: 36px; border-radius: 2px; background-color: #2bafeb; text-align: center; line-height: 36px; color:#fff; font-size: 16px;
+                            }
+                            .popUpBtn_Blue a:hover{
+                                background-color: #2eb8f6;
+                            }
+                            .popUpBtn_Blue a:active{
+                                background-color: #2baee9;
+                            }
+                        </style>
+
+                        <script>
+
+                            function closeNoteForm() {
+                                $("#bookNote1").css('display','none');
+                                $(".MusicPopUp_bg").css('display','none');
+                            }
+
+                        </script>
+                        <div class="sageCity_Page1" id="bookNote1" style="display: none">
+                            <div class="popUp_In">
+                                <div class="clearfix popUp_Title">
+                                    <h1 class="left">作品简介：</h1>
+                                    <a href="javascript:;" class="clearfix right closeDown" style="width: 20px; margin: 14px 10px 0 0;" onclick="javascript:closeNoteForm()">
+                                        <i class="Sponsor_closeDown_Btn"></i>
+                                    </a>
+                                </div>
+                                <div class="Sponsor4_workValue">
+                                    <div class="Sponsor4_workValue_Main">
+                                        <div class="Sponsor4_workValue_Main_C">
+                                            <div class="Sponsor4_workValue_Main_Center">
+                                                <p class="sageCity_Page_Text_Page"></p>
+                                                <p>   青春是唱不完的旋律      说不尽的友情       </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix sageCity_Page_B">
+                                    <div class="SsageCity_Page_Btn popUpBtn_Blue">
+                                        <a href="javascript:;" onclick="javascript:closeNoteForm()">关闭</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="clearfix bookContain_l_conbtn">
+                    <a href="javascript:;" onclick="favourite('11479')" class="clearfix left bookContain_l_conbtn2">
+                        <div id="favoriteFlag" class="clearfix left btn2L">
+                            <i class="left addCollection"></i>
+                            <span class="left">加入书架</span>
+                        </div>
+
+                            <div class="left btn2R" >
+                                <div id="favoriteNum" class="left btn2R_In">9<span>人</span></div>
+                            </div>
+                    </a>
+
+                                                                        <a href="javascript: void(0)" onclick="javascript: read(33435) ;" class="left bookContain_l_conbtn1" target="_self">点击阅读</a>
+                                            
+                    <a class="left bookContain_l_conbtn1 bookContain_l_conbtn3"  href = "javascript:void(0)" onclick = "dashang(1,11479,10155)" >赏</a>
+
+                                    </div>
+            </div>
+            <!--角色下拉列表-->
+            <div class="bookContain_l_dw2">
+                <div class="bookContain_l_dw2Con">
+                    <div class="dw2ConIn">
+                                                                                    <div class=" bookContain_l_dw2con" onclick="javascript:window.open('/home/book/jsDetail/961')">
+                                    <div class="left bookContain_l_dw2con1">
+                                        <a href="/home/book/jsDetail/961" target="_self" class="right bookContain_l_dw2name">方想</a>
+                                        <a href="/home/book/jsDetail/961" target="_self" class="right bookContain_l_dw2p">主角人气NO.1</a>
+                                    </div>
+                                    <img src="style/images/20151109_67533_s.jpg" alt="青春咏叹调" class="left" />
+                                </div>
+                                                            <div class=" bookContain_l_dw2con" onclick="javascript:window.open('/home/book/jsDetail/960')">
+                                    <div class="left bookContain_l_dw2con1">
+                                        <a href="/home/book/jsDetail/960" target="_self" class="right bookContain_l_dw2name">唐宋</a>
+                                        <a href="/home/book/jsDetail/960" target="_self" class="right bookContain_l_dw2p">主角人气NO.2</a>
+                                    </div>
+                                    <img src="style/images/20151109_318cc_s.jpg" alt="青春咏叹调" class="left" />
+                                </div>
+                                                            <div class=" bookContain_l_dw2con" onclick="javascript:window.open('/home/book/jsDetail/962')">
+                                    <div class="left bookContain_l_dw2con1">
+                                        <a href="/home/book/jsDetail/962" target="_self" class="right bookContain_l_dw2name">林寻</a>
+                                        <a href="/home/book/jsDetail/962" target="_self" class="right bookContain_l_dw2p">主角人气NO.3</a>
+                                    </div>
+                                    <img src="style/images/20151109_dc377_s.jpg" alt="青春咏叹调" class="left" />
+                                </div>
+                                                                        </div>
+                </div>
+                <div class="bookContain_l_dw2click">
+                                                                        <a href="javascript:;" class="dw2clickA"></a>
+                                                            </div>
+                <div class="clearfix dw2click_b">
+                    <a href="javascript:;" class="left dw2clickB"></a>
+                    <a href="javascript:;" class="left dw2clickC"></a>
+                </div>
+            </div>
+            <!--手机二维码/分享-->
+            <div class="clearfix informRb">
+                <div class="left informErweima">
+                    <a href="http://www.8kana.com/active/index/download" class="clearfix" target="_blank">
+                        <span class="left">下载到手机</span>
+                        <i class="left"></i>
+                        <div class="informErweima_Box">
+                            <div class="informErweima_Box_Pic">
+                                <img src="style/images/footer_erweimaAPP.png" alt="下载到手机" style="width: 100%; height: 100%;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="left informShared">
+                    <a href="javascript:;"></a>
+                </div>
+            </div>
+            <!--分享弹窗-->
+            <div class="informShared_popUp">
+                <div class="informShared_popUp_In">
+                    <div class="informShared_popUp_In_X" title="关闭">
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="informShared_popUp_Title"></div>
+                    <div class="informShared_popUp_main bdsharebuttonbox" data-tag="share_1">
+                        <div class="left informShared_popUp_mainL">
+                            <div class="informShared_popUp_QQIcon">
+                                <a class="bds_qzone BookDetails_bds1" data-cmd="qzone" id="qzone" ></a>
+                            </div>
+                            <div class="informShared_popUp_QQsize">分享到QQ空间</div>
+                        </div>
+                        <div class="left informShared_popUp_mainR">
+                            <div class="informShared_popUp_SinaIcon">
+                                <a class="bds_tsina BookDetails_bds2" data-cmd="tsina" id="tsina"></a>
+                            </div>
+                            <div class="informShared_popUp_Sinasize">分享到新浪微博</div>
+                        </div>
+                        <div class="left informShared_popUp_mainR">
+                            <div class="informShared_popUp_WeixinIcon">
+                                <a class="bds_weixin BookDetails_bds3" data-cmd="weixin" id="weixin"></a>
+
+                            </div>
+                            <div class="informShared_popUp_Sinasize">分享到微信</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <style>
+        .bdshare-button-style0-16 .bds_qzone{background-position:0;}
+        .bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more {
+            float: none;
+            font-size: 0;
+            padding-left: 0;
+            line-height: 0;
+            height: 60px;
+            background: url(style/images/img/Shared.png) no-repeat;
+            background-repeat: 0;
+            cursor: 0;
+            margin: 0 auto 12px;
+        }
+        .bdshare-button-style0-16 .bds_tsina {
+            background-position: -122px 0;
+        }
+        .bdshare-button-style0-16 .bds_weixin {
+            background-position: -244px 0;;
+        }
+        .bdsharebuttonbox a {}
+        .bdsharebuttonbox a .bds_qzone{background: rgba(0, 0, 0, 0) url("style/images/img/Shared.png") no-repeat scroll 0 0;}
+    </style>
+
+            <div class="clearfix right  BookDetails_In_Br ">
+
+                <div class="right "  style="position: relative;">
+
+                    <div class="right BookDetails_In_Btn_L2">
+                        <i class="BookDetails_QQIcon"></i>
+                    </div>
+                    <div class="right BookDetails_In_Btn_L3">
+                        <i class="BookDetails_SinaIcon"></i>
+                    </div>
+                    <div class="right BookDetails_In_Btn_L4">
+                        <i class="BookDetails_WeixinIcon"></i>
+                    </div>
+                </div>
+                <script>
+                    var domain = kana.getDomain('www');
+                    var app = kana.getDomain('app');
+                    window._bd_share_config = {
+                        common : {
+                            bdText : "超级精彩的小说，墙裂推荐！#青春咏叹调#,不可能的世界阅读地址："+domain+"/book/11479.html，一定不会失望！也可以下载APP来读："+app+"/list.html，大爱这个网站。@不可能的世界官微",
+                            bdDesc : "超级精彩的小说，墙裂推荐！#青春咏叹调#,不可能的世界阅读地址："+domain+"/book/11479.html，一定不会失望！也可以下载APP来读："+app+"/list.html，大爱这个网站。@不可能的世界官微",
+                            bdUrl : domain+"/book/11479.html",
+                            bdPic : 'http://c.8kana.com/201511/114/79/11479_0a3cf_868_l.jpg'
+                        },
+                        share : {
+                            "bdSize" : 16,
+                        }
+                    }
+                    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+                </script>
+            </div>
+            <!--分享弹窗-->
+        </div>
+    </div>
+    <div class="chapter">
+        <div class="clearfix chapter_top">
+            <h3>章节列表</h3>
+            <div class="left chapter_top_line"></div>
+            <div class="left chapter_top_looking">
+
+                                                    
+            </div>
+            <div class="right chapter_top_R">
+                <a href="javascript:;" onclick="javascript: sortFunction()"  class="chapter_top_order zxBox">↓倒序</a>
+                <a href="javascript:;" onclick="javascript: sortFunction()"  class="chapter_top_order ">↑正序</a>
+            </div>
+        </div>
+
+        <div class="chapter_con">
+            <ul class="clearfix">
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/36667.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                014 山行                                                                                                <div class="chapter_con_new"></div>
+                                                                                        </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/36268.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                013 板报                                                                                                <div class="chapter_con_new"></div>
+                                                                                        </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/36159.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                012 你的                                                                                                <div class="chapter_con_new"></div>
+                                                                                        </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/35880.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                011 约定                                                                                                <div class="chapter_con_new"></div>
+                                                                                        </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/35525.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                010 同桌                                                                                                                    </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/35373.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                009 相拥                                                                                                                    </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/35111.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                008 决赛                                                                                                                    </div>
+                        </a>
+                    </li>
+                
+                                                    
+                    <li tag="chapters" class=" nolooking">
+
+                        <a href="/read/34817.html" class="left" target="_self">
+                            <i class="left"></i>
+                            <div class="left ListName">
+                                007 怪想                                                                                                                    </div>
+                        </a>
+                    </li>
+                            </ul>
+
+            
+                            <ul class="clearfix">
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/34409.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    006 初赛                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/33837.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    005 陈彬                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/33438.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    004 很美                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/33437.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    003 初心                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/33436.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    002 方想                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                    
+                                                                
+                        <li tag="chapters"  class=" nolooking">
+                            <a href="/read/33435.html" target="_self" class="left chapter_con_a">
+                                <i class="left"></i>
+                                <div class="left ListName">
+                                    001 记得                                                                                                                                                </div>
+                            </a>
+
+                        </li>
+                                    </ul>
+            
+        </div>
+    </div>
+    <div class="regionBox">
+        <div class="regionBox_T">
+            <h3>讨论区/书评区</h3>
+        </div>
+        <div class="clearfix regionBox_B">
+            <div class="left regionBox_talk regionBox_talk_Hot BookTopic"  onclick="loadBookTopic()">
+                <a href="javascript:;"class="clearfix">
+                    <div class="left regionBox_talk_Icon"></div>
+                    <div class="left regionBox_talk_R" style="cursor: pointer;">
+                        <p class="regionBox_talk_R_Tsize">点此收起评论</p>
+                        <p class="regionBox_talk_R_Bsize">（<span id="TopicNum">5</span>个话题 / <span id="TopicReplyNum">5</span>讨论）</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="right regionBox_talk BookComment"  onclick="loadBookComment()">
+                <a href="javascript:;" class="clearfix">
+                    <div class="left regionBox_bookReview_Icon"></div>
+                    <div class="left regionBox_bookReview_R">
+                        <p class="regionBox_bookReview_R_Tsize">点此展开查看书评</p>
+                        <p class="regionBox_bookReview_R_Bsize">（<span id="CommentNum">2</span>篇书评/<span id="CommentRecommend">1</span>篇推荐书评<span id="CommentGoodArea" style="color: #999  ;display: none ">/<span id="CommentGood">0</span>篇精华书评</span>）</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="commentlist" style="display: none">
+
+        </div>
+
+    </div>
+
+
+    <div class="roleHeroBox">
+        <div class="roleHeroBox_In">
+            <div class="clearfix roleHeroBox_T">
+                <h3 class="left">角色英雄区</h3>
+                <span class="left">※免责声明:作品初期角色缺乏，8KANA.COM 作者部分设定可能会借用素材。仅做示意，供站内娱乐，待来日替换，欢迎于同人区投稿人设素材完善。</span>
+            </div>
+
+                <div class="roleHeroBox_B">
+                    <div class="roleHeroBox_B_Main">
+                        <ul class="clearfix">
+
+                                                                
+                                    
+                                    
+                                    <li id="juese_li_1" class="clearfix"  style="" >
+                                        <div class="left roleHeroBox_B_head" >
+                                            <a href="/home/book/jsDetail/961.html" target="_self">
+                                                <img src="style/images/20151109_67533_s.jpg" alt="青春咏叹调" style="width:100%; height:100%; "/>
+                                            </a>
+                                        </div>
+                                        <div class="left roleHeroBox_B_R">
+                                            <p class="roleHeroBox_B_name">
+                                                <a href="/home/book/jsDetail/961.html" target="_self" class="manColor">方想</a>
+                                            </p>
+                                            <p class="roleHeroBox_B_nameIntroduce">
+                                                <a href="/home/book/jsDetail/961.html" target="_self">在你脑海里追求梦想最执拗的人就是他了</a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                                                
+                                    
+                                    
+                                    <li id="juese_li_2" class="clearfix"  style="" >
+                                        <div class="left roleHeroBox_B_head" >
+                                            <a href="/home/book/jsDetail/960.html" target="_self">
+                                                <img src="style/images/20151109_318cc_s.jpg" alt="青春咏叹调" style="width:100%; height:100%; "/>
+                                            </a>
+                                        </div>
+                                        <div class="left roleHeroBox_B_R">
+                                            <p class="roleHeroBox_B_name">
+                                                <a href="/home/book/jsDetail/960.html" target="_self" class="manColor">唐宋</a>
+                                            </p>
+                                            <p class="roleHeroBox_B_nameIntroduce">
+                                                <a href="/home/book/jsDetail/960.html" target="_self">兄弟们之间最好的协调员</a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                                                
+                                                                                                                
+                                    
+                                    <li id="juese_li_3" class="clearfix"  style=" margin-right:0; " >
+                                        <div class="left roleHeroBox_B_head" >
+                                            <a href="/home/book/jsDetail/962.html" target="_self">
+                                                <img src="style/images/20151109_dc377_s.jpg" alt="青春咏叹调" style="width:100%; height:100%; "/>
+                                            </a>
+                                        </div>
+                                        <div class="left roleHeroBox_B_R">
+                                            <p class="roleHeroBox_B_name">
+                                                <a href="/home/book/jsDetail/962.html" target="_self" class="manColor">林寻</a>
+                                            </p>
+                                            <p class="roleHeroBox_B_nameIntroduce">
+                                                <a href="/home/book/jsDetail/962.html" target="_self">最强颜值</a>
+                                            </p>
+                                        </div>
+                                    </li>
+                            
+                        </ul>
+                    </div>
+                                    </div>
+
+        </div>
+    </div>
+
+    <div class="roleHeroBox">
+    <div class="roleHeroBox_In">
+        <div class="clearfix roleHeroBox_T">
+            <h3 class="left">国度资料区</h3>
+            <!--<a href="javascript:void(0)" onclick="PostYsWorks(1);" class="right role_fbtr">发同人</a>-->
+            <!--<a href="javascript:;" class="right Publish_GameBtn">为作品创作游戏</a>-->
+            <a href="javascript:;" onclick="PostYsWorks(1);" class="right PublishFan_Btn">发同人</a>
+        </div>
+            <!--视频-->
+        <!--音乐-->
+        <!--插图-->
+        <!--设定-->
+        <!--COS-->
+        <!--手工-->
+    
+
+    <div class="DataBox">
+        <div class="DataBox_Title">为<span>青春咏叹调</span>创作同人作品，参与世界补完</div>
+        <div class="DataBox_Nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(1);"  class="clearfix">
+                        <i class="left DataBox_Nav_Icon1"></i>
+                        <span class="left DataBox_Nav_Size1">插画/漫画</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(2);"  class="clearfix">
+                        <i class="left DataBox_Nav_Icon2"></i>
+                        <span class="left DataBox_Nav_Size2">设定/设计</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(4);"  class="clearfix">
+                        <i class="left DataBox_Nav_Icon3"></i>
+                        <span class="left DataBox_Nav_Size3">COS/摄影</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(3);"  class="clearfix">
+                        <i class="left DataBox_Nav_Icon4"></i>
+                        <span class="left DataBox_Nav_Size4">音乐/音频</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(5);" class="clearfix">
+                        <i class="left DataBox_Nav_Icon5"></i>
+                        <span class="left DataBox_Nav_Size5">手工/技术宅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:PostYsWorks(6);"  class="clearfix">
+                        <i class="left DataBox_Nav_Icon6"></i>
+                        <span class="left DataBox_Nav_Size6">视频/MAD</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+
+
+<script>
+    var BookId = "11479";  //作品id
+    var url = "/home/comment/list?item=1&id=11479&type=1";
+    LoadComment(url);
+
+    function loadBookTopic(){
+        var obj = $('.regionBox_B').children('div').eq(0);
+        var obj1 = $('.regionBox_B').children('div').eq(1);
+        if( obj.hasClass('regionBox_talk_Hot') ){
+            obj.find('p').eq(0).html('点此展开查看评论');
+            obj.removeClass('regionBox_talk_Hot');
+            $('#commentlist').css('display','none');
+        }else{
+            obj1.find('p').eq(0).html('点此展开查看书评');
+            obj.find('p').eq(0).html('点此收起评论');
+            obj.siblings().removeClass('regionBox_talk_Hot');
+            obj.addClass('regionBox_talk_Hot');
+            var url = "/home/comment/list?item=1&id=11479&type=1";
+            LoadComment(url,1);
+        }
+    }
+
+    function loadBookComment(){
+        var obj = $('.regionBox_B').children('div').eq(0);
+        var obj1 = $('.regionBox_B').children('div').eq(1);
+        if( obj1.hasClass('regionBox_talk_Hot') ){
+            obj1.find('p').eq(0).html('点此展开查看书评');
+            obj1.removeClass('regionBox_talk_Hot');
+            $('#commentlist').css('display','none');
+        }else{
+            obj.find('p').eq(0).html('点此展开查看评论');
+            obj1.find('p').eq(0).html('点此收起书评');
+            obj1.siblings().removeClass('regionBox_talk_Hot');
+            obj1.addClass('regionBox_talk_Hot');
+            var url = "/home/comment/list?item=1&id=11479&type=2";
+            LoadComment(url,1);
+        }
+    }
+
+    function LoadComment(url1,jump) {
+
+        $('#commentlist').load(url1);
+        $('#commentlist').css('display','block');
+
+        if (jump == 1){
+            //var top1 = $('#commentlist').offset().top - 100 ;
+            //$(window).scrollTop(top1);
+            $('html,body').animate({scrollTop:$('.regionBox').offset().top}, 800);
+        }
+
+        /*  更新头部数量  */
+        url1 = "/home/ajax/ajaxGetBookCommentNum/" + BookId;
+        $.ajax({
+            type : "post",
+            url : url1,
+            dataType : "json",
+            success : function (result){
+                if(result.status == 1){
+//                    var strR = "（" + result.BookCommentNum + "个书评 /" + result.CommentNum + "讨论）";
+                    $("#TopicNum").html(result.TopicNum);
+                    $("#TopicReplyNum").html(result.TopicReplyNum);
+                    $("#CommentNum").html(result.CommentNum);
+                    $("#CommentGood").html(result.CommentGood);
+                    $("#CommentRecommend").html(result.CommentRecommend);
+                    if(result.CommentGood > 0)
+                        $("#CommentGoodArea").show();
+                }
+            }
+        })
+    }
+
+    function favourite(bookId){
+
+        if( bookId == ''){
+            return false;
+        }
+
+        var loginUser = GPT.getCookieValue('UserId');
+        if( (loginUser == false) || (loginUser == 0) || (loginUser == '') ){
+            kana.loadLoginForm();
+            return false;
+        }
+
+        var data={};
+        data['BookId']=bookId;
+        var result = GPT.sendAjax("/home/book/ajaxFavourite",data);
+        if(result.status==1){
+            $('#favoriteNum').html(result.info);
+            $("#favoriteFlag").find('span').text("已收藏");
+            $("#favoriteFlag").find('i').attr('class',' left removeCollection');
+
+            $('#favoriteNum').parent().css('display','block');
+
+        } else if (result.status==2){   //  取消收藏
+            $('#favoriteNum').html(result.info);
+            $("#favoriteFlag").find('span').text("加入书架");
+            $("#favoriteFlag").find('i').attr('class',' left addCollection');
+
+            if ( parseInt(result.info) == 0 ) {
+                $('#favoriteNum').parent().css('display','none');
+            }
+
+        }
+        else {
+            kana.showErrorLittle(result.info);
+        }
+    }
+
+    function PostYsWorks(index){
+        var loginUser = GPT.getCookieValue('UserId');
+        if( (loginUser == false) || (loginUser == 0) || (loginUser == '') ){
+            kana.loadLoginForm();
+            return false;
+        }
+
+        var result = GPT.sendAjax("/community/ysmember/ajaxCheckYsMember");
+
+        if(result.status == 1){
+            var data = GPT.sendAjax("/community/ysworks/ajaxCheckPostYsWorks");
+            if(!data.status){
+                var url = window.location.href;
+                kana.showErrorForm(data.info,url,'正在跳转。。');
+            }else{
+                var url = '/community/ysworks/postysworks?bookid=11479&action=' + index;
+                window.open(url);
+            }
+        }else if(result.status == 3){
+//            kana.showNoticeConfirm('科学艺术坊','请先加入科学艺术坊','/community/ysindex/manual/index','科学艺术坊说明手册','加入科学艺术坊','btn-warning','joinConfirm');
+            var url = '/community/ysindex/index';
+            window.open(url);
+        }
+
+    }
+
+    function joinConfirm(){
+
+        var loginUser = GPT.getCookieValue('UserId');
+        if( (loginUser == false) || (loginUser == 0) || (loginUser == '') ){
+            kana.loadLoginForm();
+            return false;
+        }else{
+            joinYs();
+        }
+    }
+
+    function joinYs() {
+        $('#ShowNoticeConfirm').remove();
+        var data = GPT.sendAjax("/community/ysmember/ajaxJoin",'ajaxJoin=1');
+
+        if(data.status){
+            kana.showSuccessLittle('加入科学艺术坊成功');
+            setTimeout(function(){
+                location.reload();
+            },300);
+//            var url = window.location.href;
+//            kana.showSuccess('科学艺术坊',{'msg':'欢迎您加入科学艺术坊!科学艺术坊是“不可能的世界”各类才华横溢的人们汇聚之处，这里的人们拥有最优秀的技术，不可思议的手艺，和最丰富的创造力。从一次元到二次元，从二次元到三次元。人们用巧夺天工的本领，补完着又一又一个故事世界，同人文化在这里盛开。影像、乐曲、图像、手工、这里是大神辈出的坊市，这里是构筑在故事世界上的自治乐园。','url':url,'url_name':'科学艺术坊'});
+        }else{
+        }
+    }
+
+
+</script>
+
+
+
+        
+
+<!-- main_right start -->
+<div class="right informR">
+
+    <!-- 右1 -->
+    <div class="bookContain_r1">
+        
+
+<div class="left bookContain_r1">
+    <div class="bookContain_r1_up">
+        <div id="chart1" class=" left bookContain_r1_uppic" style="widows: 248px;"></div>
+    <div class="left" style="padding-top: 7px; ">
+        <span class=" bookContain_r1_upsp">
+
+        <span style="font-size:22px " >数据过少</span>
+
+        </span>
+
+        <div class="clearfix bookContain_r1_upline"">
+            <span class="left">剧情：</span>
+            <div class=" left bookContain_r1_upline_">
+                <div class="bookContain_r1_upline1" style="width: 0%"></div>
+            </div>
+            <span class="left">--</span>
+        </div>
+        <div class="clearfix bookContain_r1_upline">
+            <span class="left">角色：</span>
+            <div class=" left bookContain_r1_upline_">
+                <div class="bookContain_r1_upline2" style="width: 0%"></div>
+            </div>
+            <span class="left">--</span>
+        </div>
+        <div class="clearfix bookContain_r1_upline">
+            <span class="left">营养：</span>
+            <div class=" left bookContain_r1_upline_">
+                <div class="bookContain_r1_upline3" style="width: 0%"></div>
+            </div>
+            <span class="left">--</span>
+        </div>
+    </div>
+</div>
+<!-- 我要打分 -->
+<div class="bookContain_r1_down" >
+
+                                还没有贤者评分
+                        <a id="btnScore" href="javascript:void(0)" onclick="javascript:kana.showBookScoreForm('11479','青春咏叹调')">我要打分</a>
+    
+</div>
+
+    <div id="scorelist" class="bookContain_r1_up" style="position: relative; height: 35px;margin-top: 5px; width: 249px; left:0;">
+
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        var myChart = echarts.init(document.getElementById('chart1'));
+
+        var score1 = "0";
+        var score2 = "0";
+        var score3 = "0";
+
+        option = {
+            title : {
+                show:false
+            },
+            polar : [
+                {
+                    indicator : [
+                        {text : '1', max  : 10},
+                        {text : '2', max  : 10},
+                        {text : '3', max  : 10}
+                    ],
+                    name:{show:false},
+                    radius : 51,
+                    type: 'circle',
+                    splitArea : {
+                        show : true,
+                        areaStyle : {
+                            color: ['#abe4ff','#abe4ff']
+                        }
+                    },
+                    splitLine : {
+                        show : true,
+                        lineStyle : {
+                            width : 1,
+                            color : 'white'
+                        }
+                    },
+                    axisLine :{
+                        show : false
+                    }
+                }
+            ],
+            series : [
+                {
+                    type: 'radar',
+                    symbol:'none',
+                    borderColor:'red',
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                color : '#ff7f50',
+                                type: 'solid',
+                                width:0
+                            },
+                            areaStyle: {
+                                type: 'default',
+                                color:'#f7ffef'
+                            }
+                        }
+                    },
+                    data : [
+                        {
+                            value : [score1, score2, score3],
+    name : '0'
+    }
+    ]
+    }
+    ]
+    };
+    /*  为echarts对象加载数据   */
+    myChart.setOption(option);
+
+
+    });
+
+</script>
+
+    </div>
+    <!-- 右1 -->
+
+    <!-- 右2 -->
+    <div class="giftBox">
+        <div class="clearfix giftBox_Title">
+            <i class="left giftBox_Title_Icon"></i>
+            <span class="left">礼物</span>
+        </div>
+        <div class="giftBox_Main">
+            <div class="giftBox_Main_In" onclick="kana.showRewardForm(1,11479,1);">
+                <div class="clearfix giftBox_Main_In_T">
+                    <div class="left giftBox_Main_In_L">
+                        <i class="giftBox_Main_Icon1"  title="投食"></i>
+                    </div>
+                    <div class="left giftBox_Main_In_R">
+                        给作者投食 <span>0</span>
+                    </div>
+                </div>
+                <!-- <div class="giftBox_Main_In_B"></div> -->
+                <div class="giftBox_Main_In_Rfloat"></div>
+            </div>
+            <div class="giftBox_Main_In" onclick="kana.showRewardForm(1,11479,2)">
+                <div class="clearfix giftBox_Main_In_T">
+                    <div class="left giftBox_Main_In_L">
+                        <i class="giftBox_Main_Icon2" title="壁咚"></i>
+                    </div>
+                    <div class="left giftBox_Main_In_R">
+                        壁咚作者 <span>0</span>
+                    </div>
+                </div>
+                <!-- <div class="giftBox_Main_In_B"></div> -->
+                <div class="giftBox_Main_In_Rfloat"></div>
+            </div>
+            <div class="giftBox_Main_In" onclick="kana.showRewardForm(1,11479,3)">
+                <div class="clearfix giftBox_Main_In_T">
+                    <div class="left giftBox_Main_In_L">
+                        <i class="giftBox_Main_Icon3" title="推倒"></i>
+                    </div>
+                    <div class="left giftBox_Main_In_R">
+                        推倒作者 <span>0</span>
+                    </div>
+                </div>
+                <!-- <div class="giftBox_Main_In_B"></div> -->
+                <div class="giftBox_Main_In_Rfloat"></div>
+            </div>
+            <div class="giftBox_Main_In" onclick="kana.showRewardForm(1,11479,4)">
+                <div class="clearfix giftBox_Main_In_T">
+                    <div class="left giftBox_Main_In_L">
+                        <i class="giftBox_Main_Icon4" title="和作者生猴子"></i>
+                    </div>
+                    <div class="left giftBox_Main_In_R">
+                        跟作者生猴子 <span>0</span>
+                    </div>
+                </div>
+                <!-- <div class="giftBox_Main_In_B"></div> -->
+                <div class="giftBox_Main_In_Rfloat"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 右2 -->
+
+    <!-- 右3 -->
+    <div class="informR_Main1">
+        <div class="informR_Main1_Title">
+            <ul class="clearfix">
+                <li class='informR_Main1_Title1 informR_Main1_Title_Hot '>
+                    <a href="javascript:;">大家正在送</a>
+                </li>
+                <li class="informR_Main1_Title2" onclick="javascript:loadRewarderList()">
+                    <a href="javascript:;">本书豪粉排名</a>
+                </li>
+            </ul>
+            <div class="informR_Main1_Title_float"></div>
+        </div>
+
+        <script>
+
+            function loadRewarderList(){
+                var url1 = "/home/ajax/rewarderlist/11479";
+                $("#tuhaolist").load(url1);
+            }
+
+            function showMore(element,pageSize){
+                var objList = $('#'+element).siblings(":hidden");
+                if(objList.length > pageSize){
+                    $('#'+element).siblings(":hidden:lt("+pageSize+")").fadeIn();
+                    $('#'+element).find('span').html(objList.length - pageSize);
+                } else {
+                    objList.fadeIn()
+                    $('#'+element).css('display','none');
+                }
+            }
+
+        </script>
+
+
+                    <div id="rewarelist1" >
+                <!--大家没有送时-->
+                <div class="informR_Main1_B_no" style="display: block;">
+                    <div class="noSend"></div>
+                    <p class="noSend_size"><a href="javascript:kana.showRewardForm(1,11479,4);">作者跪求生猴子~</a></p>
+                </div>
+            </div>
+        
+        <div id="tuhaolist">
+
+        </div>
+
+    </div>
+    <!-- 右3 -->
+
+    <!-- 右4 -->
+    <div id="commentrecommend" class="informR_Main1" style="padding-bottom:7px; margin-bottom:0;">
+
+
+    </div>
+    <!-- 右4 -->
+
+    <!--右5-->
+        <div class="classPage_b_img threeHotBook_img" style="margin:27px 0 30px 0; border-radius: 3px;">
+            <a href="javascript:;" target="_blank" style="display:block; width:250px; height74px;border-radius: 3px; overflow: hidden;">
+                <img src="style/images/250-74-18.jpg" alt="青春咏叹调" />
+            </a>
+        </div>
+    <!--右5-->
+
+</div>
+<!-- main_right end -->
+
+<!-- 保荐弹窗 start-->
+<div class="baojian1" style="display: none">
+<div class="Sponsor1_popUp" >
+    <div class="popUp_In">
+        <div class="clearfix Sponsor_Title">
+            <div class="left Sponsor_Title_L">保荐 <span>青春咏叹调</span> 进精选</div>
+            <a class="clearfix right closeDown" onclick="closeOne();" href="javascript:;" style="margin-right:0;"><i class="Sponsor_closeDown_Btn"></i></a>
+        </div>
+        <div class="Sponsor_Ticket">
+            <!--<span class="left">保荐成功后自动投</span>-->
+            <!--<div class="left SelectedChoose_Ticket_Btn1">-->
+            <!--    <a href="javascript:;">√支持票</a>-->
+            <!--</div>-->
+            <!--<span class="left Sponsor_Ticket_X">X</span>-->
+            <!--<span class="left Sponsor_Ticket_member">2</span>-->
+            <span class="left">您本月还有 <span id="num"class="Sponsor_Ticket_member">2</span> 次保荐作品进精选的机会</span>
+        </div>
+        <div class="Sponsor_text">
+            <iframe src=""  width="0" height="0" style="display:none;"  name="tarframe">   </iframe>
+            <form id="b_form" name="b_form" action="/home/book/SaveRecommendBook"  method="post" enctype="multipart/form-data">
+                <div class="comment_Text_In">
+                    <div class="comment_Text_input" boxtip="1" id="bText" limit="1" words="2000" wordcount="wordNum" contenteditable="true" cols="" rows="" style="width:555px; height:76px;">请注意文明用语</div>
+                    <input type="text" id="cont" name="Note" hidden="hidden"/>
+                    <input type="text" name="BookId" hidden="hidden" value="11479"/>
+                </div>
+                <div  id="postBox" class="bookrack_words">
+                    <input type="hidden" id="image_txt1" name="image_txt[]" />
+                    <input type="hidden" id="image_txt2" name="image_txt[]" />
+                    <input type="hidden" id="image_txt3" name="image_txt[]" />
+                    <input type="hidden" id="image_txt4" name="image_txt[]" />
+                    <input type="hidden" id="image_txt5" name="image_txt[]" />
+                    <input type="hidden" id="image_txt6" name="image_txt[]" />
+                </div>
+
+                <div class="clearfix comment_Text_B">
+                    <div class="clearfix left smiley_img_Box">
+                        <a class="left lookBtn" href="javascript:;" style="margin-top:0; position: relative;">
+                            <span class="left picBtn_Icon" style="  background-position: -20px 0px"></span>
+                            <span class="left lookBtn_size" style="cursor: pointer">贴图</span>
+                                    <form id="form_7" name="form_7" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn" >
+                                        <!--                                <div class="" style="cursor: pointer;">-->
+                                        <!--                                    <input name="index" value="7"/>-->
+                                        <!--                                    <input type="file" id="image7" name="image7">-->
+                                        <!--                                </div>-->
+                                    </form>
+                                    <form id="form_6" name="form_6" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn" >
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="6"/>
+                                            <input type="file" id="image6" name="image6" onchange="showPic(6)">
+                                        </div>
+                                    </form>
+                                    <form id="form_5" name="form_5" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn">
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="5"/>
+                                            <input type="file" id="image5" name="image5" onchange="showPic(5)">
+                                        </div>
+                                    </form>
+                                    <form id="form_4" name="form_4" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn">
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="4"/>
+                                            <input type="file" id="image4" name="image4" onchange="showPic(4)">
+                                        </div>
+                                    </form>
+                                    <form id="form_3" name="form_3" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn">
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="3"/>
+                                            <input type="file" id="image3" name="image3" onchange="showPic(3)">
+                                        </div>
+                                    </form>
+                                    <form id="form_2" name="form_2" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn">
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="2"/>
+                                            <input type="file" id="image2" name="image2" onchange="showPic(2)">
+                                        </div>
+                                    </form>
+                                    <form id="form_1" name="form_1" action="/home/ajax/ajaxUploadTempPic" method="post" target="tarframe" enctype="multipart/form-data" class="picInput_btn">
+                                        <div class="" style="cursor: pointer;">
+                                            <input name="index" value="1"/>
+                                            <input type="file" id="image1" name="image1" onchange="showPic(1)" style="cursor: pointer;">
+                                        </div>
+                                    </form>
+                        </a>
+                    </div>
+                    <div class="right submitBtn">
+                        <a class="right" id="sub_btn" href="javascript:saveReBook();">保荐</a>
+                        <span class="" id="wordNum">0</span><span>/2000</span>
+                    </div>
+                </div>
+            </form>
+
+            <div class="Sponsor_Pic">
+                    <ul id="piclist" class="clearfix">
+                        <li style="display: none" >
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调">
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(1)"></a>
+                            </div>
+                        </li>
+                        <li style="display: none">
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调" style="display: none">
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(2)"></a>
+                            </div>
+                        </li>
+                        <li style="display: none">
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调">
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(3)"></a>
+                            </div>
+                        </li>
+                        <li style="display: none">
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调">
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(4)"></a>
+                            </div>
+                        </li>
+                        <li style="display: none">
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调" >
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(5)"></a>
+                            </div>
+                        </li>
+                        <li style="display: none;margin-right:0;">
+                            <a href="javascript:;">
+                                <img alt="青春咏叹调">
+                            </a>
+                            <div class="Sponsor_Pic_T" style="display: none">
+                                <a href="javascript:;" onclick="delPic(6)"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<div id="fade" class="black_popUp" style="display: block;	opacity: .6;z-index:100;background-color: black;"></div>
+</div>
+<!-- 保荐弹窗end-->
+
+<!-- 去投票提示弹窗 start-->
+<div class="baojian2" style="display: none">
+<div class="Sponsor3_popUp" style="height:220px;">
+    <div class="popUp_In">
+        <div class="clearfix Sponsor_Title" style="border-bottom:0; padding-top:0; margin-bottom:0;">
+            <a class="clearfix right closeDown" onclick="closeTwo()" href="javascript:;"><i class="Sponsor_closeDown_Btn"></i></a>
+        </div>
+        <div class="Sponsor2_T">正在进行编辑审核</div>
+        <div class="Sponsor2_Head">
+            <div class="clearfix Sponsor2_Head_In">
+                <span class="left">保荐人：</span>
+                <div class="left Sponsor2_Head_Img">
+                    <a href="javascript:;" target="_blank" id="url_name">
+                        <img src="" id="avatar" style="width:100%; height:100%;" alt="青春咏叹调" >
+                    </a>
+                </div>
+                <span class="left Sponsor2_Head_name manColor" id="nickname" >--</span>
+                <span class="left" id="role">--</span>
+            </div>
+        </div>
+        <div class="Sponsor3_Ticket_main" style="display: none;">
+            <div class="Sponsor3_Ticket_main_Title">已有<span id="people">--</span>人评选</div>
+            <div class="Sponsor3_Ticket_main_Member">
+                <div class="clearfix Sponsor3_Ticket_main_Member_In">
+                    <div class="clearfix left Sponsor3_Ticket_Support">
+                        <div class="left Sponsor3_Ticket_Support_Btn">√支持票</div>
+                        <span class="left Sponsor3_Ticket_X">X</span>
+                        <span class="left Sponsor3_Ticket_member" id="support">--</span>
+                    </div>
+                    <span class="left Sponsor3_Ticket_main_Colon">：</span>
+                    <div class="clearfix left Sponsor3_Ticket_Opposition">
+                        <div class="left Sponsor3_Ticket_Opposition_Btn">×反对票</div>
+                        <span class="left Sponsor3_Ticket_X">X</span>
+                        <span class="left Sponsor3_Ticket_member" id="opposition">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Sponsor2_B">
+            <div class="clearfix Sponsor2_B_In">
+                <div class="left Sponsor_Btn1" style="display: none">
+                    <a href="javascript:window.open('/community/xzindex/bookchoice');">去投票</a>
+                </div>
+                <div class="left Sponsor_Btn1">
+                    <a href="javascript:closeTwo();">知道了</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fade" class="black_popUp" style="display: block;	opacity: .6;z-index:100;background-color: black;"></div>
+</div>
+<!-- 去投票提示弹窗 end-->
+
+<script>
+    $(document).ready(function(){
+
+        GPT.bindLimitFunction();
+
+        setTimeout(function(){
+            var url1 = '/home/comment/commentRecommend';
+            $("#commentrecommend").load(url1,{BookClassId:4 });
+        },2000);
+
+        /*  打赏列表换行处理*/
+        $('.informR_Main1_B_In').each(function(){
+            if($(this).find('.informR_Main1_Name_Icon').length>0){
+                if($(this).find('.informR_Main1_Name_Icon').offset().top - $(this).offset().top < 10){
+                    $(this).find('.informR_Main1_Name_Icon').before("<br>");
+                }
+            }
+        });
+
+        $(".comment_Text_input").focus(function(){
+            if($(this).html()=='请注意文明用语'){
+                $(this).html('');
+            }
+        }).blur(function(){
+            if($(this).html()==''){
+                $(this).html('请注意文明用语');
+            }
+        });
+
+        if($(".bookPresent p").height() > $(".bookPresent .bookPresent_T").height()){
+            $(".bookPresent_Btn").css('display',"block");
+            $(".bookPresent_Btn").parent().click(function(){
+                document.getElementById('bookNote1').style.display='block';
+                $(".MusicPopUp_bg").css("display","block");
+            });
+        }
+
+    });
+
+    //打赏判断是否是自己作品
+    function dashang(index,BookId,AuthorId){
+        var loginUser = GPT.getCookieValue('UserId');
+        if( (loginUser == false) || (loginUser == 0) || (loginUser == '') ){
+            kana.loadLoginForm();
+            return false;
+        }
+        if(loginUser ==AuthorId){
+            if($('#MsgMain').length > 0 ){
+                return false;
+            }
+            kana.showErrorLittle("不能打赏自己的作品");
+        }else{
+            kana.showRewardForm(index,BookId)
+        }
+
+    }
+
+    function showPic(index){
+        $("#form_"+index).submit();
+        var imgListId = $('#piclist').find('li').eq(index-1);
+        imgListId.css('display','block');
+        $('#piclist').css('display','block');
+        imgListId.find('a img').css('width','31');
+        imgListId.find('a img').css('height','31');
+        imgListId.find('a img').css('display','block');
+        imgListId.find('a img').css('margin','25px auto 0');
+        $(".Sponsor1_popUp").css('height','360');
+        imgListId.find('a img').attr('src', "http://s.8kana.com/img/common/loading.gif");
+        $("#piclist").attr("index",index);
+    }
+
+    function showCrop(strFile,index) {
+
+        var imgListId = $('#piclist').find('li').eq(index-1);
+        $('#image_txt'+index).val(strFile);
+
+        /*  得到的是原图地址，显示缩略图  */
+        strFile = getFileUrlByStyle(strFile,'s');
+        imgListId.find('a img').attr('src', strFile);
+        imgListId.find('a img')[0].onload = function(){
+            $('#image'+index).hide();
+            $('#form_'+index).hide();
+            imgListId.find('a img').css('width','75');
+            imgListId.find('a img').css('height','75');
+            imgListId.find('a img').css('margin','0');
+            $(".Sponsor1_popUp").css('height','360');
+        };
+    }
+    function delPic(index) {
+        var imgListId = $('#piclist').find('li').eq(index-1);
+        $("#form_"+index).find('#image'+index).val('');
+        imgListId.css('display','none');
+        $('#image_txt' + index).val('');
+        $('#image'+index).show();
+        $('#form_'+index).show();
+
+        for(var index =0 ;index<6 ;index++){
+            if($('#postBox').find('#image_txt').val()!="")
+                break;
+        }
+
+        if(index==6)
+            $('#piclist').css('display','none');
+
+        if($(".Sponsor_Pic").find("ul").find("li:not(:hidden)").length==0){
+            $(".Sponsor1_popUp").css('height','260');
+        }
+
+    }
+
+    //  保荐提交
+    function saveReBook(){
+        var num = GPT.DivContentCount('bText');
+        if(num==0){
+            kana.showErrorLittle('请输入内容！');
+            return ;
+        }
+        if(num<300){
+            kana.showErrorLittle('保荐语最少300字哦！');
+            return ;
+        }else if(num>2000){
+            kana.showErrorLittle('超出字数限制！');
+            return ;
+        }
+
+        /*  正在操作中，不可用   */
+        if($("#sub_btn").attr('clickflag')==1 ){
+            return;
+        }
+
+        /*  开始处理，设置按钮为正在操作中状态，不可用   */
+        $("#sub_btn").attr('clickflag',1);
+        var chkPass = true;
+
+        var BookId = $("#BookId").val();
+        var Note = $(".comment_Text_input").html();
+        $("#cont").val(Note);
+        $('#b_form').attr('target', "tarframe");
+
+        document.getElementById("b_form").submit();
+
+        setTimeout(function(){
+            $("#sub_btn").attr('clickflag',1);
+        },3000);
+
+    }
+
+    //关闭保荐弹窗
+    function closeOne(){
+        $(".baojian1").css('display','none');
+    }
+
+    //关闭去投票弹窗
+    function closeTwo(){
+        $(".baojian2").css('display','none');
+    }
+
+    function reError(info){
+        kana.showErrorLittle(info)
+        closeOne();
+    }
+    function showRes(code,info){
+        if(code==1){
+            kana.showSuccessForm(info,'');
+            //kana.showSuccessLittle(info);
+            closeOne();
+        }else{
+            kana.showErrorForm(info,'')
+            //kana.showErrorLittle(info);
+            closeOne();
+        }
+    }
+
+    function showError(code,info){
+        if(code==1) {
+           //('#piclist').find('a img').css('width','31');
+            //$('#piclist').find('a img').css('height','31');
+            var index = $("#piclist").attr("index");
+
+            kana.showErrorLittle(info);
+            delPic(index);
+            //$("#piclist").css('display','none');
+        }
+    }
+
+
+</script>
+
+
+    </div>
+</div>
+
+<!-- index main -->
+
+<!--footer start-->
+
+<div class="footer">
+    <div class="footer_up">
+        <div class="footer_up_In">
+            <div class="footer_Logo">
+                <div class="footer_Logo_Up"></div>
+                <div class="footer_Logo_Down">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/about')">关于我们</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/contact')">联系我们</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/home/help/link')">友情链接</a>
+                        </li>
+                        <li class="footer_solid"></li>
+                        <li>
+                            <a href="javascript:;" onclick="window.open('http://www.8kana.com/bbs/index/idea')" >问题帮助</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_erweimaApp">
+                <a href="http://www.8kana.com/active/index/download" target="_blank">
+                    <div class="footer_erweimaApp_Img">
+                        <img src="style/images/footer_erweimaAPP.png" alt="" style="width: 100%; height: 100%;"/>
+                    </div>
+                    <p>不可能的世界APP</p>
+                    <p style="margin-top: 5px;">扫描或点击下载</p>
+                </a>
+            </div>
+            <div class="footer_erweimaHome">
+                <a href="javascript:;">
+                    <div class="footer_erweimaHome_Img">
+                        <img src="style/images/footer_erweimaHome.png" alt="" style="width: 100%; height: 100%;"/>
+                    </div>
+                    <p>不可能的世界</p>
+                    <p style="margin-top: 5px;">官方微信</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer_down">
+        <div class="footer_down_In">
+            <div class="footer_down_In_">
+                <span>© 2014 不可能的世界 <a href="javascript:;"> http://www.8kana.com</a> </span>
+                <span>北京晨星盛世网络文化有限公司 版权所有</span>
+                <span>京ICP备15011361号-1</span>
+                <span>网络文化经营许可证：文网文[2015]0613-243号</span>
+                <span>京公网安备：11010102000514号</span>
+                <!--<a key ="5608b6adefbfb02412482bd0" logo_size="83x30"  logo_type="business"  href="http://www.anquan.org" ><script src="style/js/aq_auth.js"></script></a>-->
+                <a href="http://webscan.360.cn/index/checkwebsite/url/www.8kana.com" style="display: none"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/44d801581afbd43af3c0051d02717c41"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer end-->
+
+<div class="MusicPopUp_bg"></div>
+<!--<script>-->
+<!--    var _hmt = _hmt || [];-->
+<!--    (function() {-->
+<!--        var hm = document.createElement("script");-->
+<!--        hm.src = "//hm.baidu.com/hm.js?8e5c267d09f366bed9ed2b29a40a3798";-->
+<!--        var s = document.getElementsByTagName("script")[0];-->
+<!--        s.parentNode.insertBefore(hm, s);-->
+<!--    })();-->
+<!--</script>-->
+<!---->
+<!--<script>-->
+<!---->
+<!--    (function(){-->
+<!---->
+<!--        var bp = document.createElement('script');-->
+<!---->
+<!--        bp.src = '//push.zhanzhang.baidu.com/push.js';-->
+<!---->
+<!--        var s = document.getElementsByTagName("script")[0];-->
+<!---->
+<!--        s.parentNode.insertBefore(bp, s);-->
+<!---->
+<!--    })();-->
+<!---->
+<!--</script>-->
+
+</body>
+</html>
